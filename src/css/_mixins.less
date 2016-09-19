@@ -1,0 +1,41 @@
+@import "@{sso-mixins}_marginMixin.less";
+@import "@{sso-mixins}_paddingMixin.less";
+@import "@{sso-mixins}_flex.less";
+/*** font size mixin ***/
+.font-size(@sizeValue) {
+    @pxValue: (@sizeValue);
+    @remValue: @sizeValue/10;
+    font-size: ~"@{pxValue}px"; 
+    font-size: ~"@{remValue}rem";
+}
+/*** border radius mixin ***/
+.border-radius(@radius) {
+    @radiusValue: @radius;
+    @radRem: @radius/10;
+    -webkit-border-radius: ~"@{radiusValue}px";
+    -webkit-border-radius: ~"@{radRem}rem";
+    -moz-border-radius: ~"@{radiusValue}px";
+    -moz-border-radius: ~"@{radRem}rem";    
+    border-radius: ~"@{radiusValue}px";
+    border-radius: ~"@{radRem}rem";
+}
+
+/*** Width mixin ***/
+// width: 0;
+.width(@a) when (isnumber(@a)) and (@a = 0) {
+    width: ~"@{a}";
+}
+//width: 20px; width 2rem;
+.width(@a) when (isnumber(@a)) and (@a > 0) and not(ispercentage(@a)) {
+    @rem: @a/10;
+    width: ~"@{a}px";
+    width: ~"@{rem}rem";
+}
+//width: auto;
+.width(@a) when not(isnumber(@a)) {
+    width: ~"@{a}";
+}
+//(1%)
+.width(@a) when (ispercentage(@a)) { 
+    width: ~"@{a}";    
+}

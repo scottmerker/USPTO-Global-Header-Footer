@@ -1,0 +1,581 @@
+/***
+*  myUSPTO base styles
+*  imports all needed external stylesheets and variables
+*  only add global styles
+*  This is imported to with myUSPTO UserAdmin styles
+***/
+
+// originally "@{assets-path}partials/mixins/_mixins.less";
+@import "_mixins.less";
+// originally "@{assets-path}partials/_ssoVariables.less";
+@import "_ssoVariables.less";
+@import "@{bower-path}/bower_components/USPTOPatternLibrary/usptostrap/less/usptostrap.less";
+// originally "@{assets-path}partials/_uspto-header-styles.less";
+@import "_uspto-header-styles.less";
+//myuspto base styles
+html {
+    font-size: 62.5%;
+    height: 100%;
+    body {
+        .font-size(@sso-font-size-base);
+        background-color: @off-white-lightest;
+        height: 100%;
+        min-width: 320px;
+        .skip-navigation-link {
+            background: @white;
+            .padding(0, 5);
+        }
+        .skip-target, aria-live {
+            .sr-only;
+        }
+    }
+    main {
+        .margin(bottom, 0);
+        .padding(10, 10, 340);
+        &.member-area {
+            .container-fluid;
+        }
+        &.public {
+            .container;
+        }
+        &.signin-page {
+            .margin(top, 55);
+            .padding(bottom, 385);
+        }
+    }
+}
+
+
+/**************************************/
+
+
+/*************push footer to bottom---- temporary placement, will be moved to proper location after testing*************************/
+
+.page-wrapper {
+    min-height: 100%;
+    position: relative;
+}
+
+//wrap text that overflows container
+.text-wrap{
+    word-wrap: break-word;
+
+}
+
+/**************************************/
+
+//all styles specific to the account details Form
+/*
+@import "@{assets-path}partials/_spacing.less";
+@import "@{assets-path}partials/_textElements.less";
+@import "@{assets-path}partials/_errors.less";
+@import "@{assets-path}partials/_ssoIcons.less";
+@import "@{assets-path}partials/_commonForm.less";
+@import "@{assets-path}partials/_buttons.less";
+@import "@{assets-path}partials/_alerts.less";
+@import "@{assets-path}partials/_messages.less";
+@import "@{assets-path}partials/_stickySave.less";
+@import "@{assets-path}partials/_modal.less";
+@import "@{assets-path}partials/_recaptcha.less";
+@import "@{assets-path}partials/_header.less";
+@import "@{assets-path}partials/_footer.less";
+@import "@{assets-path}partials/_spinnerOverlay.less";
+@import "@{assets-path}partials/_profile-create-account.less";
+@import "@{assets-path}partials/_sso-tables.less";
+*/
+
+/****************/
+
+/* Employee notice popover */
+.emp-notice {
+    left: 74% !important;
+    @-moz-document url-prefix() { 
+        left: 80% !important;
+        top: 225px !important;
+    }
+}
+
+/* This is an over-ride for .help-block.  It does not change the text color when there's an alert. */
+.sso-help-block {
+    .help-block;
+}
+//styles for '* indicates required text'
+required-input{
+    .help-block;
+    .text-right;
+    .req-form-input-text{
+        span{
+            span{
+                .sr-only;
+            }
+        }
+    }
+}
+/******** TOP BANNER ********/
+.sso-dropdown-menu {
+    li {
+        text-align: left;
+        .padding(left, 6%);
+        .width(100%);
+        &:hover {
+            background-color: @gray-faint;
+        }
+        a {
+            display: inline-block;
+            .width(80%);
+        }
+    }
+}
+
+.sso-release {
+    .padding(right, 1%);
+}
+
+
+//may not be used since 6/3 due to moving page title to 'middle' section of header
+#bs-example-navbar-collapse-1 div:first-child {
+    color: @white;
+    display: inline-block;
+    .margin(top, 3);
+}
+
+
+/******** MENU WIDGET ********/
+
+// only cursor is needed as other styles are being used to style header menu items
+.menu-logged-in-user {
+    color: @white;
+    cursor: pointer;
+    text-decoration: none;
+    .padding(4, 15, 6, 12);
+    &:focus, &:hover {
+        background-color: @blue-secondary;
+        color: @white;
+    }
+}
+
+/******** END MENU WIDGET ********/
+
+.el-fade {
+    opacity: 1;
+    transition: 0.5s linear all;
+    &.ng-hide {
+        opacity: 0;
+    }
+}
+
+svg {
+    fill: currentColor;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.sso-version {
+    color: @gray-alt;
+    .font-size(7);
+    font-weight: 700;
+}
+
+a {
+    &.sso-link-btn {
+        &:visited, &:active, &:focus, &:hover, &:link {
+            color: @white;
+        }
+    }
+    &[data-disabled='disabled'] {
+        color: inherit;
+        display: block;
+        cursor: pointer;
+        text-decoration: none;
+        &:hover, &:focus{
+            text-decoration: none;
+        }
+    }
+
+}
+
+.sso-sub-title {
+    display: inline-block;
+    .margin(bottom, 15);
+}
+//used?
+#block-menu-menu-utility-menu li a:hover {
+    text-decoration: none;
+    background-color: transparent;
+}
+
+/*NOTE: The sizes are based on the original SVG sprite which is 14px x 14px.*/
+
+
+/****** END SSO ICONS *******/
+
+
+/****** Text Colors *******/
+.txt-md-blue {
+    color: @brand-info;
+}
+
+.txt-light-gray {
+    color: @gray;
+}
+
+.txt-more-light-gray {
+    color: @sso-gray;
+}
+
+.txt-brand-primary {
+    color: @blue-primary;
+}
+
+.txt-brand-success {
+    color: @brand-success;
+}
+
+.txt-brand-info {
+    color: @blue-primary;
+}
+
+.txt-brand-warning {
+    color: @tan;
+}
+
+.txt-brand-danger {
+    color: @brand-danger;
+}
+
+.txt-gray-darker {
+    color: @black-lighten;
+}
+
+.txt-gray-dark {
+    color: @gray-dark;
+}
+
+.txt-gray {
+    color: @gray-darker;
+}
+
+.txt-gray-light {
+    color: @gray-alt;
+}
+
+.txt-gray-lighter {
+    color: @gray-faint-alt;
+}
+
+.txt-white {
+    color: @white;
+}
+
+.intro-text {
+    .font-size(20);
+    .margin(top, 20);
+}
+/****** End Text Colors *******/
+
+
+/******************************* END COMMON CONTENT *******************************/
+
+
+/******** account activity styles ***********/
+
+
+/******** FORM Styles ********/
+
+form {
+    &:not(.form-horizontal) {
+        label, p {
+            &.required {
+                font-weight: 600;
+                &:after {
+                    //override font sizing and add p tag 
+                    content: "*";
+                    .font-size(12);
+                    left: 4px;
+                    position: relative;
+                }
+            }
+        }
+    }
+}
+
+.help-block.sso-hint {
+    color: #848484;
+}
+
+.additional-emails {
+    display: inline-block;
+    .width(90%);
+}
+
+.spacer-el {
+    line-height: 1px;
+}
+
+//all styles specific to the account details Form
+// @import "partials/_commonForm.less";
+// @import "partials/_accountDetailsForm.less";
+//styles for ie upgrade modal on welcome and sign in pages
+.browser-upgrade {
+    .list-inline();
+    .browser {
+        background: url('../images/browser-logos-small.jpg') scroll -268px 0 transparent;
+        display: block;
+        height: 124px;
+        .width(124);
+        &.firefox {
+            background-position: -134px 0;
+        }
+        &.chrome {
+            background-position: 0 0;
+        }
+        > span {
+            .sr-only;
+        }
+    }
+}
+
+
+/******** END FORM Styles ********/
+//used?
+.top-buffer {
+    .margin(20);
+}
+//used?
+.bottom-buffer {
+    .margin(bottom, 20);
+}
+
+.selected {
+    background: @blue-secondary;
+    color: @white;
+}
+
+
+/******** LOADING SPINNER ********/
+
+
+/* Layout the position and default state of the spinner. */
+
+form {
+    &.myusptoloading {
+        &:before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 1070;
+            right: 0;
+            background: @white-trans;
+        }
+    }
+}
+
+
+/** Spinner **/
+
+.loading-overlay {
+    position: fixed;
+    top: 50%;
+    bottom: 0;
+    left: 50%;
+    z-index: 1069;
+}
+
+
+/******** END LOADING SPINNER ********/
+
+
+/*************** END MESSAGES/VALIDATION ***************/
+
+
+/*****New layout styles*****/
+//not used?
+.form-group-heading {
+    h2{
+        .padding(0);
+    }
+}
+.sso-body-height {
+    min-height: 700px;
+}
+
+.sso-left-col {
+    margin-right: .5em;
+}
+
+.sso-controls-container {
+    .margin(bottom, 12);
+    .margin(top, 12);
+}
+
+.sso-box {
+    .row;
+    .margin(left, 1.25%);
+    .margin(right, 1.25%);
+}
+
+.sso-card {
+    .panel;
+    .margin(10);
+    border-color: @sso-gray-lighter;
+    .sso-body-height {
+        min-height: 700px;
+    }
+
+    h2 {
+        color: @gray-dark;
+        .font-size(20.8);
+        .margin(0);
+        .padding(10, 15, 10, 0);
+    }
+}
+section.sso-card {
+    h2 {
+        .padding(10, 15);
+    }
+}
+
+.sso-card-icon {
+    .margin(right, 10);
+}
+
+.sso-image-size {
+    max-width: 100%;
+    height: auto;
+}
+
+.sso-systemstatus {
+    border: 1px solid @off-white-lightest-alt;
+    .margin(10, 0);
+    .padding(5);
+
+}
+.sso-tab-content {
+    background-color: @white;
+    border: 1px solid @sso-gray-lighter;
+    border-top: 0 none;
+    .padding(15);
+} 
+//rss-director-forum.html
+.sso-blog-area {
+    height: 23rem;
+    overflow: auto;
+    .padding(left, 10);
+    .padding(right, 5);
+    h4 {
+        .margin(top, 0);
+    }
+}
+
+// system-status.html
+.sso-system-status {
+    // height: 14.6154em;//250px;
+
+    .padding(left, 0);
+    .padding(right, 0);
+    li {
+        list-style-type: none;
+        border-bottom: 1px solid @sso-gray-lighter;
+        .margin(bottom, 14);
+        .padding(bottom, 14);
+        &:last-child{
+            border-bottom: none;
+            .margin(bottom, 0);
+            .padding(bottom, 0);
+        }
+        h3{
+            &.h5{
+                .margin(top, 0);
+            }
+        }
+    }
+}
+
+//used?
+.sso-top-margin {
+    .margin(top,10);
+}
+
+//password template
+.sso-pass-requirement {
+    background-clip: padding-box;
+    border: 1px solid #cccccc;
+    border: 1px solid @black-trans;
+    .border-radius(2);
+    -webkit-box-shadow: 0 5px 10px @black-trans-twenty;
+    box-shadow: 0 5px 10px @black-trans-twenty;
+}
+
+//security-questions-form.html
+.sso-sq-width {
+    max-width: 370px;
+}
+
+
+/******** OVER-RIDES ********/
+
+//change id to class if used
+#content {
+    @media (min-width: @screen-sm) {
+        .padding(left, 0);
+        .padding(right, 0);
+        .padding(top, 0);
+    }
+}
+
+.popover.right {
+    .margin(left, 50);
+}
+
+
+//used?
+/*@media all and (max-device-width:1024px) {
+    .sso-smaller-height,
+    .sso-small-height,
+    .sso-middle-height,
+    .sso-big-height,
+    .sso-bigger-height {
+        height: auto;
+    }
+}*/
+
+
+/******** END OVER-RIDES ********/
+
+
+.edit .column {
+    border: 1px dashed #ccc;
+    .border-radius(5); 
+    min-height: 420px;
+    .padding(top, 15);
+}
+
+pre.edit {
+    .margin(top, 15);
+}
+
+.column .placeholder {
+    background: @off-white-lightest-alt;
+    border: 1px dashed @gray-darker;
+    .border-radius(5);
+    .margin(bottom, 15);
+    opacity: 0.4;
+}
+
+//used?
+.padding-bottom {
+    .padding(bottom, 5);
+    //padding-bottom: 5px;
+}
+//used?
+.block {
+    display: block;
+}
+
+.overflow-hidden{
+    overflow: hidden;
+}

@@ -1,0 +1,199 @@
+/*
+  Use the following mixin class name to create desired output
+  
+  1. .padding(1) => padding: 1px; padding: .1rem;
+  2. .padding(1, 2) => padding: 1px 2px; padding: .1rem .2rem;
+  3. .padding(1, 2, 3) => padding: 1px 2px 3px; padding: .1rem .2rem .3rem;
+  4 .padding(1, 2, 3, 4) => padding: 1px 2px 3px 4px; padding: .1rem .2rem .3rem .4rem;
+  5. .padding(top, 5) = padding-top: 5px; padding-top: .5rem;
+*/
+
+
+//follows pattern for padding:(1);
+.padding(@a) when (isnumber(@a)) and not (@a = 0) and not(ispercentage(@a)) {
+    @rem: @a/10;
+    padding: ~"@{a}px";
+    padding: ~"@{rem}rem";
+}
+.padding(@a) when (isnumber(@a)) and (@a = 0) {
+    padding: ~"@{a}";
+}
+
+//follows pattern for padding:(1,1);
+.padding(@a; @b) when (isnumber(@a)) and not (@a = 0) and not (@b = 0) {
+    @remA: @a/10;    @remB: @b/10;
+    padding: ~"@{a}px" ~"@{b}px";
+    padding: ~"@{remA}rem" ~"@{remB}rem";
+}
+.padding(@a; @b) when (isnumber(@a)) and (@a = 0){
+    @remA: @a/10;    @remB: @b/10;
+    padding: ~"@{a}" ~"@{b}px";
+    padding: ~"@{remA}" ~"@{remB}rem";
+}
+.padding(@a; @b) when (isnumber(@a)) and (@b = 0){
+    @remA: @a/10;    @remB: @b/10;
+    padding: ~"@{a}px" ~"@{b}";
+    padding: ~"@{remA}rem" ~"@{remB}";
+}
+
+//follows pattern for padding:(1,1,1);
+//(1, 1, 1)
+.padding(@a; @b; @c) when (isnumber(@a)) and not (@a = 0) and not (@b = 0) and not (@c = 0) { 
+    @remA: @a/10;    @remB: @b/10;    @remC: @c/10;    
+    padding: ~"@{a}px" ~"@{b}px" ~"@{c}px";
+    padding: ~"@{remA}rem" ~"@{remB}rem" ~"@{remC}rem";
+}//(0, 0, 1)
+.padding(@a; @b; @c) when (isnumber(@a)) and (@a = 0) and (@b = 0) and not (@c = 0){
+    @remA: @a/10;    @remB: @b/10;    @remC: @c/10; 
+    padding: ~"@{a}" ~"@{b}" ~"@{c}px";
+    padding: ~"@{remA}" ~"@{remB}" ~"@{remC}rem";
+}
+//(0, 1, 0)
+.padding(@a; @b; @c) when (isnumber(@a)) and (@a = 0) and not (@b = 0) and (@c = 0){
+    @remA: @a/10;    @remB: @b/10;    @remC: @c/10; 
+    padding: ~"@{a}" ~"@{b}px" ~"@{c}";
+    padding: ~"@{remA}" ~"@{remB}rem" ~"@{remC}";
+}
+//1, 0, 0)
+.padding(@a; @b; @c) when (isnumber(@a)) and not (@a = 0) and (@b = 0) and (@c = 0) {
+    @remA: @a/10;    @remB: @b/10;    @remC: @c/10; 
+    padding: ~"@{a}px" ~"@{b}" ~"@{c}";
+}
+//(1, 1, 0)
+.padding(@a; @b; @c) when (isnumber(@a)) and not (@a = 0) and not (@b = 0) and (@c = 0){
+    @remA: @a/10;    @remB: @b/10;    @remC: @c/10; 
+    padding: ~"@{a}px" ~"@{b}px" ~"@{c}";
+    padding: ~"@{remA}rem" ~"@{remB}rem" ~"@{c}";
+}
+//(1, 0, 1)
+.padding(@a; @b; @c) when (isnumber(@a)) and not (@a = 0) and (@b = 0) and not (@c = 0){
+    @remA: @a/10; @remC: @c/10; 
+    padding: ~"@{a}px" ~"@{b}" ~"@{c}px";
+    padding: ~"@{remA}rem" ~"@{b}" ~"@{remC}rem";
+}
+//(0, 1, 1)
+.padding(@a; @b; @c) when (isnumber(@a)) and (@a = 0) and not (@b = 0) and not (@c = 0){
+    @remA: @a/10;    @remB: @b/10;    @remC: @c/10; 
+    padding: ~"@{a}" ~"@{b}px" ~"@{c}px";
+    padding: ~"@{remA}" ~"@{remB}rem" ~"@{remC}rem";
+}
+//(0, 0, 0)
+.padding(@a; @b; @c) when (isnumber(@a)) and (@a = 0) and (@b = 0) and (@c = 0) {
+    padding: ~"@{a}" ~"@{b}" ~"@{c}";
+}
+
+//follows pattern for padding:(1,1,1,1);
+//(1, 1, 1, 1)
+.padding(@a; @b; @c; @d) when (isnumber(@a)) and not (@a = 0) and not (@b = 0) and not (@c = 0) and not (@d = 0) { 
+    @remA: @a/10;    @remB: @b/10;    @remC: @c/10;    @remD: @d/10;
+    padding: ~"@{a}px" ~"@{b}px" ~"@{c}px" ~"@{d}px";
+    padding: ~"@{remA}rem" ~"@{remB}rem" ~"@{remC}rem" ~"@{remD}rem";
+}
+//(1, 1, 1, 0)
+.padding(@a; @b; @c; @d) when (isnumber(@a)) and not (@a = 0) and not (@b = 0) and not (@c = 0) and (@d = 0) { 
+    @remA: @a/10;    @remB: @b/10;    @remC: @c/10;    @remD: @d/10;
+    padding: ~"@{a}px" ~"@{b}px" ~"@{c}px" ~"@{d}";
+    padding: ~"@{remA}rem" ~"@{remB}rem" ~"@{remC}rem" ~"@{remD}";
+}
+//(1, 1, 0, 1)
+.padding(@a; @b; @c; @d) when (isnumber(@a)) and not (@a = 0) and not (@b = 0) and (@c = 0) and not (@d = 0) { 
+    @remA: @a/10;    @remB: @b/10;    @remC: @c/10;    @remD: @d/10;
+    padding: ~"@{a}px" ~"@{b}px" ~"@{c}" ~"@{d}px";
+    padding: ~"@{remA}rem" ~"@{remB}rem" ~"@{remC}" ~"@{remD}rem";
+}
+//(1, 0, 1, 1)
+.padding(@a; @b; @c; @d) when (isnumber(@a)) and not (@a = 0) and (@b = 0) and not (@c = 0) and not (@d = 0) { 
+    @remA: @a/10;    @remB: @b/10;    @remC: @c/10;    @remD: @d/10;
+    padding: ~"@{a}px" ~"@{b}" ~"@{c}px" ~"@{d}px";
+    padding: ~"@{remA}rem" ~"@{remB}" ~"@{remC}rem" ~"@{remD}rem";
+}
+//(0, 1, 1, 1)
+.padding(@a; @b; @c; @d) when (isnumber(@a)) and (@a = 0) and not (@b = 0) and not (@c = 0) and not (@d = 0) { 
+    @remA: @a/10;    @remB: @b/10;    @remC: @c/10;    @remD: @d/10;
+    padding: ~"@{a}" ~"@{b}px" ~"@{c}px" ~"@{d}px";
+    padding: ~"@{remA}" ~"@{remB}rem" ~"@{remC}rem" ~"@{remD}rem";
+}
+//(0, 0, 1, 1)
+.padding(@a; @b; @c; @d) when (isnumber(@a)) and (@a = 0) and (@b = 0) and not (@c = 0) and not (@d = 0) { 
+    @remA: @a/10;    @remB: @b/10;    @remC: @c/10;    @remD: @d/10;
+    padding: ~"@{a}" ~"@{b}" ~"@{c}px" ~"@{d}px";
+    padding: ~"@{remA}" ~"@{remB}" ~"@{remC}rem" ~"@{remD}rem";
+}
+//(0, 0, 0, 1)
+.padding(@a; @b; @c; @d) when (isnumber(@a)) and (@a = 0) and (@b = 0) and (@c = 0) and not (@d = 0) { 
+    @remA: @a/10;    @remB: @b/10;    @remC: @c/10;    @remD: @d/10;
+    padding: ~"@{a}" ~"@{b}" ~"@{c}" ~"@{d}px";
+    padding: ~"@{remA}" ~"@{remB}" ~"@{remC}" ~"@{remD}rem";
+}
+//(0, 0, 0, 0,)
+.padding(@a; @b; @c; @d) when (isnumber(@a)) and (@a = 0) and (@b = 0) and (@c = 0) and (@d = 0) { 
+    padding: ~"@{a}" ~"@{b}" ~"@{c}" ~"@{d}";
+}
+//(1, 0, 0, 0)
+.padding(@a; @b; @c; @d) when (isnumber(@a)) and not (@a = 0) and (@b = 0) and (@c = 0) and (@d = 0) { 
+    @remA: @a/10;    @remB: @b/10;    @remC: @c/10;    @remD: @d/10;
+    padding: ~"@{a}px" ~"@{b}" ~"@{c}" ~"@{d}";
+    padding: ~"@{remA}rem" ~"@{remB}" ~"@{remC}" ~"@{remD}";
+}
+//(1, 0, 0, 1)
+.padding(@a; @b; @c; @d) when (isnumber(@a)) and not (@a = 0) and (@b = 0) and (@c = 0) and not (@d = 0) { 
+    @remA: @a/10;    @remB: @b/10;    @remC: @c/10;    @remD: @d/10;
+    padding: ~"@{a}px" ~"@{b}" ~"@{c}" ~"@{d}px";
+    padding: ~"@{remA}rem" ~"@{remB}" ~"@{remC}" ~"@{remD}rem";
+}
+//(1, 0, 1, 0)
+.padding(@a; @b; @c; @d) when (isnumber(@a)) and not (@a = 0) and (@b = 0) and not (@c = 0) and (@d = 0) { 
+    @remA: @a/10;    @remB: @b/10;    @remC: @c/10;    @remD: @d/10;
+    padding: ~"@{a}px" ~"@{b}" ~"@{c}px" ~"@{d}";
+    padding: ~"@{remA}rem" ~"@{remB}" ~"@{remC}rem" ~"@{remD}";
+}
+//(0, 1, 0, 0)
+.padding(@a; @b; @c; @d) when (isnumber(@a)) and (@a = 0) and not (@b = 0) and (@c = 0) and (@d = 0) { 
+    @remA: @a/10;    @remB: @b/10;    @remC: @c/10;    @remD: @d/10;
+    padding: ~"@{a}" ~"@{b}px" ~"@{c}" ~"@{d}";
+    padding: ~"@{remA}" ~"@{remB}rem" ~"@{remC}" ~"@{remD}";
+}
+//(0, 1, 0, 1)
+.padding(@a; @b; @c; @d) when (isnumber(@a)) and (@a = 0) and not (@b = 0) and (@c = 0) and not (@d = 0) { 
+    @remA: @a/10;    @remB: @b/10;    @remC: @c/10;    @remD: @d/10;
+    padding: ~"@{a}" ~"@{b}px" ~"@{c}" ~"@{d}px";
+    padding: ~"@{remA}" ~"@{remB}rem" ~"@{remC}" ~"@{remD}rem";
+}
+//(0, 1, 1, 0)
+.padding(@a; @b; @c; @d) when (isnumber(@a)) and (@a = 0) and not (@b = 0) and not (@c = 0) and (@d = 0) { 
+    @remA: @a/10;    @remB: @b/10;    @remC: @c/10;    @remD: @d/10;
+    padding: ~"@{a}" ~"@{b}px" ~"@{c}px" ~"@{d}";
+    padding: ~"@{remA}" ~"@{remB}rem" ~"@{remC}rem" ~"@{remD}";
+}
+//(1, 1, 0, 0)
+.padding(@a; @b; @c; @d) when (isnumber(@a)) and not (@a = 0) and not (@b = 0) and (@c = 0) and (@d = 0) { 
+    @remA: @a/10;    @remB: @b/10;    @remC: @c/10;    @remD: @d/10;
+    padding: ~"@{a}px" ~"@{b}px" ~"@{c}" ~"@{d}";
+    padding: ~"@{remA}rem" ~"@{remB}rem" ~"@{remC}" ~"@{remD}";
+}
+//(0, 0, 1, 0)
+.padding(@a; @b; @c; @d) when (isnumber(@a)) and (@a = 0) and (@b = 0) and not (@c = 0) and (@d = 0) { 
+    @remA: @a/10;    @remB: @b/10;    @remC: @c/10;    @remD: @d/10;
+    padding: ~"@{a}" ~"@{b}" ~"@{c}px" ~"@{d}";
+    padding: ~"@{remA}" ~"@{remB}" ~"@{remC}rem" ~"@{remD}";
+}
+
+//padding value is 0 do not include unit
+.padding(@a; @b) when not (isnumber(@a)) and (@b = 0) {
+    padding-@{a}: ~"@{b}"; 
+}
+.padding(@a; @b) when not (isnumber(@a)) and not(ispercentage(@b)) and (isnumber(@b)) and not (@b = 0) {
+    @rem: @b/10;
+    @px: (@b);
+    padding-@{a}: ~"@{px}px"; 
+    padding-@{a}: ~"@{rem}rem";
+}
+//(1%)
+.padding(@a; @b) when not(isnumber(@a)) and (ispercentage(@b)) { 
+    padding-@{a}: ~"@{b}";    
+}
+
+//(1%)
+.padding(@a) when (ispercentage(@a)) { 
+    padding: ~"@{a}";    
+}

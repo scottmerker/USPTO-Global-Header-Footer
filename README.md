@@ -9,15 +9,21 @@ for USPTO web apps or sites.
 ## Quick start
 
 Choose one of the following options:
-
 1. Download the latest stable release from
-   [html5boilerplate.com](https://html5boilerplate.com/) or create a
+   [USPTO-Global-Header-Footer](https://github.com/USPTO/USPTO-Global-Header-Footer) or create a
    custom build using [Initializr](http://www.initializr.com).
 2. Clone the git repo — `git clone
-   https://github.com/h5bp/html5-boilerplate.git` - and checkout the
-   [tagged release](https://github.com/h5bp/html5-boilerplate/releases)
+   https://github.com/USPTO/USPTO-Global-Header-Footer` - and checkout the
+   [tagged release](https://github.com/USPTO/USPTO-Global-Header-Footer/releases)
    you'd like to use.
 
+Install [Node.js](https://nodejs.org/en/).
+
+`npm install -g grunt-cli`
+
+`npm install grunt grunt-contrib-jshint grunt-contrib-less --save-dev`
+
+`bower install`
 
 ## Features
 
