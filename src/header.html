@@ -1,88 +1,83 @@
 <header role="banner">
-    <skip-nav></skip-nav>
     <div class="top-section">
-        <wrapper>
-            <skip-nav></skip-nav>
-            <a href="http://www.uspto.gov" target="_blank" class="uspto-logo" title="United States Patent and Trademark Office - An Agency of the Department of Commerce">
-                <span>United States Patent and Trademark Office (<abbr title="United States Patent and Trademark Office">USPTO</abbr>) logo</span>
-            </a>
-            <nav id="uspto-header-links" data-ng-show="showHeaderLinks">
-                <ul>
-                    <li><a href="http://www.uspto.gov/about-us" target="_blank">Patents</a></li> 
-                    <li><a href="http://www.uspto.gov/careers" target="_blank">Trademarks</a></li> 
-                    <li id="fpng-dropdown"
-                        data-fpng-dropdown>
-                        <a href="http://www.uspto.gov/about-us/contact-us" target="_blank">Fees and payment</a>
-                    </li>
-                    <li><a href="http://www.uspto.gov/about-us/contact-us" target="_blank"><abbr title="Frequently asked questions">FAQ</abbr></a></li>
-                    <li class="dropdown" data-ng-if="showAuthDropDwnMenu">
-                        <a id="menu1" class="menu-logged-in-user dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="javascript:void(0);"> {{fullName}} <span class="caret"></span> </a>
-                        <ul class="dropdown-menu sso-dropdown-menu" role="menu" aria-labelledby="menu1">
-                            <li data-ng-if="!isRegistering"> <span class="icon icon-home" aria-hidden="true"></span><a id="dropdown-menu-home" class="sso-link-home" href="/home">My Console</a> </li>
-                            <li data-ng-if="showAccountsLink"> <span class="icon icon-user" aria-hidden="true"></span><a id="dropdown-menu-account" class="sso-link-profile" href="/profile">Account</a> </li>
-                            <li class="divider" role="separator" aria-hidden="true"></li>
-                            <li> <span class="icon icon-sign-out" aria-hidden="true"></span><a id="dropdown-menu-signout" class="sso-link-home" href="/signout">Sign out</a> </li>
-                        </ul>
-                    </li>
-                    <li class="sso-nav" data-ng-if="showSigninLink"><a id="top-menu-signin" class="sso-link-home" href="/home">Sign in</a></li>
-                </ul>
-            </nav>
-        </wrapper>
+        <a href="http://www.uspto.gov" target="_blank" class="uspto-logo"
+           title="United States Patent and Trademark Office - An Agency of the Department of Commerce">
+            <span>
+                United States Patent and Trademark Office (<abbr title="United States Patent and Trademark Office">USPTO</abbr>) logo
+            </span>
+        </a>
+        <nav id="uspto-header-links" data-ng-show="showHeaderLinks">
+            <ul>
+                <li><a href="http://www.uspto.gov/about-us" target="_blank">Patents</a></li>
+                <li><a href="http://www.uspto.gov/careers" target="_blank">Trademarks</a></li>
+                <li id="fpng-dropdown"
+                    data-fpng-dropdown>
+                    <a href="http://www.uspto.gov/about-us/contact-us" target="_blank">Fees and payment</a>
+                </li>
+                <li><a href="http://www.uspto.gov/about-us/contact-us" target="_blank"><abbr title="Frequently asked questions">FAQ</abbr></a></li>
+                <li class="dropdown" data-ng-if="showAuthDropDwnMenu">
+                    <a id="menu1" class="menu-logged-in-user dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="javascript:void(0);"> {{fullName}} <span class="caret"></span> </a>
+                    <ul class="dropdown-menu sso-dropdown-menu" role="menu" aria-labelledby="menu1">
+                        <li data-ng-if="!isRegistering"> <span class="icon icon-home" aria-hidden="true"></span><a id="dropdown-menu-home" class="sso-link-home" href="/home">My Console</a> </li>
+                        <li data-ng-if="showAccountsLink"> <span class="icon icon-user" aria-hidden="true"></span><a id="dropdown-menu-account" class="sso-link-profile" href="/profile">Account</a> </li>
+                        <li class="divider" role="separator" aria-hidden="true"></li>
+                        <li> <span class="icon icon-sign-out" aria-hidden="true"></span><a id="dropdown-menu-signout" class="sso-link-home" href="/signout">Sign out</a> </li>
+                    </ul>
+                </li>
+                <li class="sso-nav" data-ng-if="showSigninLink"><a id="top-menu-signin" class="sso-link-home" href="/home">Sign in</a></li>
+            </ul>
+        </nav>
     </div>
     <div class="middle-section">
-        <wrapper>
-            <h1 class="pull-left" data-ng-bind="pageHeaderText" aria-describedby="title-beta"></h1>
-            <span class="app-release label-default subtle" id="title-beta">{{appRelease}}</span>
-        </wrapper>
+        <h1 class="pull-left" data-ng-bind="pageHeaderText" aria-describedby="title-beta"></h1>
+        <span class="app-release label-default subtle" id="title-beta">{{appRelease}}</span>
     </div>
     <div class="bottom-section">
-        <wrapper>
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#user-nav"> 
-                <span class="sr-only">Toggle navigation</span> 
-                <span class="icon icon-align-justify icon-inverse" aria-hidden="true"></span> 
-            </button>
-            <nav class="collapse navbar-collapse" id="user-nav">
-                <ul class="nav navbar-nav navbar-right">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#user-nav">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon icon-align-justify icon-inverse" aria-hidden="true"></span>
+        </button>
+        <nav class="collapse navbar-collapse" id="user-nav">
+            <ul class="nav navbar-nav navbar-right">
 <!--                    <li class="my-console"><span data-ng-if="isDashboardPage">My Console</span></li>-->
-                    <!-- my uspto menu -->
+                <!-- my uspto menu -->
 <!--                    <li class="dropdown fpng-dropdown">
-                        <a id="fpng-dropdown" class="menu-logged-in-user dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="javascript:void(0);">Fees and payment<span class="caret"></span> </a>
-                        <ul class="dropdown-menu sso-dropdown-menu" role="menu" aria-labelledby="fpng-dropdown">
-                            <li><a  href="https://fees.uspto.gov/" target="_blank">Fees and payment</a> </li>
-                            <li class="divider" role="separator" aria-hidden="true"></li>
-                            <li><a  href="https://fees.uspto.gov/FinancialManager" id="dropdown-menu-fpngFinMangr" target="_blank">Financial Manager</a> </li>
-                            <li> <a href="https://fees.uspto.gov/MaintenanceFees"id="dropdown-menu-fpngmainFees" target="_blank">Patent Maintenance Fees</a> </li>
-                        </ul>
-                    </li>-->
-                    <!-- /my uspto menu -->
-                    <li><a href="http://usptoglobalsignon.ideascale.com/" target="_blank">What's new</a></li>
-                    <li data-ng-if="!showSigninLink"><a href="http://usptoglobalsignon.ideascale.com/" target="_blank">Feedback</a></li>
-                    <li class="dropdown" data-ng-if="showAuthDropDwnMenu">
-                        <a id="menu2" 
-                           class="menu-logged-in-user dropdown-toggle" 
-                           data-toggle="dropdown" 
-                           role="button" 
-                           aria-haspopup="true" 
-                           aria-expanded="false" 
-                           href="javascript:void(0);">Help<span class="caret"></span></a>
-                        <ul class="dropdown-menu sso-dropdown-menu" role="menu" aria-labelledby="menu2">
-                            <li><a href="http://www.uspto.gov/about-us/contact-us" target="_blank"><abbr title="Frequently asked questions">FAQ</abbr></a></li>
-                            <li><a href="http://www.uspto.gov/about-us/contact-us" target="_blank">Tutorial</a></li>
-                        </ul>
-                    </li>
+                    <a id="fpng-dropdown" class="menu-logged-in-user dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="javascript:void(0);">Fees and payment<span class="caret"></span> </a>
+                    <ul class="dropdown-menu sso-dropdown-menu" role="menu" aria-labelledby="fpng-dropdown">
+                        <li><a  href="https://fees.uspto.gov/" target="_blank">Fees and payment</a> </li>
+                        <li class="divider" role="separator" aria-hidden="true"></li>
+                        <li><a  href="https://fees.uspto.gov/FinancialManager" id="dropdown-menu-fpngFinMangr" target="_blank">Financial Manager</a> </li>
+                        <li> <a href="https://fees.uspto.gov/MaintenanceFees"id="dropdown-menu-fpngmainFees" target="_blank">Patent Maintenance Fees</a> </li>
+                    </ul>
+                </li>-->
+                <!-- /my uspto menu -->
+                <li><a href="http://usptoglobalsignon.ideascale.com/" target="_blank">What's new</a></li>
+                <li data-ng-if="!showSigninLink"><a href="http://usptoglobalsignon.ideascale.com/" target="_blank">Feedback</a></li>
+                <li class="dropdown" data-ng-if="showAuthDropDwnMenu">
+                    <a id="menu2"
+                       class="menu-logged-in-user dropdown-toggle"
+                       data-toggle="dropdown"
+                       role="button"
+                       aria-haspopup="true"
+                       aria-expanded="false"
+                       href="javascript:void(0);">Help<span class="caret"></span></a>
+                    <ul class="dropdown-menu sso-dropdown-menu" role="menu" aria-labelledby="menu2">
+                        <li><a href="http://www.uspto.gov/about-us/contact-us" target="_blank"><abbr title="Frequently asked questions">FAQ</abbr></a></li>
+                        <li><a href="http://www.uspto.gov/about-us/contact-us" target="_blank">Tutorial</a></li>
+                    </ul>
+                </li>
 <!--                    <li><a href="http://www.uspto.gov/learning-and-resources/account-faqs" target="_blank">FAQ</a></li>-->
 <!--                    <li class="dropdown" data-ng-if="showAuthDropDwnMenu">
-                                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Collection <span class="caret"></span></a><a id="menu1" class="menu-logged-in-user dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="javascript:void(0);"> {{fullName}} <span class="caret"></span> </a>
-                        <ul class="dropdown-menu sso-dropdown-menu" role="menu"aria-labelledby="menu1">
-                            <li data-ng-if="!isRegistering"> <span class="icon icon-home" aria-hidden="true"></span><a id="dropdown-menu-home" class="sso-link-home" href="/home">My Console</a> </li>
-                            <li data-ng-if="showAccountsLink"> <span class="icon icon-user" aria-hidden="true"></span><a id="dropdown-menu-account" class="sso-link-profile" href="/profile">Account</a> </li>
-                            <li class="divider" role="separator" aria-hidden="true"></li>
-                            <li> <span class="icon icon-sign-out" aria-hidden="true"></span><a id="dropdown-menu-signout" class="sso-link-home" href="/signout">Sign out</a> </li>
-                        </ul>
-                    </li>-->
+                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Collection <span class="caret"></span></a><a id="menu1" class="menu-logged-in-user dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="javascript:void(0);"> {{fullName}} <span class="caret"></span> </a>
+                    <ul class="dropdown-menu sso-dropdown-menu" role="menu"aria-labelledby="menu1">
+                        <li data-ng-if="!isRegistering"> <span class="icon icon-home" aria-hidden="true"></span><a id="dropdown-menu-home" class="sso-link-home" href="/home">My Console</a> </li>
+                        <li data-ng-if="showAccountsLink"> <span class="icon icon-user" aria-hidden="true"></span><a id="dropdown-menu-account" class="sso-link-profile" href="/profile">Account</a> </li>
+                        <li class="divider" role="separator" aria-hidden="true"></li>
+                        <li> <span class="icon icon-sign-out" aria-hidden="true"></span><a id="dropdown-menu-signout" class="sso-link-home" href="/signout">Sign out</a> </li>
+                    </ul>
+                </li>-->
 <!--                    <li class="sso-nav" data-ng-if="showSigninLink"><a id="top-menu-signin" class="sso-link-home" href="/home">Sign in</a></li>-->
-                </ul>
-            </nav>
-        </wrapper>
+            </ul>
+        </nav>
     </div>
 </header>

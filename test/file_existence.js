@@ -44,7 +44,6 @@ var expectedFilesInDistDir = [
 
     'js/',
         'js/includeHTML.js',
-        'js/plugins.js',
         'js/vendor/',
             'js/vendor/jquery-' + pkg.devDependencies.jquery + '.min.js',
 

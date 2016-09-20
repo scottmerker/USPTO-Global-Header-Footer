@@ -21,16 +21,13 @@ A basic HTML5 Boilerplate site initially looks something like this:
 ```
 .
 ├── css
-│   ├── main.css
-│   └── normalize.css
+│   └── headerfooter.css
 ├── doc
 ├── img
 ├── js
 │   ├── includeHTML.js
-│   ├── plugins.js
 │   └── vendor
-│       ├── jquery.min.js
-│       └── modernizr.min.js
+│       └── jquery.min.js
 ├── .editorconfig
 ├── .htaccess
 ├── 404.html

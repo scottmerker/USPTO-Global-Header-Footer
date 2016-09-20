@@ -158,25 +158,6 @@ ga('set', 'anonymizeIp', true);
 ga('send', 'pageview');
 ```
 
-### Track jQuery AJAX requests in Google Analytics
-
-An article by @JangoSteve explains how to [track jQuery AJAX requests in Google
-Analytics](http://www.alfajango.com/blog/track-jquery-ajax-requests-in-google-analytics/).
-
-Add this to `plugins.js`:
-
-```js
-/*
- * Log all jQuery AJAX requests to Google Analytics
- * See: http://www.alfajango.com/blog/track-jquery-ajax-requests-in-google-analytics/
- */
-if (typeof ga !== "undefined" && ga !== null) {
-    $(document).ajaxSend(function(event, xhr, settings){
-        ga('send', 'pageview', settings.url);
-    });
-}
-```
-
 ### Track JavaScript errors in Google Analytics
 
 Add this function after `ga` is defined:

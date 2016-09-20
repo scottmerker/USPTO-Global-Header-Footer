@@ -148,16 +148,9 @@ just put it before the other scripts in the bottom of the page:
     <script src="https://cdn.polyfill.io/v1/polyfill.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-    <script src="js/plugins.js"></script>
     <script src="js/includeHTML.js"></script>
 </body>
 ```
-
-If you like to just include the polyfills yourself, you could include them in
-`js/plugins.js`. When you have a bunch of polyfills to load in, you could
-also create a `polyfills.js` file in the `js/vendor` directory. Also using
-this technique, make sure the polyfills are all loaded before any other
-Javascript.
 
 There are some misconceptions about Modernizr and polyfills. It's important
 to understand that Modernizr just handles feature checking, not polyfilling
