@@ -22,8 +22,7 @@ var expectedFilesInDistDir = [
 
     'css/', // for directories, a `/` character
             // should be included at the end
-        'css/main.css',
-        'css/normalize.css',
+        'css/headerfooter.css',
 
     'doc/',
         'doc/TOC.md',
@@ -48,7 +47,6 @@ var expectedFilesInDistDir = [
         'js/plugins.js',
         'js/vendor/',
             'js/vendor/jquery-' + pkg.devDependencies.jquery + '.min.js',
-            'js/vendor/modernizr-2.8.3.min.js',
 
     'LICENSE.txt',
     'robots.txt',

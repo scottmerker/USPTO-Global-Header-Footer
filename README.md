@@ -17,13 +17,24 @@ Choose one of the following options:
    [tagged release](https://github.com/USPTO/USPTO-Global-Header-Footer/releases)
    you'd like to use.
 
-Install [Node.js](https://nodejs.org/en/).
+You will also need to install [Node.js](https://nodejs.org/en/).
+Node.js powers the front-end build and dependency management tools
+[Grunt](http://gruntjs.com/) and [Bower](http://bower.io/).
 
-`npm install -g grunt-cli`
+```
+npm install -g grunt-cli
+npm install grunt grunt-contrib-jshint grunt-contrib-less --save-dev
+```
 
-`npm install grunt grunt-contrib-jshint grunt-contrib-less --save-dev`
-
-`bower install`
+Install the project's dependencies with:
+```
+npm install
+bower install
+```
+Build the front-end assets (LESS/CSS/JS) with:
+```
+grunt build
+```
 
 ## Features
 
@@ -33,8 +44,6 @@ Install [Node.js](https://nodejs.org/en/).
   * [`Normalize.css`](https://necolas.github.com/normalize.css/)
     for CSS normalizations and common bug fixes
   * [`jQuery`](https://jquery.com/) via CDN, with a local fallback
-  * A custom build of  [`Modernizr`](http://modernizr.com/) for feature
-    detection
   * [`Apache Server Configs`](https://github.com/h5bp/server-configs-apache)
     that, among other, improve the web site's performance and security
 * Placeholder CSS Media Queries.
