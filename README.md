@@ -31,6 +31,15 @@ Install the project's dependencies with:
 npm install
 bower install
 ```
+Tweak the path in
+bower_components/USPTOPatternLibrary/usptostrap/less/usptostrap.less. Change
+```
+@bootstrap-path: "bootstrap/";
+```
+to
+```
+@bootstrap-path: "../../../bootstrap/";
+```
 Build the front-end assets (LESS/CSS/JS) with:
 ```
 grunt build

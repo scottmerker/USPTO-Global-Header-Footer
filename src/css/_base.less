@@ -10,8 +10,7 @@
 // originally "@{assets-path}partials/_ssoVariables.less";
 @import "_ssoVariables.less";
 @import "@{bower-path}/bower_components/USPTOPatternLibrary/usptostrap/less/usptostrap.less";
-// originally "@{assets-path}partials/_uspto-header-styles.less";
-@import "_uspto-header-styles.less";
+
 //myuspto base styles
 html {
     font-size: 62.5%;
@@ -27,24 +26,6 @@ html {
     }
 }
 
-
-/**************************************/
-
-
-/*************push footer to bottom---- temporary placement, will be moved to proper location after testing*************************/
-
-.page-wrapper {
-    min-height: 100%;
-    position: relative;
-}
-
-//wrap text that overflows container
-.text-wrap{
-    word-wrap: break-word;
-
-}
-
-/**************************************/
 
 //all styles specific to the account details Form
 // originally "@{assets-path}partials/_textElements.less";
@@ -66,22 +47,6 @@ html {
 @import "@{assets-path}partials/_profile-create-account.less";
 @import "@{assets-path}partials/_sso-tables.less";
 */
-
-/****************/
-
-/* Employee notice popover */
-.emp-notice {
-    left: 74% !important;
-    @-moz-document url-prefix() { 
-        left: 80% !important;
-        top: 225px !important;
-    }
-}
-
-/* This is an over-ride for .help-block.  It does not change the text color when there's an alert. */
-.sso-help-block {
-    .help-block;
-}
 
 /******** TOP BANNER ********/
 .sso-dropdown-menu {
@@ -116,34 +81,7 @@ html {
 
 /******** END MENU WIDGET ********/
 
-.el-fade {
-    opacity: 1;
-    transition: 0.5s linear all;
-    &.ng-hide {
-        opacity: 0;
-    }
-}
-
-svg {
-    fill: currentColor;
-}
-
-.cursor-pointer {
-    cursor: pointer;
-}
-
-.sso-version {
-    color: @gray-alt;
-    .font-size(7);
-    font-weight: 700;
-}
-
 a {
-    &.sso-link-btn {
-        &:visited, &:active, &:focus, &:hover, &:link {
-            color: @white;
-        }
-    }
     &[data-disabled='disabled'] {
         color: inherit;
         display: block;
@@ -155,78 +93,6 @@ a {
     }
 
 }
-
-//used?
-#block-menu-menu-utility-menu li a:hover {
-    text-decoration: none;
-    background-color: transparent;
-}
-
-/*NOTE: The sizes are based on the original SVG sprite which is 14px x 14px.*/
-
-
-/****** END SSO ICONS *******/
-
-
-/****** Text Colors *******/
-.txt-md-blue {
-    color: @brand-info;
-}
-
-.txt-light-gray {
-    color: @gray;
-}
-
-.txt-more-light-gray {
-    color: @sso-gray;
-}
-
-.txt-brand-primary {
-    color: @blue-primary;
-}
-
-.txt-brand-success {
-    color: @brand-success;
-}
-
-.txt-brand-info {
-    color: @blue-primary;
-}
-
-.txt-brand-warning {
-    color: @tan;
-}
-
-.txt-brand-danger {
-    color: @brand-danger;
-}
-
-.txt-gray-darker {
-    color: @black-lighten;
-}
-
-.txt-gray-dark {
-    color: @gray-dark;
-}
-
-.txt-gray {
-    color: @gray-darker;
-}
-
-.txt-gray-light {
-    color: @gray-alt;
-}
-
-.txt-gray-lighter {
-    color: @gray-faint-alt;
-}
-
-.txt-white {
-    color: @white;
-}
-
-/****** End Text Colors *******/
-
 
 /******************************* END COMMON CONTENT *******************************/
 
@@ -252,43 +118,6 @@ form {
         }
     }
 }
-
-.help-block.sso-hint {
-    color: #848484;
-}
-
-.additional-emails {
-    display: inline-block;
-    .width(90%);
-}
-
-.spacer-el {
-    line-height: 1px;
-}
-
-//all styles specific to the account details Form
-// @import "partials/_commonForm.less";
-// @import "partials/_accountDetailsForm.less";
-//styles for ie upgrade modal on welcome and sign in pages
-.browser-upgrade {
-    .list-inline();
-    .browser {
-        background: url('../images/browser-logos-small.jpg') scroll -268px 0 transparent;
-        display: block;
-        height: 124px;
-        .width(124);
-        &.firefox {
-            background-position: -134px 0;
-        }
-        &.chrome {
-            background-position: 0 0;
-        }
-        > span {
-            .sr-only;
-        }
-    }
-}
-
 
 /******** END FORM Styles ********/
 
@@ -343,13 +172,6 @@ form {
         .padding(0);
     }
 }
-.sso-body-height {
-    min-height: 700px;
-}
-
-.sso-left-col {
-    margin-right: .5em;
-}
 
 /******** OVER-RIDES ********/
 
@@ -361,18 +183,6 @@ form {
         .padding(top, 0);
     }
 }
-
-//used?
-/*@media all and (max-device-width:1024px) {
-    .sso-smaller-height,
-    .sso-small-height,
-    .sso-middle-height,
-    .sso-big-height,
-    .sso-bigger-height {
-        height: auto;
-    }
-}*/
-
 
 /******** END OVER-RIDES ********/
 
@@ -386,8 +196,4 @@ form {
 //used?
 .block {
     display: block;
-}
-
-.overflow-hidden{
-    overflow: hidden;
 }

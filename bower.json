@@ -1,13 +1,11 @@
 {
-  "name": "myuspto",
+  "name": "headerfooter",
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "bootstrap": "3.3.6",
-    "jquery": "2.1.3"
   },
   "devDependencies": {
-    "USPTOPatternLibrary": "https://github.com/USPTO/designpatterns.git#v1.5.0"
+    "USPTOPatternLibrary": "https://github.com/USPTO/designpatterns.git#v1.5.2"
   },
   "appPath": "resources",
   "moduleName": "myusptoApp"
