@@ -37,9 +37,13 @@
         <!-- dynamically include the footer file (see src/js/includeHTML.js) -->
         <div include-html="footer.html"></div>
 
-        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+        <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+        <script>window.jQuery || document.write('<script src="bower_components/jquery/dist/jquery.min.js"><\/script>')</script>
+        <script src="bower_components/jquery-ui/ui/accordion.js"></script>
 
+        <!-- footer animation -->
+        <script src="js/footer.js"></script>
         <script src="js/includeHTML.js"></script>
+
     </body>
 </html>

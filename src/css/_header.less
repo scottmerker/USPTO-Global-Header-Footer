@@ -5,10 +5,7 @@
 
 header, sub-header{
     display: block;
-    .container-fluid;
-    .top-section, .middle-section, .bottom-section{
-        .row;
-    }
+
     .top-section{
         background-color: @gray-darkest;
         .padding(bottom, 6);
@@ -35,11 +32,8 @@ header, sub-header{
 
         }
         nav{
-            .pull-right;
             .margin(top, 16);
             ul{
-                .list-unstyled; 
-                .list-inline;
                 li{
                     a{
                         color: @white;
@@ -69,10 +63,7 @@ header, sub-header{
         nav{
             >ul{
                 >li{
-                    &.my-console{
-                        .sr-only;
-                    }
-                    > a{
+                    >a{
                         color: @white;
                         .padding(6,15,6,12);
                         &:focus, &:hover {

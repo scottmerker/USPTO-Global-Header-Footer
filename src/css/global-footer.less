@@ -2,53 +2,15 @@
    1. Bootstrap v3 with LESS
    2. Design Pattern Library
 */
-.collapse-cntrl{
-    background-color: #363636;
-    display: block;
-    left: 0;
-    position: absolute;
-    width: 100%;
-    button{
-        background: #363636;
-        .border-radius(100);
-        border: 1px solid #363636;
-        height: 61px;
-        left: 50%; 
-        position: relative;
-        top: -25px;
-        width:61px;
-        z-index: 2;
-        &:before{
-            content: url('@{uhf-img-path}/footer-up-icon.png');
-            display: block;
-            height: 44px;
-            width: 53px;
-            .transition-transform(.3s);
-        }
-        &[aria-expanded="true"]{
-            &:before{
-                transform: rotate(180deg);
-            }
-        }
-        span{
-            .sr-only;
-        }
-    }
-}
+
 footer{
-    .container-fluid;
     background-color: #363636;
    .font-size(13);
     .padding(20,20,14);
     position: relative;
     z-index:1;
-    > h2{
-        .sr-only;
-    }
     .logo-wrapper{
-        .row;
         .footer-logo{
-            .make-md-column(7);
             .logo{
                 background: transparent url('@{uhf-img-path}/logo-small.png') no-repeat left center;
                 height: 57px;
@@ -74,17 +36,11 @@ footer{
                 height: 150px;
                 width: 150px;
             }
-            > p{
-                .sr-only;
-            }
         }
     }
     .footer-menu{
-        .row;
         menu{
-            .make-sm-column(3); 
             h3{
-                .h2;
                 color: #fff;
                 .font-size(13);
                 font-weight: 700;
@@ -92,7 +48,6 @@ footer{
                 text-transform: uppercase;
             }
             ul{
-                .list-unstyled;
                 li{
                     .padding(bottom, 8);
                     &:last-child{

@@ -12,6 +12,9 @@ module.exports = function (grunt) {
 
         globals: globals,
 
+        // import the configuration info from package.json
+        pkg: grunt.file.readJSON('package.json'),
+
         // check coding style
         jshint: {
             options: {
@@ -22,7 +25,7 @@ module.exports = function (grunt) {
             all: {
                 src: [
                     'Gruntfile.js',
-                    '<%= globals.source %>/js/**/}*.js'
+                    '<%= globals.source %>/js/**/*.js'
                 ]
             }
         },

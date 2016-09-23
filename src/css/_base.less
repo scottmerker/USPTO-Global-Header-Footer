@@ -9,7 +9,19 @@
 @import "_mixins.less";
 // originally "@{assets-path}partials/_ssoVariables.less";
 @import "_ssoVariables.less";
-@import "@{bower-path}/bower_components/USPTOPatternLibrary/usptostrap/less/usptostrap.less";
+//@import "@{bower-path}/bower_components/USPTOPatternLibrary/usptostrap/less/usptostrap.less";
+@body-bg: #FFF; // used in _ssoVariables.less
+@gray-lighter: #EEE; // used in _ssoVariables.less
+@gray-25: #d9d9d6;    // used in _ssoVariables.less
+@gray-light: #777; // used in _ssoVariables.less
+@gray: #555;    // used in _ssoVariables.less
+@black: #000;    // used in _ssoVariables.less
+@text-color: #444;  // used in _ssoVariables.less
+@headings-color: rgb(34, 34, 34); // used in _ssoVariables.less
+@medium-blue: #004c97;  // used in _ssoVariables.less
+@brand-success: #008139;  // used in _ssoVariables.less, overrides bootstrap
+@screen-sm: 768px;  // used in _base.less
+@screen-sm-min: @screen-sm;  // used in _textElements.less
 
 //myuspto base styles
 html {
@@ -20,9 +32,6 @@ html {
         background-color: @off-white-lightest;
         height: 100%;
         min-width: 320px;
-        .skip-target, aria-live {
-            .sr-only;
-        }
     }
 }
 
@@ -31,6 +40,7 @@ html {
 // originally "@{assets-path}partials/_textElements.less";
 @import "_textElements.less";
 /*
+@assets-path: "";
 @import "@{assets-path}partials/_spacing.less";
 @import "@{assets-path}partials/_errors.less";
 @import "@{assets-path}partials/_ssoIcons.less";

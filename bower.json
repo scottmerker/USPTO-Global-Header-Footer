@@ -1,12 +1,21 @@
 {
   "name": "headerfooter",
   "version": "0.0.0",
-  "private": true,
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "USPTOPatternLibrary": "https://github.com/USPTO/designpatterns.git#v1.5.2"
+    "USPTOPatternLibrary": "https://github.com/USPTO/designpatterns.git#v1.5.2",
+    "jquery-ui": "^1.12.1"
   },
   "appPath": "resources",
-  "moduleName": "myusptoApp"
+  "moduleName": "myusptoApp",
+  "homepage": "https://github.com/USPTO/USPTO-Global-Header-Footer",
+  "description": "USPTO header/footer",
+  "main": "",
+  "authors": [
+    "Lincoln Gup"
+  ],
+  "ignore": [
+    "node_modules",
+    "bower_components"
+  ]
 }

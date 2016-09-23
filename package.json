@@ -17,7 +17,7 @@
     "type": "MIT",
     "url": "https://github.com/h5bp/html5-boilerplate/blob/master/LICENSE.txt"
   },
-  "name": "html5-boilerplate",
+  "name": "headerfooter",
   "private": true,
   "scripts": {
     "build": "grunt build"

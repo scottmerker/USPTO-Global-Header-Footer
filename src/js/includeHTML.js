@@ -20,7 +20,7 @@
          * include-html attribute
          */
         elementList = $("div[include-html]");
-        for (var i = 0, len = elementList.length; i < elementList.length; i++) {
+        for (var i = 0, len = elementList.length; i < len; i++) {
             // create a copy of the div element, but not any descendants
             newDiv = elementList[i].cloneNode(false);
             file = elementList[i].getAttribute("include-html");
@@ -31,7 +31,7 @@
                  * if the request is ready, the response is ready, and the status
                  * is OK, then the file has been read
                  */
-                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                if (xhttp.readyState === 4 && xhttp.status === 200) {
                     // remove the include-html tag
                     newDiv.removeAttribute("include-html");
                     // put the file contents in <div>contents</div>
@@ -39,7 +39,7 @@
                     elementList[i].parentNode.replaceChild(newDiv, elementList[i]);
                     includeHTML();
                 } // if
-            }
+            };
             xhttp.open("GET", file, true);  // open the connection
             xhttp.send();                   // send the request
 
