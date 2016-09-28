@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>United States Patent and Trademark Office</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- USPTO Pattern Library CSS -->
+    <link rel="stylesheet" type="text/css" href="css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="css/spectrum.css">
+    <link rel="stylesheet" type="text/css" href="css/vendor.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!-- USPTO Global Header CSS -->
+    <link rel="stylesheet" type="text/css" href="css/uspto-header-styles.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <!-- TPAC -->
+    <link rel="stylesheet" type="text/css" href="css/tpac.css">
+
+    <!--[if lt IE 9]>
+    <script src="scripts/html5shiv.min.js"></script>
+    <script src="scripts/respond.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/ie8.css">
+    <![endif]-->
+
+    <link rel="shortcut icon" type="image/x-icon" href=images/icons/favicon.ico">
+    <link rel="icon" type="image/png" href=images/icons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="images/icons/favicon-16x16.png" sizes="16x16">
+</head>
+<body>
+<div class="bodyOverlay hide"></div>
+
+<!--  loader start -->
+<!-- #BeginLibraryItem "/Library/loader.lbi" -->
+<div class="loading-overlay hide" style="z-index:10000;">
+    <i class="loading-icon"></i>
+    <div>Loading...</div>
+</div><!-- #EndLibraryItem --><!-- loader end-->
+<!--  system notification start --><!-- #BeginLibraryItem "/Library/system-notification.lbi" -->
+<div class="toast-list bs-callout el-fade" data-spy="affix" role="alertdialog" aria-labelledby="system-msg-success">
+    <div class="toast toast-success hide" id="system-msg-success">
+        <div class="toast-content">
+            <button type="button" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close</span>
+            </button>
+            <span id="system-msg-text">Your security questions has been saved.</span></div>
+    </div>
+
+    <div class="toast toast-danger hide" id="system-msg-danger">
+        <div class="toast-content">
+            <button type="button" class="close">
+                <span>×</span>
+            </button>
+            <span id="system-msg-text">ICT down.</span>
+        </div>
+        <div class="toast-actions hide">
+            <button type="button" class="btn btn-link">Retry now</button>
+        </div>
+    </div>
+
+</div>
+<!-- #EndLibraryItem --><!-- system notification end-->
+<!-- InstanceBeginEditable name="header" -->
+<!-- Navigation -->
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div>
+        <div class="navbar-header">
+
+
+        </div>
+        <div class="clearfix"></div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div>
+            <div class="nav navbar-nav hide" style="width:100%;">
+                <!-- sub Header: start -->
+                <div id="subHeaderHTML"><!-- #BeginLibraryItem "/Library/headerSmall.lbi" -->
+                    <header role="banner" id="headerSmall">
+                        <div id="usptoGlobalHeader">
+                            <div class="uspto-header-top">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="logoChange"></div>
+                                            <a href="http://www.uspto.gov" class="uspto-logo"
+                                               title="United States Patent and Trademark Office - An Agency of the Department of Commerce"></a>
+                                            <div class="pull-right" id="uspto-header-links"><span><a href="#"
+                                                                                                     class="launchPatents"
+                                                                                                     aria-haspopup="true"
+                                                                                                     aria-expanded="false">Patents <i
+                                                    class="caret"></i></a></span> <span><a href="#"
+                                                                                           class="launchTrademarks"
+                                                                                           aria-haspopup="true"
+                                                                                           aria-expanded="false">Trademarks <i
+                                                    class="caret"></i></a></span> <span><a href="#" class="launchFees"
+                                                                                           id="Feespayment-overlay"
+                                                                                           aria-haspopup="true"
+                                                                                           aria-expanded="false">Fees and payment <i
+                                                    class="caret"></i></a></span>
+
+                                                <span><a href="#" class="launchFaqs" id="Feespayment-overlay"
+                                                         aria-haspopup="true" aria-expanded="false">Help <i
+                                                        class="caret"></i></a></span>
+
+                                                <span class="hide"><a href="http://www.uspto.gov" target="_blank">USPTO <i
+                                                        class="icon icon-globe icon-inverse"></i></a></span>
+
+                                                <span class="hide"><a href="" id="shoppingCart">Cart <i
+                                                        class="icon icon-shopping-cart icon-inverse"></i></a></span>
+
+                                                <span><a href="" class="loginName" style="1color:#F2A900;"><i
+                                                        class="icon icon-check-circle icon-color-success hide"
+                                                        aria-label="You are signed in."></i>&nbsp; T. Markey <i
+                                                        class="caret"></i></a></span>
+
+                                                <span><a href="" id="sign-in-header" class="headerLogin" type="button"> Sign in <i
+                                                        class="icon icon-sign-in icon-inverse hide"></i></a></span>
+                                                <!--			<span class="headerLogin"><a href="../signin.aspx" class="1headerLogin">Sign in <i class="icon icon-sign-in icon-inverse hide"></i></a></span>-->
+
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="uspto-header-bottom">
+                                <nav class="navbar">
+                                    <div class="container-fluid">
+                                        <!-- Brand and toggle get grouped for better mobiledisplay -->
+                                        <div class="navbar-header">
+                                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                                    data-target="#bs-example-navbar-collapse-1"><span class="sr-only">Toggle navigation</span>
+                                                <i class="icon icon-align-justify icon-inverse"></i></button>
+                                        </div>
+                                        <!-- Collect the nav links, forms, and other content for toggling -->
+                                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                                            <span class="pull-left mainHeaderHeading footerbar-smallHeading">Account</span>
+                                            <!--Start :Fee links-->
+
+                                            <!--End : Fee links-->
+
+                                            <ul class="nav navbar-nav">
+                                                <li style="margin-left: 8px;"><a href=""><span
+                                                        class="my-console">&nbsp;</span></a></li>
+                                                <!-- <li><a href="">Navigation</a></li>
+                            <li class="dropdown"> <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Navigation <i class="caret"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="">Action</a></li>
+                                    <li><a href="">Another action</a></li>
+                                    <li><a href="">Something else here</a></li>
+                                </ul>
+                            </li>-->
+                                            </ul>
+                                            <ul class="nav navbar-nav topBlueLinks pull-right"
+                                                style="display:block!important;" id="">
+                                                <li class="myCollection "><a href="collections.html">&nbsp;</a></li>
+
+                                                <li class=""><a href="">What's new</a></li>
+                                                <li class="dropdown ConsoleHelp ">
+                                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                                                       role="button" aria-expanded="false">Account help <i
+                                                            class="caret"></i></a>
+                                                    <ul class="dropdown-menu" role="menu">
+                                                        <li><a href="http://usptoglobalsignon.ideascale.com/"
+                                                               target="_blank">Feedback</a></li>
+                                                        <li>
+                                                            <a href="http://www.uspto.gov/learning-and-resources/account-faqs"
+                                                               target="_blank">Account FAQs</a></li>
+                                                        <li id="" class="blueTutorial hide"><a href="overlay-help.aspx">Tutorial </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+
+
+                                                <li class="hide"><a href="" id="launchApps" data-placement="bottom"> <i
+                                                        class="icon icon-th icon-inverse"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- /.navbar-collapse -->
+                                    </div>
+                                    <!-- /.container-fluid -->
+                                </nav>
+                            </div>
+                        </div>
+                    </header>
+
+
+                    <!-- #EndLibraryItem --></div>
+                <!-- sub Header: end -->
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- main Header: start --><!-- #BeginLibraryItem "/Library/header.lbi" -->
+<header role="banner">
+    <div id="usptoGlobalHeader">
+        <div class="uspto-header-top">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="logoChange"></div>
+                        <a href="http://www.uspto.gov" class="uspto-logo"
+                           title="United States Patent and Trademark Office - An Agency of the Department of Commerce"></a>
+                        <div class="pull-right" id="uspto-header-links"><span><a href="#" class="launchPatents"
+                                                                                 aria-haspopup="true"
+                                                                                 aria-expanded="false">Patents <i
+                                class="caret"></i></a></span> <span><a href="#" class="launchTrademarks"
+                                                                       aria-haspopup="true" aria-expanded="false">Trademarks <i
+                                class="caret"></i></a></span> <span><a href="#" class="launchFees"
+                                                                       id="Feespayment-overlay" aria-haspopup="true"
+                                                                       aria-expanded="false">Fees and payment <i
+                                class="caret"></i></a></span>
+
+                            <span><a href="#" class="launchFaqs" id="Feespayment-overlay" aria-haspopup="true"
+                                     aria-expanded="false">Help <i class="caret"></i></a></span>
+
+                            <span class="hide"><a href="http://www.uspto.gov" target="_blank">USPTO <i
+                                    class="icon icon-globe icon-inverse"></i></a></span>
+
+                            <span class="hide"><a href="" id="shoppingCart">Cart <i
+                                    class="icon icon-shopping-cart icon-inverse"></i></a></span>
+
+                            <span><a href="" class="loginName" style="1color:#F2A900;"><i
+                                    class="icon icon-check-circle icon-color-success hide"
+                                    aria-label="You are signed in."></i>&nbsp; T. Markey <i
+                                    class="caret"></i></a></span>
+
+                            <span><a href="" id="sign-in-header" class="headerLogin" type="button"> Sign in <i
+                                    class="icon icon-sign-in icon-inverse hide"></i></a></span>
+                            <!--			<span class="headerLogin"><a href="../signin.aspx" class="1headerLogin">Sign in <i class="icon icon-sign-in icon-inverse hide"></i></a></span>-->
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="uspto-header-middle">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12"><span class="mainHeaderHeading">Account</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="uspto-header-bottom">
+            <nav class="navbar">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display. -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                data-target="#bs-example-navbar-collapse-1"><span
+                                class="sr-only">Toggle navigation</span> <i
+                                class="icon icon-align-justify icon-inverse"></i></button>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                        <ul class="nav navbar-nav topBlueLinksLeft" style="display:block!important;" id="leftBlueLinks">
+
+                        </ul>
+
+                        <ul class="nav navbar-nav topBlueLinks pull-right" style="display:block!important;" id="">
+                            <li class="myCollection "><a href="collections.html">&nbsp;</a></li>
+
+                            <li class=""><a href="">What's new</a></li>
+                            <li class="dropdown ConsoleHelp ">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                   aria-expanded="false">Account help <i class="caret"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="http://usptoglobalsignon.ideascale.com/" target="_blank">Feedback</a>
+                                    </li>
+                                    <li><a href="http://www.uspto.gov/learning-and-resources/account-faqs"
+                                           target="_blank">Account FAQs</a></li>
+                                    <li id="" class="blueTutorial hide"><a href="overlay-help.aspx">Tutorial </a></li>
+                                </ul>
+                            </li>
+
+
+                            <li class="hide"><a href="" id="launchApps" data-placement="bottom"> <i
+                                    class="icon icon-th icon-inverse"></i></a></li>
+                        </ul>
+
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container-fluid -->
+            </nav>
+        </div>
+    </div>
+</header>
+
+<div id="mainArea">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <a id="main-content"></a>
+                <!-- START CONTENT HERE -->
+                <h1>Page Title</h1>
+                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                <h2>Section Title </h2>
+                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                <h3>Subsection Title </h3>
+                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Column 1</th>
+                        <th>Column 2</th>
+                        <th>Column 3</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>row1 col1</td>
+                        <td>row1 col2</td>
+                        <td>row1 col3</td>
+                    </tr>
+                    <tr>
+                        <td>row2 col1</td>
+                        <td>row2 col2</td>
+                        <td>row2 col3</td>
+                    </tr>
+                    <tr>
+                        <td>row3 col1</td>
+                        <td>row3 col2</td>
+                        <td>row3 col3</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p><strong>Unordered List</strong></p>
+                <ul>
+                    <li>Patents Process
+                        <ul><li>Visit the Patents Process page</li></ul>
+                    </li>
+                    <li>Search
+                        <ul><li>Search patent databases</li></ul>
+                    </li>
+                    <li>View Fee Schedule
+                        <ul><li>Check on the current fees and information related to the patent process</li></ul>
+                    </li>
+                    <li>File Online
+                        <ul><li>Apply for a patent using the Electronic Filing System (EFS-Web)</li></ul>
+                    </li>
+                    <li>Check Status
+                        <ul><li>Check the status via the Patent Application Information Retrieval (PAIR) system</li></ul>
+                    </li>
+                    <li>Maintain/Pay Fees
+                        <ul><li>Pay your maintenance fees</li></ul>
+                    </li>
+                    <li>Appeal
+                        <ul><li>Learn the appeal process via the Board of Patent Appeals and Interferences (BPAI)</li></ul>
+                    </li>
+                    <li>Assignments
+                        <ul><li>Visit the Assignments Homepage</li></ul>
+                    </li>
+                    <li>Electronic Business Center
+                        <ul><li>Get web application links &amp; help via the Electronic Business Center (EBC)</li></ul>
+                    </li>
+                    <li>Patent Prosecution Highway
+                        <ul><li>Ombudsman Pilot Program</li></ul>
+                    </li>
+                </ul>
+                <!-- END CONTENT HERE -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer file --><!-- #BeginLibraryItem "/Library/footer.lbi" -->
+<div class="panel-group" id="footer-accordion" role="tablist" aria-multiselectable="true" style="">
+    <div class="collapsed text-center" id="footerCollapse" data-parent="#footer-accordion"
+         data-target="#footer-html"
+         aria-expanded="false" data-toggle="collapse" aria-controls="footer-html">
+
+        <span class="footerbar"> <span class="footerbar-icon"></span></span>
+
+    </div>
+    <div id="footer-html" class="panel-collapse collapse" role="tabpanel" aria-labelledby="2headingOne"
+         aria-expanded="false" style="height: 0px;  position: relative; top: -20px;">
+        <div>
+            <footer id="footer">
+                <div id="usptoAppFooter">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="uspto-footer-top col-sm-12">
+                                <div class="uspto-footer-logo col-sm-10"><a class="logo"
+                                                                            href="http://www.uspto.gov/"
+                                                                            title="United States Patent and Trademark Office - An Agency of the Department of Commerce"> <span
+                                        class="sr-only">United States Patent and Trademark Office - An Agency of the Department of Commerce</span>
+                                </a></div>
+                                <div class="uspto-footer-watermark col-sm-2"
+                                     title="United States Patent and Trademark Office - An Agency of the Department of Commerce"> <span
+                                        class="sr-only">United States Patent and Trademark Office - An Agency of the Department of Commerce</span>
+                                </div>
+                            </div>
+                            <div class="uspto-footer-middle col-sm-12">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                            data-target="#navbar-collapse-topic"> Browse By Topic <i
+                                            class="icon icon-sort-desc icon-inverse"></i></button>
+                                </div>
+                                <div class="uspto-footer-column col-sm-3 collapse navbar-collapse"
+                                     id="navbar-collapse-topic">
+                                    <h2>Browse By Topic</h2>
+                                    <ul>
+                                        <li><a href="http://www.uspto.gov/patent">Patents</a></li>
+                                        <li><a href="http://www.uspto.gov/trademark">Trademarks</a></li>
+                                        <li><a href="http://www.uspto.gov/learning-resources">Learning &amp;
+                                            Resources</a></li>
+                                        <li><a href="http://www.uspto.gov/about-us">About the USPTO</a></li>
+                                        <li>
+                                            <a href="http://www.uspto.gov/learning-and-resources/glossary">Glossary</a>
+                                        </li>
+                                        <li><a href="http://www.uspto.gov/careers">Careers</a></li>
+                                        <li><a href="http://www.uspto.gov/about-us/contact-us">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                            data-target="#navbar-collapse-about"> About This Site <i
+                                            class="icon icon-sort-desc icon-inverse"></i></button>
+                                </div>
+                                <div class="uspto-footer-column col-sm-3 collapse navbar-collapse"
+                                     id="navbar-collapse-about">
+                                    <h2>About This Site</h2>
+                                    <ul>
+                                        <li>
+                                            <a href="http://www.uspto.gov/using-usptogov/accessibility-uspto-website">Accessibility</a>
+                                        </li>
+                                        <li><a href="http://www.uspto.gov/privacy-policy">Privacy Policy</a></li>
+                                        <li><a href="http://www.uspto.gov/terms-use-uspto-website">Terms of Use</a>
+                                        </li>
+                                        <li><a href="http://www.uspto.gov/about-us/security">Security</a></li>
+                                        <li><a href="http://www.uspto.gov/blog/ebiz/">Systems Status</a></li>
+                                        <li><a href="http://www.uspto.gov/sitemap">Site Map</a></li>
+                                    </ul>
+                                </div>
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                            data-target="#navbar-collapse-uspto"> USPTO Background <i
+                                            class="icon icon-sort-desc icon-inverse"></i></button>
+                                </div>
+                                <div class="uspto-footer-column col-sm-3 collapse navbar-collapse"
+                                     id="navbar-collapse-uspto">
+                                    <h2>USPTO Background</h2>
+                                    <ul>
+                                        <li>
+                                            <a href="http://www.uspto.gov/about-us/performance-and-planning/federal-activities-inventory-reform-fair-act">Federal
+                                                Activity Inventory Reform Act (FAIR)</a></li>
+                                        <li><a href="http://www.uspto.gov/about-us/performance-and-planning">USPTO
+                                            Budget and Performance</a></li>
+                                        <li>
+                                            <a href="http://www.uspto.gov/learning-and-resources/ip-policy/electronic-freedom-information-act-e-foia">Freedom
+                                                of Information Act</a></li>
+                                        <li>
+                                            <a href="http://www.uspto.gov/learning-and-resources/information-quality-guidelines">Information
+                                                Quality Guidelines</a></li>
+                                    </ul>
+                                </div>
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                            data-target="#navbar-collapse-federal"> Federal Government <i
+                                            class="icon icon-sort-desc icon-inverse"></i></button>
+                                </div>
+                                <div class="uspto-footer-column col-sm-3 collapse navbar-collapse"
+                                     id="navbar-collapse-federal">
+                                    <h2>Federal Government</h2>
+                                    <ul>
+                                        <li><a href="http://www.regulations.gov"
+                                               target="_blank">Regulations.gov<span class="ext"> <span
+                                                class="icon icon-external-link icon-inverse"><span class="sr-only"> (link is external)<\span><\span></a>
+                                        </li>
+                                        <li><a href="http://www.stopfakes.gov" target="_blank">StopFakes.gov<span
+                                                class="ext"> <span
+                                                class="icon icon-external-link icon-inverse"><span
+                                                class="sr-only"> (link is external)<\span><\span></a></li>
+                                        <li><a href="http://www.usa.gov" target="_blank">USA.gov<span
+                                                class="ext"> <span
+                                                class="icon icon-external-link icon-inverse"><span class="sr-only"> (link is external)<\span><\span></a>
+                                        </li>
+                                        <li><a href="http://www.commerce.gov" target="_blank">Department of Commerce<span
+                                                class="ext"> <span
+                                                class="icon icon-external-link icon-inverse"><span
+                                                class="sr-only"> (link is external)<\span><\span></a></li>
+                                        <li>
+                                            <a href="http://www.uspto.gov/learning-and-resources/ip-policy/enforcement/strategy-targeting-organized-piracy-stop">Strategy
+                                                Targeting Organized Piracy</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</div> <!-- #footer-accordion -->
+
+<!-- jQuery -->
+<script src="js/jquery.min.js"></script>
+<!-- JQuery UI -->
+<script src="js/jquery-ui.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<script src="js/spectrum.js"></script>
+<!-- Select 2 JavaScript -->
+<script src="js/select2.full.js"></script>
+
+<!-- Custom JavaScript -->
+<script src="js/scripts.js"></script>
+
+<!-- TPAC -->
+
+<script src="js/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="js/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="js/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="js/bootstrap-switch.min.js" type="text/javascript"></script>
+
+<script src="js/app.min.js" type="text/javascript"></script>
+
+<script src="js/panel-draggable.min.js" type="text/javascript"></script>
+<script src="js/jquery-bootstrap-modal-steps.js"></script>
+
+<script src="js/jquery.shorten.js"></script>
+<!-- END TPAC -->
+<!-- InstanceBeginEditable name="footerScripts" -->
+
+<!-- InstanceEndEditable -->
+</body>
+
+</html>
+
