@@ -1,89 +1,164 @@
 #usptoGlobalHeader .uspto-header-top a:hover {
-text-decoration: none;
+    text-decoration: none;
 }
-.affix {top: 0;width: 100%!important; z-index:1000;}
 
-#headerSmallHeading, #headerSmallHeadingMobile {display: none;}
-.affix #headerSmallHeading {display: inline-block;margin-left: -8px;}
-.affix .uspto-header-middle {display: none;}
+.affix {
+    top: 0;
+    width: 100% !important;
+    z-index: 1000;
+}
+
+#headerSmallHeading, #headerSmallHeadingMobile {
+    display: none;
+}
+
+.affix #headerSmallHeading {
+    display: inline-block;
+    margin-left: -8px;
+}
+
+.affix .uspto-header-middle {
+    display: none;
+}
 
 .headerbar-smallHeading {
-display: inline-block;
-color: #444;
-padding: 5px 19px;
-font-size: 16px;
-background-color: #E2E2E2;
+    display: inline-block;
+    color: #444;
+    padding: 5px 19px;
+    font-size: 16px;
+    background-color: #E2E2E2;
 }
 
-.uspto-header-top .btn-group .btn  {color: rgb(204, 204, 204); font-weight:normal; text-decoration:none;margin-top:9px; margin-right:5px;}
-.uspto-header-top ul.dropdown-menu {background-color: #282828;}
-.uspto-header-top ul.dropdown-menu.patent-menu  {min-width:275px; }
-.uspto-header-top ul.dropdown-menu.trademark-menu  {min-width:350px; }
-.uspto-header-top ul.dropdown-menu.fees-menu  {min-width:200px; }
-.uspto-header-top ul.dropdown-menu>li>a {  line-height: 2.5; color: rgb(204, 204, 204);}
-.uspto-header-top ul.dropdown-menu>li>a:hover {background-color:rgb(50, 50, 50);}
-.dropdown-menu>li { display: block; }
+.uspto-header-top .btn-group .btn {
+    color: rgb(204, 204, 204);
+    font-weight: normal;
+    text-decoration: none;
+    margin-top: 9px;
+    margin-right: 5px;
+}
 
-.uspto-header-top .dropdown-menu { margin:0;}
-.uspto-header-top .icon-btn {min-width:17px;}
+.uspto-header-top ul.dropdown-menu {
+    background-color: #282828;
+}
+
+.uspto-header-top ul.dropdown-menu.patent-menu {
+    min-width: 275px;
+}
+
+.uspto-header-top ul.dropdown-menu.trademark-menu {
+    min-width: 350px;
+}
+
+.uspto-header-top ul.dropdown-menu.fees-menu {
+    min-width: 200px;
+}
+
+.uspto-header-top ul.dropdown-menu > li > a {
+    line-height: 2.5;
+    color: rgb(204, 204, 204);
+}
+
+.uspto-header-top ul.dropdown-menu > li > a:hover {
+    background-color: rgb(50, 50, 50);
+}
+
+.dropdown-menu > li {
+    display: block;
+}
+
+.uspto-header-top .dropdown-menu {
+    margin: 0;
+}
+
+.uspto-header-top .icon-btn {
+    min-width: 17px;
+}
 
 /* top button style*/
-.icon-patent { background-image:url(../images/icons/patent.svg);width: 20px;
-  display: inline-block;}
+.icon-patent {
+    background-image: url(../images/icons/patent.svg);
+    width: 20px;
+    display: inline-block;
+}
+
 .uspto-header-top .ex-btn-inverse {
-background: none;
-border: none;
-color: #fff;
-box-shadow: none;
-padding: 8px 8px;
-vertical-align: middle;
-border-radius: 0;
-text-align: center; background: rgba(255,255,255,0.05);
+    background: none;
+    border: none;
+    color: #fff;
+    box-shadow: none;
+    padding: 8px 8px;
+    vertical-align: middle;
+    border-radius: 0;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .uspto-header-top .ex-btn-inverse.btn:hover, .uspto-header-top .ex-btn-inverse.btn:focus {
-background-color: #282828;
-color: #fff
+    background-color: #282828;
+    color: #fff
 }
 
-.uspto-header-top .open>.dropdown-toggle.btn-default {background: #282828;}
-/******Footer **************/
-#footer-accordion {background-color:#363636; margin-top:30px;}
-.footerbar {display:inline-block; padding:14px 21px; border-radius:50%; position:relative; top:-34px;background-color:#363636; cursor:pointer;}
-#footer-accordion  .footerbar-icon {width:50px;height:50px; background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADkAAAAwCAYAAACrF9JNAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAASTQAAEk0B85fEpwAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAAWdEVYdENyZWF0aW9uIFRpbWUAMDYvMTMvMTaioMBwAAABZUlEQVRoge3ZvY2EMBCGYe81SU5AGZASQANQBCRUAFVABThEJPxI30V70t0tYIxnQJZfyRFiNE9oeAEQtvd19wIcOaQtOaQtOaQtOaQtOaQtOaQtOaQQQqRpimEYMI4j8jx/xL0siiJIKTFNE4qiON4JwOZJkgTDMODdOI7Isgx771CfMAwhpfzZaZ5nlGW5u9PmgziOfwGfAP0LVIVuDuy67t+wO6FbwHd93yMIgo87bQ6tqgrruj4CegQEgLZtN3fZHd40ze1QVaDneXrIu6EmgErIu6CmgMpIbqhJ4CkkF9Q08DSSGkoB1EJSQamA2kjTUErgJaQpqAqw6zr4vq8FvIy8CuUAGkHqQrmAxpBnoZxAo0hVaFEUrEDjSBXoUaaBJMgrUAogGVIHSgUkRZ6BUgLJkSpQaiALcg/KAWRDfoJyAVmRAERd11iWBW3bsgEBiBfwiI/ipLl/IbbkkLbkkLb0DQub8fAIbyXyAAAAAElFTkSuQmCC'); display:inline-block; background-repeat:no-repeat; margin-left:-6px;}
-#footer-accordion .collapsed .footerbar-icon {
-
--moz-transform: scaleY(-1);
--o-transform: scaleY(-1);
--webkit-transform: scaleY(-1);
-transform: scaleY(-1);
-filter: FlipV;
--ms-filter: "FlipV";}
-.footerbar-smallHeading {display: inline-block;
-color: #444;
-padding: 5px 19px; 1font-weight:bold;font-size: 16px; background-color:#E2E2E2;}
-
-#footer-html {height: 0px;  position: relative;
-top: -70px;}
-
-
+.uspto-header-top .open > .dropdown-toggle.btn-default {
+    background: #282828;
+}
 
 @media (max-width: 767px) {
-#uspto-top-navigation {padding:0;}
-.uspto-header-bottom .nav > li > a {padding-left:24px;}
-.uspto-header-top ul.dropdown-menu li { border-bottom:1px solid #444;}
-.uspto-header-top ul.dropdown-menu li:last-child { border-bottom:none;}
-.uspto-header-top ul.dropdown-menu li a {  line-height:2.1; padding:3px 15px;}
-#headerSmallHeadingMobile {display: inline-block;height:35px;}
-.affix #headerSmallHeading {display: none;}
-.affix #headerSmallHeadingMobile {display: inline-block;}
-.uspto-header-middle {display: none;}
+    #uspto-top-navigation {
+        padding: 0;
+    }
 
-.uspto-header-middle .container,.uspto-header-middle .container-fluid {font-size: 26px;}
-.uspto-header-top ul.dropdown-menu.trademark-menu {min-width: 240px; left:auto!important;}
-.uspto-header-top ul.dropdown-menu.patent-menu {min-width: 210px; right:auto!important;left:auto;}
+    .uspto-header-bottom .nav > li > a {
+        padding-left: 24px;
+    }
 
-.navbar-toggle { padding:5px 10px;}
+    .uspto-header-top ul.dropdown-menu li {
+        border-bottom: 1px solid #444;
+    }
+
+    .uspto-header-top ul.dropdown-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .uspto-header-top ul.dropdown-menu li a {
+        line-height: 2.1;
+        padding: 3px 15px;
+    }
+
+    #headerSmallHeadingMobile {
+        display: inline-block;
+        height: 35px;
+    }
+
+    .affix #headerSmallHeading {
+        display: none;
+    }
+
+    .affix #headerSmallHeadingMobile {
+        display: inline-block;
+    }
+
+    .uspto-header-middle {
+        display: none;
+    }
+
+    .uspto-header-middle .container, .uspto-header-middle .container-fluid {
+        font-size: 26px;
+    }
+
+    .uspto-header-top ul.dropdown-menu.trademark-menu {
+        min-width: 240px;
+        left: auto !important;
+    }
+
+    .uspto-header-top ul.dropdown-menu.patent-menu {
+        min-width: 210px;
+        right: auto !important;
+        left: auto;
+    }
+
+    .navbar-toggle {
+        padding: 5px 10px;
+    }
 }
 
 
