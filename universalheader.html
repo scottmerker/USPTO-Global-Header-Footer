@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>United States Patent and Trademark Office</title>
@@ -27,154 +28,15 @@
     </p>
     <![endif]-->
 
-    <!--Start global header -->
-    <div id="usptoGlobalHeader" class="affix" data-spy="affix" data-offset-top="50">
-        <div class="uspto-header-top">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-12" id="uspto-top-navigation">
-                        <a href="http://www.uspto.gov" target="_blank" class="uspto-logo"
-                            title="United States Patent and Trademark Office">
-                        </a>
-                        <span class="pull-right">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default dropdown-toggle ex-btn-inverse"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span
-                                        class="hidden-xs "> Patents <span class="caret"></span></span> <span
-                                        class="visible-xs  icon-btn"><i class="icon icon-lightbulb-o icon-inverse"></i></span> </button>
-                                <ul class="dropdown-menu dropdown-menu-right patent-menu">
-                                    <li><a href="http://patft.uspto.gov/netahtml/PTO/search-bool.html" target="_blank">Search patents</a></li>
-                                    <li><a href="http://appft.uspto.gov/netahtml/PTO/search-bool.html" target="_blank">Patent applications search</a></li>
-                                    <li><a href="https://ppair.uspto.gov/epatent/myportal/privatepair" target="_blank">Check filing status</a></li>
-                                    <li><a href="http://portal.uspto.gov/pair/PublicPair" target="_blank">Check public filing status</a></li>
+    <!--
+       Include the file containing the header using code in
+       scripts/includeHTML.js
 
-                                    <li><a href="patentcenter.aspx">File patents</a></li>
-                                    <li><a href="https://ptab.uspto.gov" target="_blank">Patent and Trial Appeal Board</a></li>
-                                    <li><a href="http://assignment.uspto.gov/" target="_blank">Search assignment</a></li>
-                                    <li><a href="http://epas.uspto.gov/" target="_blank">Record assignment</a></li>
-                                    <li><a href="http://www.uspto.gov/web/offices/pac/mpep/index.html" target="_blank">Manual of Patent Examining Procedure </a></li>
-                                </ul>
-                            </div>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default dropdown-toggle ex-btn-inverse"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span
-                                        class="hidden-xs ">Trademarks <span class="caret"></span></span> <span
-                                        class="visible-xs  icon-btn"><i
-                                        class="icon icon-trademark icon-inverse"></i></span> </button>
-                                <ul class="dropdown-menu dropdown-menu-right trademark-menu">
-                                    <li><a href="http://tmsearch.uspto.gov/bin/gate.exe?f=login&amp;p_lang=english&amp;p_d=trmk"
-                                           target="_blank">Search trademarks</a></li>
-                                    <li><a href="http://teas.uspto.gov/forms/bas/" target="_blank">Trademark regular application filing</a></li>
-                                    <li><a href="http://teas.uspto.gov/forms/teasplus" target="_blank">Trademark plus application filing</a></li>
-                                    <li><a href="http://teas.uspto.gov/forms/bas/" target="_blank">Trademark RF application filing</a></li>
-                                    <li><a href="http://tsdr.uspto.gov/" target="_blank">Status, documents, and certificates</a></li>
-                                    <li><a href="http://ttabvue.uspto.gov/ttabvue/v" target="_blank">View Trademark Trial and Appeal Board proceedings</a></li>
-                                    <li><a href="https://tmog.uspto.gov/#" target="_blank">Trademark Official Gazette</a></li>
-                                    <li><a href="http://assignments.uspto.gov/assignments/q?db=tm" target="_blank">Search Assignment for Trademarks</a></li>
-                                    <li><a href="http://estta.uspto.gov/" target="_blank">Electronic System for Trademark Trials and Appeals</a></li>
-                                    <li><a href="http://tmep.uspto.gov/RDMS/detail/manual/TMEP/current/d1e2.xml"
-                                           target="_blank">Trademark Manual of Examining Procedure</a></li>
-                                </ul>
-                            </div>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default dropdown-toggle ex-btn-inverse"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span
-                                        class="visible-xs  icon-btn"><i class="icon icon-dollar icon-inverse"></i></span> <span
-                                        class="hidden-xs "> Fees and payment <span class="caret"></span></span> </button>
-                                <ul class="dropdown-menu dropdown-menu-right fees-menu">
-                                    <li><a href="https://fees.uspto.gov/" target="_blank">Fees and payment</a></li>
-                                    <li><a href="https://fees.uspto.gov/FinancialManager" target="_blank">Financial Manager</a></li>
-                                    <li><a href="https://fees.uspto.gov/MaintenanceFees"
-                                           target="_blank">Patent maintenance fees</a></li>
-                                </ul>
-                            </div>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default dropdown-toggle ex-btn-inverse"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span
-                                        class="hidden-xs ">Help <span class="caret"></span></span> <span
-                                        class="visible-xs  icon-btn"><i
-                                        class="icon icon-question-circle icon-inverse"></i></span> </button>
-                                <ul class="dropdown-menu dropdown-menu-right">
-                                    <li> <a href="http://www.uspto.gov/learning-resources" target="_blank">FAQs</a> </li>
+       A similar example with Angular (note the single-quoted src string):
+       <div ng-include src="'header.html'"></div>
+    -->
+    <div data-include-html="header.html"></div>
 
-                                    <li><a href="http://www.uspto.gov/about-us/contact-us" target="_blank">Contact us</a> </li>
-                                </ul>
-                            </div>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default dropdown-toggle ex-btn-inverse"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span
-                                        class="hidden-xs ">T. Markey <span class="caret"></span></span> <span
-                                        class="visible-xs  icon-btn"><i
-                                        class="icon icon-user icon-inverse"></i></span> </button>
-                                <ul class="dropdown-menu dropdown-menu-right">
-                                    <li><a href="index.aspx"><i
-                                            class="icon icon-inverse icon-home"></i> &nbsp;My Console</a> </li>
-                                    <li><a href="profile.aspx"><i
-                                            class="icon icon-inverse icon-user"></i> &nbsp;Account</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="signin.aspx"><i class="icon icon-inverse icon-sign-out"></i> &nbsp;Sign out</a></li>
-                                </ul>
-                            </div>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="uspto-header-middle">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-12"><span>Universal Header</span></div>
-                </div>
-            </div>
-        </div>
-        <div class="uspto-header-bottom">
-            <nav class="navbar" id="bottomNavBar">
-                <div class="container-fluid">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <span class="pull-left  headerbar-smallHeading"
-                              id="headerSmallHeadingMobile">Universal Header</span>
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                                data-target="#bs-example-navbar-collapse-1"><span class="sr-only">Toggle navigation</span>
-                            <span class="icon icon-align-justify icon-inverse"></span></button>
-                    </div>
-
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><span
-                            class="pull-left  headerbar-smallHeading" id="headerSmallHeading">Universal Header</span>
-                        <ul class="nav navbar-nav">
-                            <li><a href="#">Navigation <span class="sr-only">(current)</span></a></li>
-                            <li><a href="#">Navigation</a></li>
-                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                                    aria-expanded="false">Navigation <span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                                    aria-expanded="false">My Collection <span class="caret"></span></a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">FAQ</a></li>
-                        </ul>
-                    </div>
-                    <!-- /.navbar-collapse -->
-                </div>
-                <!-- /.container-fluid -->
-            </nav>
-        </div>
-    </div>
-    <!--End global header-->
     <div id="mainArea">
         <div class="container-fluid">
             <div class="row">
@@ -298,120 +160,19 @@
         </div>
     </div>
 
-    <!--Start global footer -->
-    <div id="usptoAppFooter">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="uspto-footer-top col-sm-12">
-                    <div class="uspto-footer-logo col-sm-10"><a class="logo" href="http://www.uspto.gov/"
-                                                                target="_blank"
-                                                                title="United States Patent and Trademark Office">
-                        <span class="sr-only">United States Patent and Trademark Office</span> </a></div>
-                    <div class="uspto-footer-watermark col-sm-2"
-                         title="United States Patent and Trademark Office"><span class="sr-only">United States Patent and Trademark Office</span>
-                    </div>
-                </div>
-                <div class="uspto-footer-middle col-sm-12">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                                data-target="#navbar-collapse-topic"> Browse By Topic <span
-                                class="icon icon-sort-desc icon-inverse"></span></button>
-                    </div>
-                    <div class="uspto-footer-column col-sm-3 collapse navbar-collapse"
-                         id="navbar-collapse-topic">
-                        <h2>Browse By Topic</h2>
-                        <ul>
-                            <li><a href="http://www.uspto.gov/patent" target="_blank">Patents</a></li>
-                            <li><a href="http://www.uspto.gov/trademark" target="_blank">Trademarks</a></li>
-                            <li><a href="http://www.uspto.gov/learning-resources" target="_blank">Learning
-                                &amp; Resources</a></li>
-                            <li><a href="http://www.uspto.gov/about-us" target="_blank">About the USPTO</a>
-                            </li>
-                            <li><a href="http://www.uspto.gov/learning-and-resources/glossary"
-                                   target="_blank">Glossary</a></li>
-                            <li><a href="http://www.uspto.gov/careers" target="_blank">Careers</a></li>
-                            <li><a href="http://www.uspto.gov/about-us/contact-us" target="_blank">Contact
-                                Us</a></li>
-                        </ul>
-                    </div>
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                                data-target="#navbar-collapse-about"> About This Site <span
-                                class="icon icon-sort-desc icon-inverse"></span></button>
-                    </div>
-                    <div class="uspto-footer-column col-sm-3 collapse navbar-collapse"
-                         id="navbar-collapse-about">
-                        <h2>About This Site</h2>
-                        <ul>
-                            <li><a href="http://www.uspto.gov/using-usptogov/accessibility-uspto-website"
-                                   target="_blank">Accessibility</a></li>
-                            <li><a href="http://www.uspto.gov/privacy-policy" target="_blank">Privacy
-                                Policy</a></li>
-                            <li><a href="http://www.uspto.gov/terms-use-uspto-website">Terms of Use</a></li>
-                            <li><a href="http://www.uspto.gov/about-us/security"
-                                   target="_blank">Security</a></li>
-                            <li><a href="http://www.uspto.gov/blog/ebiz/ " target="_blank">Systems
-                                Status</a></li>
-                            <li><a href="http://www.uspto.gov/sitemap" target="_blank">Site Map</a></li>
-                        </ul>
-                    </div>
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                                data-target="#navbar-collapse-uspto"> USPTO Background <span
-                                class="icon icon-sort-desc icon-inverse"></span></button>
-                    </div>
-                    <div class="uspto-footer-column col-sm-3 collapse navbar-collapse"
-                         id="navbar-collapse-uspto">
-                        <h2>USPTO Background</h2>
-                        <ul>
-                            <li>
-                                <a href="http://www.uspto.gov/about-us/performance-and-planning/federal-activities-inventory-reform-fair-act"
-                                   target="_blank">Federal Activity Inventory Reform Act (FAIR)</a></li>
-                            <li><a href="http://www.uspto.gov/about-us/performance-and-planning"
-                                   target="_blank">Performance and Planning</a></li>
-                            <li>
-                                <a href="http://www.uspto.gov/learning-and-resources/ip-policy/electronic-freedom-information-act-e-foia"
-                                   target="_blank">Freedom of Information Act</a></li>
-                            <li>
-                                <a href="http://www.uspto.gov/learning-and-resources/information-quality-guidelines"
-                                   target="_blank">Information Quality Guidelines</a></li>
-                        </ul>
-                    </div>
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                                data-target="#navbar-collapse-federal"> Federal Government <span
-                                class="icon icon-sort-desc icon-inverse"></span></button>
-                    </div>
-                    <div class="uspto-footer-column col-sm-3 collapse navbar-collapse"
-                         id="navbar-collapse-federal">
-                        <h2>Federal Government</h2>
-                        <ul>
-                            <li><a href="http://www.regulations.gov" target="_blank">Regulations.gov
-                                &nbsp;<span class="icon icon-external-link icon-inverse"><span
-                                        class="sr-only"> (link is external)</span></span></a></li>
-                            <li><a href="http://www.stopfakes.gov" target="_blank">StopFakes.gov &nbsp;<span
-                                    class="icon icon-external-link icon-inverse"><span class="sr-only"> (link is external)</span></span></a>
-                            </li>
-                            <li><a href="http://www.usa.gov" target="_blank">USA.gov &nbsp;<span
-                                    class="icon icon-external-link icon-inverse"><span class="sr-only"> (link is external)</span></span></a>
-                            </li>
-                            <li><a href="http://www.commerce.gov" target="_blank">Department of Commerce
-                                &nbsp;<span class="icon icon-external-link icon-inverse"><span
-                                        class="sr-only"> (link is external)</span></span></a></li>
-                            <li>
-                                <a href="http://www.uspto.gov/learning-and-resources/ip-policy/enforcement/strategy-targeting-organized-piracy-stop"
-                                   target="_blank">Strategy Targeting Organized Piracy</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div> <!-- /.container-fluid -->
-    </div> <!-- /#usptoAppFooter -->
-    <!--End global footer -->
+    <!--
+       Include the file containing the footer using code in
+       scripts/includeHTML.js
+
+       A similar example with Angular (note the single-quoted src string):
+       <div ng-include src="'footer.html'"></div>
+    -->
+    <div data-include-html="footer.html"></div>
 
     <!-- jQuery -->
     <script src="scripts/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/includeHTML.js"></script>
 </body>
 </html>
