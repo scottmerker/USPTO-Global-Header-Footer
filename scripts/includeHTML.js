@@ -21,14 +21,14 @@
             // retrieve the filename
             file = divList[i].getAttribute("data-include-html");
             // load the file
-            $(divList[i]).load(file, function(responseTxt, statusTxt, xhr) {
+            $(divList[i]).load(file, function(responseText, textStatus, jqXHR) {
                 /*
-                if (statusTxt == "success") {
+                if (textStatus == "success") {
                     alert("success: loaded external content");
                 } //if
                  */
-                if (statusTxt == "error") {
-                    alert("error: " + xhr.status + ": " + xhr.statusText);
+                if (textStatus == "error") {
+                    alert("error: " + jqXHR.status + ": " + jqXHR.statusText);
                 } // if
             });
         } //for
