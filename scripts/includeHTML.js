@@ -26,7 +26,7 @@
                 if (textStatus == "success") {
                     alert("success: loaded external content");
                 } //if
-                 */
+                */
                 if (textStatus == "error") {
                     alert("error: " + jqXHR.status + ": " + jqXHR.statusText);
                 } // if
