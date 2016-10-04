@@ -20,6 +20,7 @@
         for (var i = 0, len = divList.length; i < len; i++) {
             // retrieve the filename
             file = divList[i].getAttribute("data-include-html");
+
             // load the file
             $(divList[i]).load(file, function(responseText, textStatus, jqXHR) {
                 /*
@@ -31,6 +32,7 @@
                     alert("error: " + jqXHR.status + ": " + jqXHR.statusText);
                 } // if
             });
+
             // execute any scripts found on the page
             $(divList[i]).find("script").each(function(i) {
                 eval($(this).text());
