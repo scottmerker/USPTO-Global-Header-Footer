@@ -15,13 +15,12 @@
                     clearTimeout(timeout);
                     timeout = null;
                     if ($(this).scrollTop() > 50) {
-                        $('#usptoGlobalHeader').addClass("scrollFade");
+                        $('#usptoGlobalHeader').addClass("collapse-header");
                     } else {
-                        $('#usptoGlobalHeader').removeClass("scrollFade");
+                        $('#usptoGlobalHeader').removeClass("collapse-header");
                     } // if
                 }, 200);
             } // if
-
         });
 
     });

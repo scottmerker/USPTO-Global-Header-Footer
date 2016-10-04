@@ -2,7 +2,7 @@
     text-decoration: none;
 }
 
-.scrollFade {
+.collapse-header {
     top: 0;
     width: 100% !important;
     z-index: 1000;
@@ -12,21 +12,21 @@
     display: none;
 }
 
-.scrollFade #headerSmallHeading {
+.collapse-header #headerSmallHeading {
     display: inline-block;
     margin-left: -8px;
 }
 
-.scrollFade .uspto-header-middle {
+.collapse-header .uspto-header-middle {
     display: none;
 }
 
 .headerbar-smallHeading {
     display: inline-block;
-    color: #444;
+    color: #FFFFFF;
     padding: 5px 19px;
     font-size: 16px;
-    background-color: #E2E2E2;
+    background-color: #003F7E ;
 }
 
 .uspto-header-top .btn-group .btn {
@@ -138,11 +138,11 @@
         height: 35px;
     }
 
-    .scrollFade #headerSmallHeading {
+    .collapse-header #headerSmallHeading {
         display: none;
     }
 
-    .scrollFade #headerSmallHeadingMobile {
+    .collapse-header #headerSmallHeadingMobile {
         display: inline-block;
     }
 

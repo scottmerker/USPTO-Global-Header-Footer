@@ -31,6 +31,10 @@
                     alert("error: " + jqXHR.status + ": " + jqXHR.statusText);
                 } // if
             });
+            // execute any scripts found on the page
+            $(divList[i]).find("script").each(function(i) {
+                eval($(this).text());
+            });
         } //for
     } // includeHTML()
 
