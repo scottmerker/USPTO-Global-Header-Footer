@@ -2,7 +2,7 @@
     text-decoration: none;
 }
 
-.affix {
+.scrollFade {
     top: 0;
     width: 100% !important;
     z-index: 1000;
@@ -12,12 +12,12 @@
     display: none;
 }
 
-.affix #headerSmallHeading {
+.scrollFade #headerSmallHeading {
     display: inline-block;
     margin-left: -8px;
 }
 
-.affix .uspto-header-middle {
+.scrollFade .uspto-header-middle {
     display: none;
 }
 
@@ -138,11 +138,11 @@
         height: 35px;
     }
 
-    .affix #headerSmallHeading {
+    .scrollFade #headerSmallHeading {
         display: none;
     }
 
-    .affix #headerSmallHeadingMobile {
+    .scrollFade #headerSmallHeadingMobile {
         display: inline-block;
     }
 
