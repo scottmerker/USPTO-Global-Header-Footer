@@ -74,6 +74,11 @@
     min-width: 17px;
 }
 
+/* make a header button icon bigger */
+.uspto-header-top .icon-btn.bigger {
+    transform: scale(1.3);
+}
+
 .uspto-header-top .ex-btn-inverse {
     background: none;
     border: none;
