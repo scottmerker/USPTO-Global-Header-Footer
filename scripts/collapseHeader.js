@@ -10,18 +10,27 @@
          * 200ms after the scroll.
          */
         $(window).scroll(function() {
-            var timeout;
+            var timeout,
+                // minimum pixels to scroll before collapsing the header
+                minimumScroll = 50,
+                // duration of the header collapse animation in milliseconds
+                duration = 200;
 
             if (!timeout) {
                 timeout = setTimeout(function () {
                     clearTimeout(timeout);
                     timeout = null;
-                    if ($(this).scrollTop() > 50) {
+                    if ($(this).scrollTop() > minimumScroll) {
                         // collapse the header
-                        $('#usptoGlobalHeader').addClass("collapse-header");
+                        $('.uspto-header-middle').hide(duration, function () {    // smooth out the transition
+                            $('#usptoGlobalHeader').addClass("collapse-header");
+                        });
+
                     } else {
                         // restore the header
-                        $('#usptoGlobalHeader').removeClass("collapse-header");
+                        $('.uspto-header-middle').show(duration, function () {   // smooth out the transition
+                            $('#usptoGlobalHeader').removeClass("collapse-header");
+                        });
                     } // if
                 }, 200);
             } // if

@@ -2,12 +2,6 @@
     text-decoration: none;
 }
 
-.collapse-header {
-    top: 0;
-    width: 100% !important;
-    z-index: 1000;
-}
-
 #headerSmallHeading, #headerSmallHeadingMobile {
     display: none;
 }
@@ -109,7 +103,7 @@
 }
 
 /*
- * Push the main body content below the header. The Boostrap fixed navbar will
+ * Push the main body content below the header. The Bootstrap fixed navbar will
  * overlay other content unless you add padding to the top of the <body>.
  */
 #mainArea {

@@ -1,9 +1,5 @@
 <!--Start global header -->
 
-<!--
-   use the Bootstrap affix plug-in to "fix" the header to the top of the page
-   and remove elements when the page is scrolled.
--->
 <header role="banner">
     <div id="usptoGlobalHeader" class="navbar-fixed-top">
         <div class="uspto-header-top">
@@ -11,7 +7,10 @@
                 <div class="row">
                     <div id="uspto-top-navigation" class="col-sm-12">
                         <a href="http://www.uspto.gov" target="_blank" class="uspto-logo"
-                           title="United States Patent and Trademark Office">
+                            title="United States Patent and Trademark Office - An Agency of the Department of Commerce">
+                            <span class="sr-only">
+                                United States Patent and Trademark Office (<abbr title="United States Patent and Trademark Office">USPTO</abbr>) logo
+                            </span>
 						</a>
 						<span class="pull-right">
 							<div class="btn-group">
@@ -57,8 +56,8 @@
 							<div class="btn-group">
 								<button type="button" class="btn btn-default dropdown-toggle ex-btn-inverse"
 										data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="hidden-xs "> Fees and payment <span class="caret"></span></span>
 									<span class="visible-xs icon-btn"><i class="icon icon-dollar icon-inverse"></i></span>
-									<span class="hidden-xs "> Fees and payment <span class="caret"></span></span>
 								</button>
 								<ul class="dropdown-menu dropdown-menu-right fees-menu">
 									<li><a href="https://fees.uspto.gov/" target="_blank">Fees and payment</a></li>
@@ -75,7 +74,6 @@
 								</button>
 								<ul class="dropdown-menu dropdown-menu-right">
 									<li> <a href="http://www.uspto.gov/learning-resources" target="_blank">FAQs</a> </li>
-
 									<li><a href="http://www.uspto.gov/about-us/contact-us" target="_blank">Contact us</a> </li>
 								</ul>
 							</div>
