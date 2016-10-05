@@ -70,7 +70,7 @@
 
 /* make a header button icon bigger */
 .uspto-header-top .icon-btn.bigger {
-    transform: scale(1.3);
+    transform: scale(1.2);
 }
 
 .uspto-header-top .ex-btn-inverse {
@@ -102,12 +102,17 @@
     padding: 0.2em 0;
 }
 
-/*
- * Push the main body content below the header. The Bootstrap fixed navbar will
- * overlay other content unless you add padding to the top of the <body>.
- */
 #mainArea {
+    /*
+     * Push the main body content below the header. The Bootstrap fixed navbar will
+     * overlay other content unless you add padding to the top of the <body>.
+     */
     padding-top: 100px;
+    /*
+     * 110px = amount of footer that's shown when there's not enough content to
+     * fill the page and push the footer out of sight
+     */
+    min-height: calc(100vh - 110px);
 }
 
 @media (max-width: 767px) {

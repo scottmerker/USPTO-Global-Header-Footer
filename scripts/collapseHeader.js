@@ -25,7 +25,6 @@
                         $('.uspto-header-middle').hide(duration, function () {    // smooth out the transition
                             $('#usptoGlobalHeader').addClass("collapse-header");
                         });
-
                     } else {
                         // restore the header
                         $('.uspto-header-middle').show(duration, function () {   // smooth out the transition
