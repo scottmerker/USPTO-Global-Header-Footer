@@ -94,6 +94,14 @@
     background: #282828;
 }
 
+/*
+ * Shift the bottom left menu to align with other header content. It seems like
+ * this really belongs in uspto-header-styles.css
+ */
+.uspto-header-bottom .container, .uspto-header-bottom .container-fluid {
+    padding-left: 10px;
+}
+
 /* browser upgrade prompt */
 .browserupgrade {
     margin: 0.2em 0;
@@ -109,6 +117,8 @@
      */
     padding-top: 100px;
     /*
+     * Position the footer when there's not enough page content to push it off
+     * the screen.
      * 110px = amount of footer that's shown when there's not enough content to
      * fill the page and push the footer out of sight
      */
