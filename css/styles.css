@@ -18,7 +18,7 @@
     margin-left: 12px;
     margin-top: 12px;
     /*
-     * Some versions of IE render resized images (width or height tags are set)
+     * IE7 and IE8 render resized images (width or height tags are set)
      * improperly if this isn't set.
      */
     -ms-interpolation-mode: bicubic;
@@ -50,15 +50,15 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
 
 .headerbar-smallHeading {
     display: inline-block;
-    color: #FFFFFF;
+    color: #FFF;
     padding: 5px 19px;
     font-size: 16px;
     background-color: #003F7E ;
 }
 
 .uspto-header-top .btn-group .btn {
-    color: rgb(204, 204, 204);
-    font-weight: normal;
+    color: #CCC;
+    font-weight: 400;
     text-decoration: none;
     margin-top: 9px;
     margin-right: 5px;
@@ -82,11 +82,11 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
 
 .uspto-header-top ul.dropdown-menu > li > a {
     line-height: 2.5;
-    color: rgb(204, 204, 204);
+    color: #CCC;
 }
 
 .uspto-header-top ul.dropdown-menu > li > a:hover {
-    background-color: rgb(50, 50, 50);
+    background-color: #323232;
 }
 
 .dropdown-menu > li {
@@ -195,7 +195,6 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
     margin-right: 15px;
 }
 
-
 @media (max-width: 767px) {
     #uspto-top-navigation {
         padding: 0;
@@ -298,7 +297,7 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
     margin-top: 2.2em;
     color: #fff;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .uspto-footer-middle .uspto-footer-column ul {
@@ -326,8 +325,6 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
     float: right;
     margin-right: 10px;
 }
-
-
 
 @media (min-width: 768px) {
     .uspto-footer-middle .uspto-footer-column.col-sm-3.navbar-collapse {
@@ -362,8 +359,3 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
 @-ms-viewport {
     width: auto !important;
 }
-
-
-
-
-
