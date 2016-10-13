@@ -1,6 +1,11 @@
 /* remove the underscore on hyperlinks */
-#global-header a, #global-footer a {
+.uspto-header-top a, .uspto-header-bottom a,
+.uspto-footer-top a, .uspto-footer-middle a {
     text-decoration: none;
+}
+
+#uspto-top-navigation {
+    padding: 0;
 }
 
 /* header top */
@@ -88,7 +93,6 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
 .uspto-header-top ul.dropdown-menu > li > a:hover {
     background-color: #323232;
 }
-
 
 .uspto-header-top .dropdown-menu {
     margin: 0;
@@ -195,10 +199,6 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
 }
 
 @media (max-width: 767px) {
-    #uspto-top-navigation {
-        padding: 0;
-    }
-
     .uspto-header-bottom .nav > li > a {
         padding-left: 24px;
     }
