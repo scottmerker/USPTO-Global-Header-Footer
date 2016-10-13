@@ -19,12 +19,12 @@
     margin-top: 12px;
     /*
      * IE7 and IE8 render resized images (width or height tags are set)
-     * improperly if this isn't set.
+     * improperly if this isn't set. This is IE-specific.
      */
     -ms-interpolation-mode: bicubic;
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2),
+@media only screen and (min-resolution: 2dppx), only screen and (min--moz-device-pixel-ratio: 2),
 only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2),
 only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
     .uspto-header-top a.uspto-logo {
@@ -89,9 +89,6 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
     background-color: #323232;
 }
 
-.dropdown-menu > li {
-    display: block;
-}
 
 .uspto-header-top .dropdown-menu {
     margin: 0;
@@ -140,12 +137,10 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
 }
 
 /* header bottom */
-/*
- * Shift the bottom left menu to align with other header content.
- */
+
 .uspto-header-bottom .container, .uspto-header-bottom .container-fluid {
     background-color: #004C97;
-    /* padding to align with other header elements */
+    /* shift the bottom left menu to align with other header content */
     padding-left: 9px;
 }
 
@@ -169,6 +164,10 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
     text-decoration: none;
     background-color: #598ABB;
     color: #fff;
+}
+
+.uspto-header-bottom .navbar-nav .open .dropdown-menu {
+    background-color: #fff;
 }
 
 .uspto-header-bottom .nav .open > a, .uspto-header-bottom .nav .open > a:hover, .uspto-header-bottom .nav .open > a:focus {
@@ -302,7 +301,7 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
 
 .uspto-footer-middle .uspto-footer-column ul {
     list-style-type: none;
-    padding: 0px;
+    padding: 0;
     margin-top: 0;
 }
 
@@ -355,7 +354,10 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
     }
 }
 
-/* correction for IE10+ auto-hide scrollbar */
+/*
+ * At-rule correction for IE10+ auto-hide scrollbar. This rule only works in
+ * IE.
+ */
 @-ms-viewport {
     width: auto !important;
 }
