@@ -4,12 +4,9 @@
     text-decoration: none;
 }
 
-#uspto-top-navigation {
-    padding: 0;
-}
-
 /* header top */
 .uspto-header-top .container, .uspto-header-top .container-fluid {
+    padding: 0 5px 0 0;
     background-color: #323232;
     height: 49px;
 }
@@ -20,7 +17,7 @@
     width: 78px;
     height: 27px;
     display: inline-block;
-    margin-left: 12px;
+    margin-left: 21px;
     margin-top: 12px;
     /*
      * IE7 and IE8 render resized images (width or height tags are set)
@@ -61,36 +58,28 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
     background-color: #003F7E ;
 }
 
-.uspto-header-top .btn-group .btn {
-    color: #CCC;
-    font-weight: 400;
-    text-decoration: none;
-    margin-top: 9px;
-    margin-right: 5px;
-}
-
-.uspto-header-top ul.dropdown-menu {
+.uspto-header-top .dropdown-menu {
     background-color: #282828;
 }
 
-.uspto-header-top ul.dropdown-menu.patent-menu {
+.uspto-header-top .patent-menu {
     min-width: 275px;
 }
 
-.uspto-header-top ul.dropdown-menu.trademark-menu {
+.uspto-header-top .trademark-menu {
     min-width: 350px;
 }
 
-.uspto-header-top ul.dropdown-menu.fees-menu {
+.uspto-header-top .fees-menu {
     min-width: 200px;
 }
 
-.uspto-header-top ul.dropdown-menu > li > a {
+.uspto-header-top .dropdown-menu > li > a {
     line-height: 2.5;
     color: #CCC;
 }
 
-.uspto-header-top ul.dropdown-menu > li > a:hover {
+.uspto-header-top .dropdown-menu > li > a:hover {
     background-color: #323232;
 }
 
@@ -102,29 +91,37 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
     min-width: 17px;
 }
 
-/* make a header button icon bigger */
-.uspto-header-top .icon-btn.bigger {
+/* make an icon bigger */
+.uspto-header-top .bigger {
     transform: scale(1.2);
 }
 
-.uspto-header-top .ex-btn-inverse {
-    background: none;
-    border: none;
-    color: #fff;
+.uspto-header-top button {
+    color: #CCC;
+    font-weight: 400;
+    text-decoration: none;
+    /* margin top, right, bottom, and left */
+    margin: 9px 5px 0 0;
+    /*border: none;*/
+    border-color: #CCC;
     box-shadow: none;
     padding: 8px 8px;
     vertical-align: middle;
-    border-radius: 0;
+    border-radius: 4px;
     text-align: center;
     background: rgba(255, 255, 255, 0.05);
 }
 
-.uspto-header-top .ex-btn-inverse.btn:hover, .uspto-header-top .ex-btn-inverse.btn:focus {
+/*
+ * button:hover works, but button:focus fails to produce the correct
+ * behavior. An initial guess is there's an interaction with css/usptostrap.min.css
+ */
+.uspto-header-top button:hover, .uspto-header-top .ex-btn-inverse.btn:focus {
     background-color: #282828;
     color: #fff
 }
 
-.uspto-header-top .open > .dropdown-toggle.btn-default {
+.uspto-header-top .open > .btn-default {
     background: #282828;
 }
 
@@ -237,14 +234,14 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
         font-size: 26px;
     }
 
-    .uspto-header-top ul.dropdown-menu.trademark-menu {
+    .uspto-header-top .trademark-menu {
         min-width: 240px;
-        left: auto !important;
+        left: auto;
     }
 
-    .uspto-header-top ul.dropdown-menu.patent-menu {
+    .uspto-header-top .patent-menu {
         min-width: 210px;
-        right: auto !important;
+        right: auto;
         left: auto;
     }
 
@@ -286,6 +283,7 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
     width: 157px;
 }
 
+/* prevent display of the header on small screens */
 .uspto-footer-middle .uspto-footer-column.col-sm-3 h2 {
     display: none;
 }
