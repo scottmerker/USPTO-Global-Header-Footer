@@ -109,6 +109,7 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
     vertical-align: middle;
     border-radius: 4px;
     text-align: center;
+    background: #FFF;    /* fallback color for old browsers */
     background: rgba(255, 255, 255, 0.05);
 }
 
@@ -123,6 +124,14 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
 
 .uspto-header-top .open > .btn-default {
     background: #282828;
+}
+
+.uspto-header-top ul.dropdown-menu li {
+    border-bottom: 1px solid #444;
+}
+
+.uspto-header-top ul.dropdown-menu li:last-child {
+    border-bottom: none;
 }
 
 /* header middle */
@@ -195,17 +204,10 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
     margin-right: 15px;
 }
 
+/* media rules for xs screens */
 @media (max-width: 767px) {
     .uspto-header-bottom .nav > li > a {
         padding-left: 24px;
-    }
-
-    .uspto-header-top ul.dropdown-menu li {
-        border-bottom: 1px solid #444;
-    }
-
-    .uspto-header-top ul.dropdown-menu li:last-child {
-        border-bottom: none;
     }
 
     .uspto-header-top ul.dropdown-menu li a {
@@ -322,7 +324,7 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
 }
 
 @media (min-width: 768px) {
-    .uspto-footer-middle .uspto-footer-column.col-sm-3.navbar-collapse {
+    .uspto-footer-column {
         width: 23%;
         padding-left: 1%;
         padding-right: 1%;
