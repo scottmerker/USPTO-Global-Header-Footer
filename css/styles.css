@@ -268,6 +268,7 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
 
 .uspto-footer-logo a.logo {
     background: transparent url('../images/logo-small.png') no-repeat left center;
+    /* logo sizing on small screen - this is overriden by a media rule for large screens */
     height: 57px;
     display: block;
 }
@@ -283,18 +284,15 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
     width: 157px;
 }
 
-/* prevent display of the header on small screens */
-.uspto-footer-middle .uspto-footer-column.col-sm-3 h2 {
-    display: none;
-}
-
-.uspto-footer-middle .uspto-footer-column h2 {
+.uspto-footer-middle .uspto-footer-column-hdg {
     font-size: 12px;
-    line-height: 1.2em;
-    margin-top: 2.2em;
+    line-height: 1.1em;
+    margin-top: 27px;
+    margin-bottom: 9px;
     color: #fff;
     text-transform: uppercase;
     font-weight: 700;
+    display: block;
 }
 
 .uspto-footer-middle .uspto-footer-column ul {
@@ -330,25 +328,11 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
         padding-right: 1%;
     }
 
-    .uspto-footer-middle .uspto-footer-column.col-sm-3 h2 {
-        display: block;
-    }
-
     .uspto-footer-logo a.logo {
         background: transparent url('../images/logo.png') no-repeat left center;
+        /* logo sizing on large screen */
         height: 62px;
         display: block;
-    }
-
-    .uspto-footer-watermark {
-        background: url('../images/logo-watermark.png') no-repeat left top;
-        background-size: contain;
-        position: absolute;
-        z-index: 0;
-        top: 0;
-        right: 0;
-        height: 157px;
-        width: 157px;
     }
 }
 
