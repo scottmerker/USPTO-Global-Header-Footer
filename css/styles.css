@@ -116,8 +116,10 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
 /*
  * button:hover works, but button:focus fails to produce the correct
  * behavior. An initial guess is there's an interaction with css/usptostrap.min.css
+ * Similar code applies to .uspto-header-bottom
  */
-.uspto-header-top button:hover, .uspto-header-top .ex-btn-inverse.btn:focus {
+.uspto-header-top button:hover,
+.uspto-header-top .ex-btn-inverse.btn:focus {
     background-color: #282828;
     color: #fff
 }
@@ -148,12 +150,52 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
 
 /* header bottom */
 
-.uspto-header-bottom .container, .uspto-header-bottom .container-fluid {
+.uspto-header-bottom .container,
+.uspto-header-bottom .container-fluid {
     background-color: #004C97;
     /* shift the bottom left menu to align with other header content */
     padding-left: 9px;
 }
 
+/********/
+.uspto-header-bottom button {
+    color: #FFF;
+    font-size: 14px;
+    background-color: #004C97;
+    border: none;
+}
+
+.uspto-header-bottom button > a {
+    color: #FFF;
+}
+
+/*
+ * button:hover works, but button:focus fails to produce the correct
+ * behavior. An initial guess is there's an interaction with css/usptostrap.min.css
+ * Similar code applies to .uspto-header-top
+ */
+.uspto-header-bottom button:hover,
+.uspto-header-bottom .ex-btn-inverse.btn:focus,
+.uspto-header-bottom button:hover > a {
+    text-decoration: none;
+    background-color: #598ABB;
+    color: #fff;
+}
+
+.uspto-header-bottom .btn-group .open > span,
+.uspto-header-bottom .btn-group .open > span:hover,
+.uspto-header-bottom .btn-group .open > span:focus {
+    background-color: #598ABB;
+}
+
+.uspto-header-bottom .open > .dropdown-toggle.btn-default {
+    background-color: #598ABB;
+    color: #FFF;
+}
+
+
+/********/
+/*
 .uspto-header-bottom .nav > li > a {
     color: #fff;
     padding: 6px 15px 6px 12px;
@@ -183,7 +225,7 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
 .uspto-header-bottom .nav .open > a, .uspto-header-bottom .nav .open > a:hover, .uspto-header-bottom .nav .open > a:focus {
     background-color: #598ABB;
 }
-
+*/
 #mainArea {
     /*
      * Push the main body content below the header. The Bootstrap fixed navbar will
@@ -206,10 +248,6 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
 
 /* media rules for xs screens */
 @media (max-width: 767px) {
-    .uspto-header-bottom .nav > li > a {
-        padding-left: 24px;
-    }
-
     .uspto-header-top ul.dropdown-menu li a {
         line-height: 2.1;
         padding: 3px 15px;
@@ -245,6 +283,10 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
         min-width: 210px;
         right: auto;
         left: auto;
+    }
+
+    .uspto-header-bottom button {
+        padding-left: 24px;
     }
 
     .navbar-toggle {
