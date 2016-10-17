@@ -2,7 +2,7 @@
 
 <header id="global-header" class="navbar-fixed-top" role="banner">
     <div class="uspto-header-top">
-        <nav class="navbar">
+        <nav class="nav navbar">
             <div class="container-fluid">
                 <a href="http://www.uspto.gov" target="_blank" class="uspto-logo"
                    title="United States Patent and Trademark Office - An Agency of the Department of Commerce">
@@ -132,12 +132,13 @@
                     </span>
 
                     <!-- left side of the menu bar -->
-                    <!--
                     <ul class="nav navbar-nav">
+                        <li><button class="btn-default">Navigation <span class="sr-only">(current)</span></button></li>
+                        <li><button class="btn-default">Navigation</button></li>
                         <li class="dropdown">
-                            <a href="#" id="nav-dropdown-left" class="dropdown-toggle" data-toggle="dropdown">
+                            <button href="#" id="nav-dropdown-left" class="btn-default dropdown-toggle" data-toggle="dropdown">
                                 Navigation <span class="caret"></span>
-                            </a>
+                            </button>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="nav-dropdown-left">
                                 <li role="presentation"><a href="#" role="menuitem">Action</a></li>
                                 <li role="presentation"><a href="#" role="menuitem">Another action</a></li>
@@ -145,54 +146,25 @@
                             </ul>
                         </li>
                     </ul>
-                    -->
-
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-default dropdown-toggle ex-btn-inverse"
-                                data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                            <span>Navigation<span class="caret"></span></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" role="menuitem">Action</a></li>
-                            <li><a href="#" role="menuitem">Another action</a></li>
-                        </ul>
-                    </div>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-default dropdown-toggle ex-btn-inverse"
-                                data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                            <span >Navigation<span class="caret"></span></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a href="#" role="menuitem">Action</a></li>
-                            <li><a href="#" role="menuitem">Another action</a></li>
-                            <li><a href="#" role="menuitem">Something else here</a></li>
-                        </ul>
-                    </div>
 
                     <!-- right side of the menu bar -->
-                    <span class="navbar-right">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default dropdown-toggle ex-btn-inverse"
-                                    data-toggle="dropdown"
-                                    aria-haspopup="true" aria-expanded="false">
-                                <span>My Collection<span class="caret"></span></span>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <button id="nav-dropdown-right" class="btn-default dropdown-toggle" data-toggle="dropdown">
+                                My Collection <span class="caret"></span>
                             </button>
-                            <ul class="dropdown-menu">
-                                <li><a href="#" role="menuitem">Action</a></li>
-                                <li><a href="#" role="menuitem">Another action</a></li>
-                                <li><a href="#" role="menuitem">Something else here</a></li>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="nav-dropdown-right">
+                                <li role="presentation"><a href="#" role="menuitem">Action</a></li>
+                                <li role="presentation"><a href="#" role="menuitem">Another action</a></li>
+                                <li role="presentation"><a href="#" role="menuitem">Something else here</a></li>
+
                                 <li class="divider"></li>
                                 <li role="presentation"><a href="#" role="menuitem">Separated link</a></li>
                             </ul>
-                        </div>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default ex-btn-inverse">
-                                <a href="#">FAQ</a>
-                            </button>
-                        </div>
-                    </span> <!-- /.navbar-right -->
+                        </li>
+                        <li><button class="btn-default">FAQ</button></li>
+                    </ul>
+
                 </div>  <!-- /.navbar-collapse -->
             </div> <!-- /.container-fluid -->
         </nav>

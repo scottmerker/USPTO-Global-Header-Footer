@@ -1,13 +1,13 @@
 {
   "name": "headerfooter",
-  "version": "0.0.0",
+  "version": "1.0",
   "dependencies": {},
   "devDependencies": {
     "USPTOPatternLibrary": "https://github.com/USPTO/designpatterns.git#v1.5.2",
     "jquery-ui": "^1.12.1"
   },
   "appPath": "resources",
-  "moduleName": "myusptoApp",
+  "moduleName": "universalHeaderFooter",
   "homepage": "https://github.com/USPTO/USPTO-Global-Header-Footer",
   "description": "USPTO header/footer",
   "main": "",
