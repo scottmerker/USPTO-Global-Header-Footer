@@ -3,8 +3,7 @@
   "version": "1.0",
   "dependencies": {},
   "devDependencies": {
-    "USPTOPatternLibrary": "https://github.com/USPTO/designpatterns.git#v1.5.2",
-    "jquery-ui": "^1.12.1"
+    "USPTOPatternLibrary": "https://github.com/USPTO/designpatterns.git#v1.5.2"
   },
   "appPath": "resources",
   "moduleName": "universalHeaderFooter",
