@@ -4,7 +4,8 @@ module.exports = function (grunt) {
 
     // global variables
     var globals = {
-        source: "src"           // path of source directory
+        source: ".",           // path of source directory
+        dist: "dist"           // path for distribution directory
     };
 
     // Define the configuration for all the tasks
@@ -25,13 +26,13 @@ module.exports = function (grunt) {
             all: {
                 src: [
                     'Gruntfile.js',
-                    '<%= globals.source %>/js/**/*.js'
+                    '<%= globals.source %>/scripts/**/*.js'
                 ]
             }
         },
 
-       less: {
-           development: {
+        less: {
+            development: {
                 options: {
                     compress: true
                 },
@@ -40,12 +41,57 @@ module.exports = function (grunt) {
                     "<%= globals.source %>/css/headerfooter.css": "<%= globals.source %>/css/headerfooter.less"
                 } // files
             } // development
-        } // less
+        }, // less
+
+        // copy files to the distribution directory
+        copy: {
+            dist: {
+                files: [{
+                    expand: true,
+                    dot: true,
+                    cwd: '<%= globals.source %>',
+                    dest: '<%= globals.dist %>',
+                    src: [
+                        '*.{ico,png,txt,md}',
+                        '*.html',
+                        'images/{,*/}*.{png,gif}',
+                        'scripts/*.{js}'
+                    ]
+                }, {
+                    expand: true,
+                    cwd: '<%= globals.source %>',
+                    dest: '<%= globals.dist %>',
+                    src: [
+                        'bower_components/jquery/dist/jquery.min.js',
+                        'bower_components/bootstrap/dist/js/bootstrap.min.js'
+                    ]
+                }]
+            },
+            css: {
+                expand: true,
+                cwd: '<%= globals.source %>',
+                dest: '<%= globals.dist %>',
+                src: 'css/{,*/}*.css'
+            },
+            // copy icons from design pattern library in bower components to images/icons
+            icons: {
+                files: [{
+                    expand: true,
+                    dot: true,
+                    cwd: 'bower_components/USPTOPatternLibrary/usptostrap/images/icons/',
+                    dest: '<%= globals.source %>/images/icons/',
+                    src: [
+                        '*.{webp,png,jpg,gif,svg}'
+                    ]
+                }]
+            }
+        } // copy
 
     });
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
     // default grunt task
     grunt.registerTask('default', [
@@ -55,7 +101,9 @@ module.exports = function (grunt) {
     // build the application
     grunt.registerTask('build', [
         'jshint:all',
-        'less'
+        'less',
+        'copy:dist',
+        'copy:css'
     ]);
 
 };

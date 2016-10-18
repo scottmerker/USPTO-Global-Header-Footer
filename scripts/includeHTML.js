@@ -24,11 +24,11 @@
             // load the file
             $(divList[i]).load(file, function(responseText, textStatus, jqXHR) {
                 /*
-                if (textStatus == "success") {
+                if (textStatus === "success") {
                     alert("success: loaded external content");
                 } //if
                 */
-                if (textStatus == "error") {
+                if (textStatus === "error") {
                     alert("error: " + jqXHR.status + ": " + jqXHR.statusText);
                 } // if
             });
