@@ -115,7 +115,7 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
 
 /*
  * button:hover works, but button:focus fails to produce the correct
- * behavior. An initial guess is there's an interaction with css/usptostrap.min.css
+ * behavior. An initial guess is there's an interaction with pattern-library.css
  * Similar code applies to .uspto-header-bottom
  */
 .uspto-header-top button:hover,
