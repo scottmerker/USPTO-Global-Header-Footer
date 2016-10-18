@@ -25,7 +25,7 @@ Node.js powers the front-end build and dependency management tools
 
 ```
 npm install -g grunt-cli
-npm install grunt grunt-contrib-jshint grunt-contrib-less --save-dev
+npm install grunt grunt-contrib-jshint grunt-contrib-less
 ```
 
 Install the project's dependencies with:
@@ -33,15 +33,7 @@ Install the project's dependencies with:
 npm install
 bower install
 ```
-Tweak the path in
-bower_components/USPTOPatternLibrary/usptostrap/less/usptostrap.less. Change
-```
-@bootstrap-path: "bootstrap/";
-```
-to
-```
-@bootstrap-path: "../../../bootstrap/";
-```
+
 Build the front-end assets (LESS/CSS/JS) with:
 ```
 grunt build
@@ -70,18 +62,12 @@ grunt build
 ## Browser support
 
 * Chrome *(latest 2)*
-* Edge *(latest 2)*
+* Internet Explorer 9+
 * Firefox *(latest 2)*
-* Internet Explorer 8+
-* Opera *(latest 2)*
 * Safari *(latest 2)*
 
 *This doesn't mean that HTML5 Boilerplate cannot be used in older browsers,
 just that we'll ensure compatibility with the ones mentioned above.*
-
-If you need legacy browser support (IE 6+, Firefox 3.6+, Safari 4+) you
-can use [HTML5 Boilerplate v4](https://github.com/h5bp/html5-boilerplate/tree/v4),
-but is no longer actively developed.
 
 
 ## Documentation
