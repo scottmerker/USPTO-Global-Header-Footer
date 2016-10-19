@@ -43,6 +43,22 @@ module.exports = function (grunt) {
             } // development
         }, // less
 
+        replace: {
+            dist:{
+                options: {
+                    patterns: [{
+                        match: /=\"dist\//g,
+                        replacement: '="'
+                    }]
+                },
+                files: [{
+                    expand: true,
+                    src: ['<%= globals.source %>/index.html'],
+                    dest: '<%= globals.dist %>'
+                }]
+            }
+        },
+
         // copy files to the distribution directory
         copy: {
             source: {
@@ -92,6 +108,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-replace');
 
     // default grunt task
     grunt.registerTask('default', [
@@ -103,7 +120,8 @@ module.exports = function (grunt) {
         'jshint:all',
         'less',
         'copy:source',
-        'copy:css'
+        'copy:css',
+        'replace:dist'
     ]);
 
 };

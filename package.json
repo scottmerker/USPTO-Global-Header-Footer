@@ -4,6 +4,7 @@
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-jshint": "^1.0.0",
     "grunt-contrib-less": "^1.4.0",
+    "grunt-replace": "^1.0.1",
     "jshint": "^2.9.3",
     "jshint-stylish": "^2.2.1"
   },

@@ -25,7 +25,8 @@ Node.js powers the front-end build and dependency management tools
 
 ```
 npm install -g grunt-cli
-npm install grunt grunt-contrib-jshint grunt-contrib-less grunt-contrib-copy
+npm install grunt grunt-contrib-jshint grunt-contrib-less
+npm install grunt-contrib-copy grunt-replace
 ```
 
 Install the project's dependencies with:
