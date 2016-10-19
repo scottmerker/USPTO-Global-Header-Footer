@@ -5,6 +5,9 @@
   "devDependencies": {
     "USPTOPatternLibrary": "https://github.com/USPTO/designpatterns.git#v1.5.2"
   },
+  "resolutions": {
+    "jquery": "^2.0"
+  },
   "appPath": "resources",
   "moduleName": "universalHeaderFooter",
   "homepage": "https://github.com/USPTO/USPTO-Global-Header-Footer",
