@@ -246,9 +246,11 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
         left: auto;
     }
 
-    .uspto-header-bottom button {
+    .uspto-header-bottom .navbar-collapse button {
         /* align the menu buttons with other header content */
         padding-left: 22px;
+        width: 100%;
+        text-align: left;
     }
 
     .navbar-toggle {

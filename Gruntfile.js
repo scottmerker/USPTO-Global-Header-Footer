@@ -44,6 +44,10 @@ module.exports = function (grunt) {
         }, // less
 
         replace: {
+            /*
+             * Remove the use of the "dist" directory from the index.html in
+             * the "dist" directory
+             */
             dist:{
                 options: {
                     patterns: [{
@@ -70,7 +74,7 @@ module.exports = function (grunt) {
                     src: [
                         '*.{ico,png,txt,md}',
                         '*.html',
-                        'images/{,*/}*.{png,gif}',
+                        'images/{,*/}*.{png,gif,svg}',
                         'scripts/*.js'
                     ]
                 }, {
