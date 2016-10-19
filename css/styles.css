@@ -52,10 +52,10 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
 
 .headerbar-smallHeading {
     display: inline-block;
-    color: #FFF;
+    color: #444;
     padding: 5px 19px;
     font-size: 16px;
-    background-color: #003F7E ;
+    background-color: #E2E2E2;
 }
 
 .uspto-header-top .dropdown-menu {
