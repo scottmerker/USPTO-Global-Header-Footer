@@ -45,7 +45,7 @@ module.exports = function (grunt) {
 
         // copy files to the distribution directory
         copy: {
-            dist: {
+            source: {
                 files: [{
                     expand: true,
                     dot: true,
@@ -55,7 +55,7 @@ module.exports = function (grunt) {
                         '*.{ico,png,txt,md}',
                         '*.html',
                         'images/{,*/}*.{png,gif}',
-                        'scripts/*.{js}'
+                        'scripts/*.js'
                     ]
                 }, {
                     expand: true,
@@ -102,7 +102,7 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'jshint:all',
         'less',
-        'copy:dist',
+        'copy:source',
         'copy:css'
     ]);
 
