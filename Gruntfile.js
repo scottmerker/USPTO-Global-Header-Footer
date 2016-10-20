@@ -108,6 +108,14 @@ module.exports = function (grunt) {
             }
         }, // copy
 
+        // concatenate the JavaScript files and place them in a temp directory
+        concat: {
+            dist: {
+                src: ['<%= globals.source %>/scripts/*.js'],
+                dest: '<%= globals.source %>/.tmp/headerFooter.concat.js'
+            }
+        }, // concat
+
         // minify the CSS and add a .min.css extension
         cssmin: {
             target: {
@@ -119,7 +127,20 @@ module.exports = function (grunt) {
                     ext: '.min.css'
                 }]
             }
-        } // cssmin
+        }, // cssmin
+
+        // compress and uglify the JavaScript
+        uglify: {
+            options: {
+                // the banner is inserted at the top of the output
+                banner: '/*! USPTO Header Footer <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+            },
+            dist: {
+                files: {
+                    '<%= globals.dist %>/scripts/headerFooter.min.js': ['<%= globals.source %>/.tmp/headerFooter.concat.js']
+                }
+            }
+        }
 
     });
 
@@ -128,6 +149,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-replace');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-concat');
 
     // default grunt task
     grunt.registerTask('default', [
@@ -141,7 +164,9 @@ module.exports = function (grunt) {
         'copy:source',
         'copy:css',
         'replace',
-        'cssmin'
+        'cssmin',
+        'concat',
+        'uglify'
     ]);
 
 };
