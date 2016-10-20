@@ -29,7 +29,9 @@
 
 
 # the following exclusion/inclusion trees are needed to tell git to just
-# include one file waaaay down in the directory tree
+# include one file waaaay down in the bower_components directory tree.
+# These components are included so that the site can always be run, even
+# if bower or the other dependencies aren't available.
 
 # include the USPTO pattern library CSS
 !/bower_components

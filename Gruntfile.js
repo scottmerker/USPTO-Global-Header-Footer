@@ -46,7 +46,7 @@ module.exports = function (grunt) {
         replace: {
             /*
              * Remove the use of the "dist" directory from the index.html in
-             * the "dist" directory
+             * the "dist" directory. Not used, but leaving this in just in case.
              */
             dist:{
                 options: {
@@ -125,8 +125,7 @@ module.exports = function (grunt) {
         'jshint:all',
         'less',
         'copy:source',
-        'copy:css',
-        'replace:dist'
+        'copy:css'
     ]);
 
 };
