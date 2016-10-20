@@ -83,7 +83,8 @@ module.exports = function (grunt) {
                     dest: '<%= globals.dist %>',
                     src: [
                         'bower_components/jquery/dist/jquery.min.js',
-                        'bower_components/bootstrap/dist/js/bootstrap.min.js'
+                        'bower_components/bootstrap/dist/js/bootstrap.min.js',
+                        'bower_components/USPTOPatternLibrary/generated/images/icons/*.svg'
                     ]
                 }]
             },
@@ -98,7 +99,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     dot: true,
-                    cwd: 'bower_components/USPTOPatternLibrary/usptostrap/images/icons/',
+                    cwd: 'bower_components/USPTOPatternLibrary/generated/images/icons/',
                     dest: '<%= globals.source %>/images/icons/',
                     src: [
                         '*.{webp,png,jpg,gif,svg}'

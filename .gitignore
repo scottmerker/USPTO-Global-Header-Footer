@@ -30,7 +30,7 @@
 # the following exclusion/inclusion trees are needed to tell git to just
 # include one file waaaay down in the directory tree
 
-# include the USPTO pattern library
+# include the USPTO pattern library CSS
 !/bower_components
 /bower_components/*
 !/bower_components/USPTOPatternLibrary
@@ -40,6 +40,12 @@
 !/bower_components/USPTOPatternLibrary/generated/styles
 /bower_components/USPTOPatternLibrary/generated/styles/*
 !/bower_components/USPTOPatternLibrary/generated/styles/pattern-library.css
+
+# include the USPTO pattern library CSS
+!/bower_components/USPTOPatternLibrary/generated/images
+/bower_components/USPTOPatternLibrary/generated/images/*
+!/bower_components/USPTOPatternLibrary/generated/images/icons
+
 
 # include jQuery
 !/bower_components/jquery
