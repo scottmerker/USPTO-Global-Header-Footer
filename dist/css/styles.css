@@ -163,12 +163,14 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
     padding-left: 9px;
 }
 
-.uspto-header-bottom button {
+.uspto-header-bottom button,
+.uspto-header-bottom .nav > li > a {
     color: #FFF;
     font-size: 14px;
     background-color: #004C97;
     border: none;
     padding: 6px 15px 6px 12px;
+    line-height: 1.4;
 }
 
 .uspto-header-bottom button > a {
@@ -176,7 +178,9 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
 }
 
 .uspto-header-bottom .nav > li > button:hover,
-.uspto-header-bottom .nav > li > button:focus {
+.uspto-header-bottom .nav > li > button:focus,
+.uspto-header-bottom .nav > li > a:hover,
+.uspto-header-bottom .nav > li > a:focus {
     text-decoration: none;
     background-color: #598ABB;
     color: #fff;
