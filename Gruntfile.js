@@ -106,7 +106,20 @@ module.exports = function (grunt) {
                     ]
                 }]
             }
-        } // copy
+        }, // copy
+
+        // minify the CSS and add a .min.css extension
+        cssmin: {
+            target: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= globals.source %>/css',
+                    src: ['*.css', '!*.min.css'],
+                    dest: '<%= globals.dist %>/css',
+                    ext: '.min.css'
+                }]
+            }
+        } // cssmin
 
     });
 
@@ -114,6 +127,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-replace');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
 
     // default grunt task
     grunt.registerTask('default', [
@@ -125,7 +139,9 @@ module.exports = function (grunt) {
         'jshint:all',
         'less',
         'copy:source',
-        'copy:css'
+        'copy:css',
+        'replace',
+        'cssmin'
     ]);
 
 };

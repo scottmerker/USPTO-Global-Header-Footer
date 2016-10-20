@@ -138,6 +138,10 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
     border-bottom: none;
 }
 
+.uspto-header-top ul.dropdown-menu li.divider {
+    border-bottom: none;
+}
+
 /* header middle */
 .uspto-header-middle .container, .uspto-header-middle .container-fluid {
     background-color: #ebebeb;
@@ -216,7 +220,7 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
 
     #headerSmallHeadingMobile {
         display: inline-block;
-        height: 35px;
+        height: 36px;
     }
 
     .collapse-header #headerSmallHeading {
