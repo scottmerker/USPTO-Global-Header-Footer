@@ -144,7 +144,32 @@ module.exports = function (grunt) {
                     ext: '.min.js'
                 }]
             }
-        } // uglify
+        }, // uglify
+
+        // build a ZIP file
+        compress: {
+            main: {
+                options: {
+                    mode: 'zip',
+                    archive: '../USPTO-Global-Header-Footer-v1.X.X.zip'
+                },
+                files: [
+                    {
+                        expand: true,
+                        cwd: '.',
+                        src: [
+                            '**',   // include everything
+                            '!archive/**',
+                            '!node_modules/**',
+                            '!bower_components/**',
+                            '!.idea/**',
+                            '!**.iml',
+                            '!.tmp/**',
+                        ]
+                    }
+                ]
+            }
+        } // compress
 
     });
 
@@ -155,10 +180,16 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-compress');
 
     // default grunt task
     grunt.registerTask('default', [
         'build' // Run grunt.registerTask('build')
+    ]);
+
+    // build a ZIP file to include with releases
+    grunt.registerTask('zip', [
+        'compress'
     ]);
 
     // build the application
