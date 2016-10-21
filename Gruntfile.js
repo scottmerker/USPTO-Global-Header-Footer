@@ -159,12 +159,14 @@ module.exports = function (grunt) {
                         cwd: '.',
                         src: [
                             '**',   // include everything
+                            '.**',
                             '!archive/**',
                             '!node_modules/**',
                             '!bower_components/**',
                             '!.idea/**',
+                            '!.git/**',
                             '!**.iml',
-                            '!.tmp/**',
+                            '!.tmp/**'
                         ]
                     }
                 ]
