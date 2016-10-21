@@ -92,7 +92,7 @@ module.exports = function (grunt) {
                 expand: true,
                 cwd: '<%= globals.source %>',
                 dest: '<%= globals.dist %>',
-                src: 'css/{,*/}*.css'
+                src: 'css/{,*/}*.{css,less}'
             },
             // copy icons from design pattern library in bower components to images/icons
             icons: {
@@ -135,12 +135,16 @@ module.exports = function (grunt) {
                 // the banner is inserted at the top of the output
                 banner: '/*! USPTO Header Footer <%= grunt.template.today("dd-mm-yyyy") %> */\n'
             },
-            dist: {
-                files: {
-                    '<%= globals.dist %>/scripts/headerFooter.min.js': ['<%= globals.source %>/.tmp/headerFooter.concat.js']
-                }
+            build: {
+                files: [{
+                    expand: true,
+                    src: '**/*.js',
+                    dest: '<%= globals.dist %>/scripts',
+                    cwd: '<%= globals.source %>/scripts',
+                    ext: '.min.js'
+                }]
             }
-        }
+        } // uglify
 
     });
 
@@ -165,7 +169,6 @@ module.exports = function (grunt) {
         'copy:css',
         'replace',
         'cssmin',
-        'concat',
         'uglify'
     ]);
 
