@@ -271,6 +271,13 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
          * overlay other content unless you add padding to the top of the <body>.
          */
         padding-top: 60px;
+        /*
+         * Position the footer when there's not enough page content to push it off
+         * the screen.
+         * 110px = amount of footer that's shown when there's not enough content to
+         * fill the page and push the footer out of sight
+         */
+        min-height: calc(100vh - 105px);
     }
 }
 
