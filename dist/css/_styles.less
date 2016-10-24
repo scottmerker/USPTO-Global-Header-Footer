@@ -1,3 +1,6 @@
+// root directory for images, relative to the location of index.html
+@image-root: "../images";
+
 /* remove the underscore on hyperlinks */
 .uspto-header-top a, .uspto-header-bottom a,
 .uspto-footer-top a, .uspto-footer-middle a {
@@ -12,7 +15,7 @@
 }
 
 .uspto-header-top a.uspto-logo {
-  background: transparent url('../images/logo-micro.png') no-repeat left center;
+  background: transparent url('@{image-root}/logo-micro.png') no-repeat left center;
   background-size: contain;
   width: 78px;
   height: 27px;
@@ -30,7 +33,7 @@
 only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2),
 only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .uspto-header-top a.uspto-logo {
-    background: transparent url('../images/retina/logo-micro.png') no-repeat left center;
+    background: transparent url('@{image-root}/retina/logo-micro.png') no-repeat left center;
     background-size: contain;
     width: 78px;
     height: 27px;
@@ -195,7 +198,7 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
   color: #FFF;
 }
 
-#mainArea {
+body main {
   /*
    * Push the main body content below the header. The Bootstrap fixed navbar will
    * overlay other content unless you add padding to the top of the <body>.
@@ -210,7 +213,8 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
   min-height: calc(100vh - 110px);
 }
 
-#mainArea .container-fluid, #mainArea .container {
+body main .container-fluid,
+body main .container {
   margin-left: 15px;
   margin-right: 15px;
 }
@@ -265,12 +269,19 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
     padding: 5px 10px;
   }
 
-  #mainArea {
+  body main {
     /*
      * Push the main body content below the header. The Bootstrap fixed navbar will
      * overlay other content unless you add padding to the top of the <body>.
      */
     padding-top: 60px;
+    /*
+     * Position the footer when there's not enough page content to push it off
+     * the screen.
+     * 110px = amount of footer that's shown when there's not enough content to
+     * fill the page and push the footer out of sight
+     */
+    min-height: calc(100vh - 105px);
   }
 }
 
@@ -291,14 +302,14 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
 }
 
 .uspto-footer-logo a.logo {
-  background: transparent url('../images/logo-small.png') no-repeat left center;
+  background: transparent url('@{image-root}/logo-small.png') no-repeat left center;
   /* logo sizing on small screen - this is overriden by a media rule for large screens */
   height: 57px;
   display: block;
 }
 
 .uspto-footer-watermark {
-  background: url('../images/logo-watermark.png') no-repeat left top;
+  background: url('@{image-root}/logo-watermark.png') no-repeat left top;
   background-size: contain;
   position: absolute;
   z-index: 0;
@@ -354,7 +365,7 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
   }
 
   .uspto-footer-logo a.logo {
-    background: transparent url('../images/logo.png') no-repeat left center;
+    background: transparent url('@{image-root}/logo.png') no-repeat left center;
     /* logo sizing on large screen */
     height: 62px;
     display: block;

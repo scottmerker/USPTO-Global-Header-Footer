@@ -195,7 +195,7 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
     color: #FFF;
 }
 
-#mainArea {
+body main {
     /*
      * Push the main body content below the header. The Bootstrap fixed navbar will
      * overlay other content unless you add padding to the top of the <body>.
@@ -210,7 +210,8 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
     min-height: calc(100vh - 110px);
 }
 
-#mainArea .container-fluid, #mainArea .container {
+body main .container-fluid,
+body main .container {
     margin-left: 15px;
     margin-right: 15px;
 }
@@ -265,12 +266,19 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
         padding: 5px 10px;
     }
 
-    #mainArea {
+    body main {
         /*
          * Push the main body content below the header. The Bootstrap fixed navbar will
          * overlay other content unless you add padding to the top of the <body>.
          */
         padding-top: 60px;
+        /*
+         * Position the footer when there's not enough page content to push it off
+         * the screen.
+         * 110px = amount of footer that's shown when there's not enough content to
+         * fill the page and push the footer out of sight
+         */
+        min-height: calc(100vh - 105px);
     }
 }
 
