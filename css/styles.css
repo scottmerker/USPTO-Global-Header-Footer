@@ -226,7 +226,7 @@ body main .container {
 
     #headerSmallHeadingMobile {
         display: inline-block;
-        height: 36px;
+        height: 37px;
     }
 
     .collapse-header #headerSmallHeading {
@@ -247,7 +247,7 @@ body main .container {
 
     .uspto-header-top .trademark-menu {
         min-width: 240px;
-        left: auto;
+        left: -80px;
     }
 
     .uspto-header-top .patent-menu {

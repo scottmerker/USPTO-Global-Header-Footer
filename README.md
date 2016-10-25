@@ -40,12 +40,13 @@ npm install
 bower install
 ```
 
-Build the front-end assets (LESS/CSS/JS) and copy them into the dist
+Build the front-end assets (LESS/CSS/JS) and copy them into the `dist`
 directory with:
 ```
 grunt build
 ```
-
+The site is now ready for use.
+ 
 ## Site Structure
 
 The source code is arranged like this after you've installed
