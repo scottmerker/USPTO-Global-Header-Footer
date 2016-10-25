@@ -24,16 +24,17 @@ Node.js powers the front-end build and dependency management tools
 going to need the [Git](https://git-scm.com/) version control system
 tools.
 
-To install Grunt and Bower:
+To install [Grunt](http://gruntjs.com/) and [Bower](http://bower.io/),
+and the tools used by Grunt:
 ```
 npm install -g grunt-cli bower
 npm install grunt grunt-contrib-jshint grunt-contrib-less
 npm install grunt-contrib-copy grunt-contrib-cssmin
-npm install grint-contrib-uglify grunt-contrib-concat
+npm install grunt-contrib-uglify grunt-contrib-concat
 npm install grunt-replace grunt-contrib-compress
 ```
 
-Install the project's dependencies with:
+Run the following commands to install the project's dependencies:
 ```
 npm install
 bower install
