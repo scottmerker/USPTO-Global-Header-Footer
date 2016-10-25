@@ -12,8 +12,7 @@ for USPTO web apps or sites.
 
 Choose one of the following options:
 1. Download the latest stable release from
-   [USPTO-Global-Header-Footer](https://github.com/USPTO/USPTO-Global-Header-Footer) or create a
-   custom build using [Initializr](http://www.initializr.com).
+   [USPTO-Global-Header-Footer](https://github.com/USPTO/USPTO-Global-Header-Footer)
 2. Clone the git repo — `git clone
    https://github.com/USPTO/USPTO-Global-Header-Footer` - and checkout the
    [tagged release](https://github.com/USPTO/USPTO-Global-Header-Footer/releases)
@@ -21,13 +20,17 @@ Choose one of the following options:
 
 You will also need to install [Node.js](https://nodejs.org/en/).
 Node.js powers the front-end build and dependency management tools
-[Grunt](http://gruntjs.com/) and [Bower](http://bower.io/).
+[Grunt](http://gruntjs.com/) and [Bower](http://bower.io/). You're also
+going to need the [Git](https://git-scm.com/) version control system
+tools.
 
+To install Grunt and Bower:
 ```
-npm install -g grunt-cli
+npm install -g grunt-cli bower
 npm install grunt grunt-contrib-jshint grunt-contrib-less
-npm install grunt-contrib-copy grunt-replace grunt-contrib-cssmin
+npm install grunt-contrib-copy grunt-contrib-cssmin
 npm install grint-contrib-uglify grunt-contrib-concat
+npm install grunt-replace grunt-contrib-compress
 ```
 
 Install the project's dependencies with:
@@ -36,49 +39,60 @@ npm install
 bower install
 ```
 
-Build the front-end assets (LESS/CSS/JS) with:
+Build the front-end assets (LESS/CSS/JS) and copy them into the dist
+directory with:
 ```
 grunt build
 ```
 
-## Features
+## Site Structure
 
-* HTML5 ready. Use the new elements with confidence.
-* Designed with progressive enhancement in mind.
-* Includes:
-  * [`Normalize.css`](https://necolas.github.com/normalize.css/)
-    for CSS normalizations and common bug fixes
-  * [`jQuery`](https://jquery.com/) via CDN, with a local fallback
-  * [`Apache Server Configs`](https://github.com/h5bp/server-configs-apache)
-    that, among other, improve the web site's performance and security
-* Placeholder CSS Media Queries.
-* Useful CSS helper classes.
-* Default print styles, performance optimized.
-* An optimized version of the Google Universal Analytics snippet.
-* Protection against any stray `console` statements causing JavaScript
-  errors in older browsers.
-* "Delete-key friendly." Easy to strip out parts you don't need.
-* Extensive inline and accompanying documentation.
+The source code is arranged like this after you've installed
+all of the components needed to build the site:
 
+```
+.
+├── bower_components
+├── css
+│   ├── _styles.css
+│   └── styles.css
+├── dist
+│   ├── bower_components
+│       ├── bootstrap
+│       ├── jquery
+│       └── USPTOPatternLibrary
+│   ├── css
+│   ├── images
+│   ├── scripts
+│   └── other source files
+├── images
+├── node_modules
+├── scripts
+│   ├── collapseHeader.js
+│   └── includeHTML.js
+├── .gitattributes
+├── .gitignore
+├── .jshinitrc
+├── bower.json
+├── footer.html
+├── Gruntfile.js
+├── header.html
+├── index.html
+├── LICENSE.txt
+├── package.json
+├── READNE.md
+└── TERMS.md
+```
 
 ## Browser support
 
-* Chrome *(latest 2)*
+* Chrome
 * Internet Explorer 9+
-* Firefox *(latest 2)*
-* Safari *(latest 2)*
+* Firefox
+* Safari
 
-*This doesn't mean that HTML5 Boilerplate cannot be used in older browsers,
+*This doesn't mean that the template can't be used in older browsers,
 just that we'll ensure compatibility with the ones mentioned above.*
-
-
-## Documentation
-
-Take a look at the [documentation table of contents](dist/doc/TOC.md).
-This documentation is bundled with the project, which makes it readily
-available for offline reading and provides a useful starting point for
-any documentation you want to write about your project.
-
 
 ## License
 

@@ -201,7 +201,8 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
 body main {
   /*
    * Push the main body content below the header. The Bootstrap fixed navbar will
-   * overlay other content unless you add padding to the top of the <body>.
+   * overlay other content unless you add padding to the top of the <body>. This
+   * is because fixed position elements are removed from the document flow.
    */
   padding-top: 100px;
   /*
@@ -272,7 +273,8 @@ body main .container {
   body main {
     /*
      * Push the main body content below the header. The Bootstrap fixed navbar will
-     * overlay other content unless you add padding to the top of the <body>.
+     * overlay other content unless you add padding to the top of the <body>. This
+     * is because fixed position elements are removed from the document flow.
      */
     padding-top: 60px;
     /*
