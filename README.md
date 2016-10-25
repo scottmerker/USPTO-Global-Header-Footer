@@ -54,7 +54,7 @@ all of the components needed to build the site:
 .
 ├── bower_components
 ├── css
-│   ├── _styles.css
+│   ├── _styles.less
 │   └── styles.css
 ├── dist
 │   ├── bower_components
@@ -83,16 +83,51 @@ all of the components needed to build the site:
 ├── READNE.md
 └── TERMS.md
 ```
+Below is an overview of the major directories and files.
+
+### css
+
+This directory contains the CSS and LESS files for the project. The styles
+preserve useful defaults from the
+[USPTO UI Design Library](https://uspto.github.io/designpatterns/), making
+changes where needed. The style sheets include media queries to support mobile
+browsers, but nothing nothing to optimize printing.
+
+### dist
+
+This directory contains everything you need to use or run the site. It includes
+minified copies of the CSS and JavaScript files.
+
+### images
+
+This directory contains non-icon images used by the header and footer. Icons
+are drawn from the from the standard
+[USPTO UI Design Library](https://uspto.github.io/designpatterns/).
+
+### scripts
+
+This directory contains the JavaScript needed to run the header and footer.
+It includes code used by the sample `index.html`, as well as any code needed
+by the header or footer.
+
+#### collapseHeader.js
+
+This script provides the automation needed to collapse and expand the header
+when the user scrolls the page. A minified version is available in the
+`dist/scripts` directory.
+
+#### includeHTML.js
 
 ## Browser support
 
+This code is intended to work with the latest versions of:
 * Chrome
 * Internet Explorer 9+
 * Firefox
 * Safari
 
 *This doesn't mean that the template can't be used in older browsers,
-just that we'll ensure compatibility with the ones mentioned above.*
+just that we'll work to ensure compatibility with the ones mentioned above.*
 
 ## License
 
