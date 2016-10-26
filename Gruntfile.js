@@ -5,7 +5,8 @@ module.exports = function (grunt) {
     // global variables
     var globals = {
         source: ".",           // path of source directory
-        dist: "dist"           // path for distribution directory
+        dist: "dist",          // path for distribution directory
+        banner: '/* USPTO Header Footer <%= grunt.template.today("dd-mm-yyyy") %> */\n'
     };
 
     // Define the configuration for all the tasks
@@ -31,14 +32,17 @@ module.exports = function (grunt) {
             }
         },
 
+        // convert LESS to CSS
         less: {
             development: {
                 options: {
-                    compress: true
+                    compress: false,  // compress output by removing some whitespaces
+                    // the banner is inserted at the top of the output
+                    banner: "<%= globals.banner %>"
                 },
                 files: {
                     // to file : from file
-                    "<%= globals.source %>/css/headerfooter.css": "<%= globals.source %>/css/headerfooter.less"
+                    "<%= globals.source %>/css/styles.css": "<%= globals.source %>/css/_styles.less"
                 } // files
             } // development
         }, // less
@@ -133,7 +137,7 @@ module.exports = function (grunt) {
         uglify: {
             options: {
                 // the banner is inserted at the top of the output
-                banner: '/*! USPTO Header Footer <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+                banner: "<%= globals.banner %>"
             },
             build: {
                 files: [{
