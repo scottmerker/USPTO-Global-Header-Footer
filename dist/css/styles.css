@@ -1,4 +1,7 @@
 /* USPTO Header Footer 26-10-2016 */
+/* color variables */
+/* width variables */
+/* height variables */
 /* remove the underscore on hyperlinks */
 .uspto-header-top a,
 .uspto-header-bottom a,
@@ -7,6 +10,14 @@
   text-decoration: none;
 }
 /* header top */
+.uspto-header-top {
+  /* make an icon bigger */
+  /*
+     * button:hover works, but button:focus fails to produce the correct
+     * behavior. An initial guess is there's an interaction with pattern-library.css
+     * Similar code applies to .uspto-header-bottom
+     */
+}
 .uspto-header-top .container,
 .uspto-header-top .container-fluid {
   padding: 0 5px 0 0;
@@ -22,36 +33,10 @@
   margin-left: 21px;
   margin-top: 12px;
   /*
-     * IE7 and IE8 render resized images (width or height tags are set)
-     * improperly if this isn't set. This is IE-specific.
-     */
+         * IE7 and IE8 render resized images (width or height tags are set)
+         * improperly if this isn't set. This is IE-specific.
+         */
   -ms-interpolation-mode: bicubic;
-}
-@media only screen and (min-resolution: 2dppx), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .uspto-header-top a.uspto-logo {
-    background: transparent url('../images/retina/logo-micro.png') no-repeat left center;
-    background-size: contain;
-    width: 78px;
-    height: 27px;
-  }
-}
-#headerSmallHeading,
-#headerSmallHeadingMobile {
-  display: none;
-}
-.collapse-header #headerSmallHeading {
-  display: inline-block;
-  margin-left: -8px;
-}
-.collapse-header .uspto-header-middle {
-  display: none;
-}
-.headerbar-smallHeading {
-  display: inline-block;
-  color: #444;
-  padding: 5px 19px;
-  font-size: 16px;
-  background-color: #E2E2E2;
 }
 .uspto-header-top .dropdown-menu {
   background-color: #282828;
@@ -67,7 +52,7 @@
 }
 .uspto-header-top .dropdown-menu > li > a {
   line-height: 2.5;
-  color: #CCC;
+  color: #ccc;
 }
 .uspto-header-top .dropdown-menu > li > a:hover {
   background-color: #323232;
@@ -78,12 +63,11 @@
 .uspto-header-top .icon-btn {
   min-width: 17px;
 }
-/* make an icon bigger */
 .uspto-header-top .bigger {
   transform: scale(1.2);
 }
 .uspto-header-top button {
-  color: #CCC;
+  color: #ccc;
   font-weight: 400;
   text-decoration: none;
   /* margin top, right, bottom, and left */
@@ -93,16 +77,14 @@
   vertical-align: middle;
   border-radius: 4px;
   text-align: center;
-  background: #FFF;
+  background: #fff;
   /* fallback color for old browsers */
   background: rgba(255, 255, 255, 0.05);
 }
-/*
- * button:hover works, but button:focus fails to produce the correct
- * behavior. An initial guess is there's an interaction with pattern-library.css
- * Similar code applies to .uspto-header-bottom
- */
-.uspto-header-top button:hover,
+.uspto-header-top button:hover {
+  background-color: #282828;
+  color: #fff;
+}
 .uspto-header-top .ex-btn-inverse.btn:focus {
   background-color: #282828;
   color: #fff;
@@ -122,6 +104,29 @@
 .uspto-header-top ul.dropdown-menu li.divider {
   border-bottom: none;
 }
+@media only screen and (min-resolution: 2dppx), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .uspto-header-top a.uspto-logo {
+    background: transparent url('../images/retina/logo-micro.png') no-repeat left center;
+    background-size: contain;
+    width: 78px;
+    height: 27px;
+  }
+}
+#headerSmallHeading,
+#headerSmallHeadingMobile {
+  display: none;
+}
+.collapse-header #headerSmallHeading {
+  display: inline-block;
+  margin-left: -8px;
+}
+.headerbar-smallHeading {
+  display: inline-block;
+  color: #444;
+  padding: 5px 19px;
+  font-size: 16px;
+  background-color: #E2E2E2;
+}
 /* header middle */
 .uspto-header-middle .container,
 .uspto-header-middle .container-fluid {
@@ -134,82 +139,74 @@
   padding-bottom: 3px;
   font-size: 32px;
 }
+.uspto-header-middle .collapse-header {
+  display: none;
+}
 /* header bottom */
 .uspto-header-bottom .container,
 .uspto-header-bottom .container-fluid {
-  background-color: #004C97;
+  background-color: #004c97;
   /* shift the bottom left menu to align with other header content */
   padding-left: 9px;
 }
 .uspto-header-bottom button,
 .uspto-header-bottom .nav > li > a {
-  color: #FFF;
+  color: #fff;
   font-size: 14px;
-  background-color: #004C97;
+  background-color: #004c97;
   border: none;
   padding: 6px 15px 6px 12px;
   line-height: 1.4;
 }
 .uspto-header-bottom button > a {
-  color: #FFF;
+  color: #fff;
 }
 .uspto-header-bottom .nav > li > button:hover,
 .uspto-header-bottom .nav > li > button:focus,
 .uspto-header-bottom .nav > li > a:hover,
 .uspto-header-bottom .nav > li > a:focus {
   text-decoration: none;
-  background-color: #598ABB;
+  background-color: #598abb;
   color: #fff;
 }
 .uspto-header-bottom .navbar-nav .open .dropdown-menu {
   background-color: #fff;
 }
 .uspto-header-bottom .open > .dropdown-toggle.btn-default {
-  background-color: #598ABB;
-  color: #FFF;
+  background-color: #598abb;
+  color: #fff;
 }
 body main {
   /*
-     * Push the main body content below the header. The Bootstrap fixed navbar will
-     * overlay other content unless you add padding to the top of the <body>. This
-     * is because fixed position elements are removed from the document flow.
-     */
+         * Push the main body content below the header. The Bootstrap fixed navbar will
+         * overlay other content unless you add padding to the top of the <body>. This
+         * is because fixed position elements are removed from the document flow.
+         */
   padding-top: 100px;
   /*
-     * Position the footer when there's not enough page content to push it off
-     * the screen.
-     * 110px = amount of footer that's shown when there's not enough content to
-     * fill the page and push the footer out of sight
-     */
+         * Position the footer when there's not enough page content to push it off
+         * the screen.
+         * 110px = amount of footer that's shown when there's not enough content to
+         * fill the page and push the footer out of sight
+         */
   min-height: calc(-10vh);
 }
-body main .container-fluid,
-body main .container {
+body main .container,
+body main .container-fluid {
   margin-left: 15px;
   margin-right: 15px;
+}
+body footer {
+  background-color: #363636;
+  padding-top: 1.4em;
+  padding-bottom: 1em;
+  margin-top: 18px;
 }
 /* media rules for xs screens */
 @media (max-width: 767px) {
   .uspto-header-top ul.dropdown-menu li a {
     line-height: 2.1;
     padding: 3px 15px;
-  }
-  #headerSmallHeadingMobile {
-    display: inline-block;
-    height: 37px;
-  }
-  .collapse-header #headerSmallHeading {
-    display: none;
-  }
-  .collapse-header #headerSmallHeadingMobile {
-    display: inline-block;
-  }
-  .uspto-header-middle {
-    display: none;
-  }
-  .uspto-header-middle .container,
-  .uspto-header-middle .container-fluid {
-    font-size: 26px;
   }
   .uspto-header-top .trademark-menu {
     min-width: 240px;
@@ -220,7 +217,19 @@ body main .container {
     right: auto;
     left: auto;
   }
-  .uspto-header-bottom .navbar-collapse button {
+  #headerSmallHeadingMobile {
+    display: inline-block;
+    height: 37px;
+  }
+  .uspto-header-middle {
+    display: none;
+  }
+  .uspto-header-middle .container,
+  .uspto-header-middle .container-fluid {
+    font-size: 26px;
+  }
+  .uspto-header-bottom .navbar-collapse button,
+  .uspto-header-bottom .nav > li > a {
     /* align the menu buttons with other header content */
     padding-left: 22px;
     width: 100%;
@@ -231,17 +240,17 @@ body main .container {
   }
   body main {
     /*
-         * Push the main body content below the header. The Bootstrap fixed navbar will
-         * overlay other content unless you add padding to the top of the <body>. This
-         * is because fixed position elements are removed from the document flow.
-         */
+             * Push the main body content below the header. The Bootstrap fixed navbar will
+             * overlay other content unless you add padding to the top of the <body>. This
+             * is because fixed position elements are removed from the document flow.
+             */
     padding-top: 60px;
     /*
-         * Position the footer when there's not enough page content to push it off
-         * the screen.
-         * 110px = amount of footer that's shown when there's not enough content to
-         * fill the page and push the footer out of sight
-         */
+             * Position the footer when there's not enough page content to push it off
+             * the screen.
+             * 110px = amount of footer that's shown when there's not enough content to
+             * fill the page and push the footer out of sight
+             */
     min-height: calc(-5vh);
   }
 }
@@ -251,13 +260,6 @@ body main .container {
   background: #ccc;
   color: #000;
   padding: 0.2em 0;
-}
-/* footer */
-#global-footer {
-  background-color: #363636;
-  padding-top: 1.4em;
-  padding-bottom: 1em;
-  margin-top: 18px;
 }
 .uspto-footer-logo a.logo {
   background: transparent url('../images/logo-small.png') no-repeat left center;

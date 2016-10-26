@@ -1,6 +1,24 @@
 // root directory for images, relative to the location of index.html
 @image-root: "../images";
 
+/* color variables */
+@color-white: #fff;     // white
+@color-bottom-background: #004c97;
+@color-header-dropdown: #282828;
+@color-header-background: #323232;
+@color-header-text: #ccc;
+@color-light-blue: #598abb;
+@color-dark-grey: #444;
+@color-header-middle: #ebebeb;
+
+/* width variables */
+@width-100: 100%;
+@width-header-logo: 78px;
+
+/* height variables */
+@height-header-logo: 27px;
+@height-header-top: 49px;
+
 /* remove the underscore on hyperlinks */
 .uspto-header-top a, .uspto-header-bottom a,
 .uspto-footer-top a, .uspto-footer-middle a {
@@ -8,26 +26,105 @@
 }
 
 /* header top */
-.uspto-header-top .container, .uspto-header-top .container-fluid {
-    padding: 0 5px 0 0;
-    background-color: #323232;
-    height: 49px;
-}
 
-.uspto-header-top a.uspto-logo {
-    background: transparent url('@{image-root}/logo-micro.png') no-repeat left center;
-    background-size: contain;
-    width: 78px;
-    height: 27px;
-    display: inline-block;
-    margin-left: 21px;
-    margin-top: 12px;
+.uspto-header-top {
+    .container,
+    .container-fluid {
+        padding: 0 5px 0 0;
+        background-color: @color-header-background;
+        height: @height-header-top;
+    }
+    a.uspto-logo {
+        background: transparent url('@{image-root}/logo-micro.png') no-repeat left center;
+        background-size: contain;
+        width: @width-header-logo;
+        height: @height-header-logo;
+        display: inline-block;
+        margin-left: 21px;
+        margin-top: 12px;
+        /*
+         * IE7 and IE8 render resized images (width or height tags are set)
+         * improperly if this isn't set. This is IE-specific.
+         */
+        -ms-interpolation-mode: bicubic;
+    }
+    .dropdown-menu {
+        background-color: @color-header-dropdown;
+    }
+    .patent-menu {
+        min-width: 275px;
+    }
+    .trademark-menu {
+        min-width: 350px;
+    }
+    .fees-menu {
+        min-width: 200px;
+    }
+    .dropdown-menu > li > a {
+        line-height: 2.5;
+        color: @color-header-text;
+        &:hover {
+            background-color: @color-header-background;
+        }
+    }
+    .dropdown-menu {
+        margin: 0;
+    }
+    .icon-btn {
+        min-width: 17px;
+    }
+    /* make an icon bigger */
+    .bigger {
+        transform: scale(1.2);
+    }
+    button {
+        color: @color-header-text;
+        font-weight: 400;
+        text-decoration: none;
+        /* margin top, right, bottom, and left */
+        margin: 9px 5px 0 0;
+        box-shadow: none;
+        padding: 8px 8px;
+        vertical-align: middle;
+        border-radius: 4px;
+        text-align: center;
+        background: @color-white;    /* fallback color for old browsers */
+        background: rgba(255, 255, 255, 0.05);
+        &:hover {
+            background-color: @color-header-dropdown;
+            color: @color-white;
+        }
+    }
     /*
-     * IE7 and IE8 render resized images (width or height tags are set)
-     * improperly if this isn't set. This is IE-specific.
+     * button:hover works, but button:focus fails to produce the correct
+     * behavior. An initial guess is there's an interaction with pattern-library.css
+     * Similar code applies to .uspto-header-bottom
      */
-    -ms-interpolation-mode: bicubic;
-}
+    .ex-btn-inverse.btn {
+        &:focus {
+            background-color: @color-header-dropdown;
+            color: @color-white;
+        }
+    }
+    .open > .btn-default {
+        background: @color-header-dropdown;
+    }
+
+    .btn-default {
+        border-style: none;
+    }
+    ul.dropdown-menu {
+        li {
+            border-bottom: 1px solid @color-dark-grey;
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+        li.divider {
+            border-bottom: none;
+        }
+    }
+} // .uspto-header-top
 
 @media only screen and (min-resolution: 2dppx), only screen and (min--moz-device-pixel-ratio: 2),
 only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2),
@@ -35,279 +132,200 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
     .uspto-header-top a.uspto-logo {
         background: transparent url('@{image-root}/retina/logo-micro.png') no-repeat left center;
         background-size: contain;
-        width: 78px;
-        height: 27px;
+        width: @width-header-logo;
+        height: @height-header-logo;
     }
 }
 
-#headerSmallHeading, #headerSmallHeadingMobile {
+#headerSmallHeading,
+#headerSmallHeadingMobile {
     display: none;
 }
 
-.collapse-header #headerSmallHeading {
-    display: inline-block;
-    margin-left: -8px;
-}
-
-.collapse-header .uspto-header-middle {
-    display: none;
-}
+.collapse-header {
+    #headerSmallHeading {
+        display: inline-block;
+        margin-left: -8px;
+    }
+} // .collapse-header
 
 .headerbar-smallHeading {
     display: inline-block;
-    color: #444;
+    color: @color-dark-grey;
     padding: 5px 19px;
     font-size: 16px;
     background-color: #E2E2E2;
 }
 
-.uspto-header-top .dropdown-menu {
-    background-color: #282828;
-}
-
-.uspto-header-top .patent-menu {
-    min-width: 275px;
-}
-
-.uspto-header-top .trademark-menu {
-    min-width: 350px;
-}
-
-.uspto-header-top .fees-menu {
-    min-width: 200px;
-}
-
-.uspto-header-top .dropdown-menu > li > a {
-    line-height: 2.5;
-    color: #CCC;
-}
-
-.uspto-header-top .dropdown-menu > li > a:hover {
-    background-color: #323232;
-}
-
-.uspto-header-top .dropdown-menu {
-    margin: 0;
-}
-
-.uspto-header-top .icon-btn {
-    min-width: 17px;
-}
-
-/* make an icon bigger */
-.uspto-header-top .bigger {
-    transform: scale(1.2);
-}
-
-.uspto-header-top button {
-    color: #CCC;
-    font-weight: 400;
-    text-decoration: none;
-    /* margin top, right, bottom, and left */
-    margin: 9px 5px 0 0;
-    box-shadow: none;
-    padding: 8px 8px;
-    vertical-align: middle;
-    border-radius: 4px;
-    text-align: center;
-    background: #FFF;    /* fallback color for old browsers */
-    background: rgba(255, 255, 255, 0.05);
-}
-
-/*
- * button:hover works, but button:focus fails to produce the correct
- * behavior. An initial guess is there's an interaction with pattern-library.css
- * Similar code applies to .uspto-header-bottom
- */
-.uspto-header-top button:hover,
-.uspto-header-top .ex-btn-inverse.btn:focus {
-    background-color: #282828;
-    color: #fff;
-}
-
-.uspto-header-top .open > .btn-default {
-    background: #282828;
-}
-
-.uspto-header-top .btn-default {
-    border-style: none;
-}
-
-.uspto-header-top ul.dropdown-menu li {
-    border-bottom: 1px solid #444;
-}
-
-.uspto-header-top ul.dropdown-menu li:last-child {
-    border-bottom: none;
-}
-
-.uspto-header-top ul.dropdown-menu li.divider {
-    border-bottom: none;
-}
-
 /* header middle */
-.uspto-header-middle .container, .uspto-header-middle .container-fluid {
-    background-color: #ebebeb;
-}
 
-.uspto-header-middle .container span, .uspto-header-middle .container-fluid span {
-    margin-left: 10px;
-    display: inline-block;
-    padding-bottom: 3px;
-    font-size: 32px;
-}
+.uspto-header-middle {
+    .container,
+    .container-fluid {
+        background-color: @color-header-middle;
+        span {
+            margin-left: 10px;
+            display: inline-block;
+            padding-bottom: 3px;
+            font-size: 32px;
+        }
+    }
+    // hide the middle header when scrolling
+    .collapse-header {
+        display: none;
+    }
+} // .uspto-header-middle
 
 /* header bottom */
 
-.uspto-header-bottom .container,
-.uspto-header-bottom .container-fluid {
-    background-color: #004C97;
-    /* shift the bottom left menu to align with other header content */
-    padding-left: 9px;
-}
-
-.uspto-header-bottom button,
-.uspto-header-bottom .nav > li > a {
-    color: #FFF;
-    font-size: 14px;
-    background-color: #004C97;
-    border: none;
-    padding: 6px 15px 6px 12px;
-    line-height: 1.4;
-}
-
-.uspto-header-bottom button > a {
-    color: #FFF;
-}
-
-.uspto-header-bottom .nav > li > button:hover,
-.uspto-header-bottom .nav > li > button:focus,
-.uspto-header-bottom .nav > li > a:hover,
-.uspto-header-bottom .nav > li > a:focus {
-    text-decoration: none;
-    background-color: #598ABB;
-    color: #fff;
-}
-
-.uspto-header-bottom .navbar-nav .open .dropdown-menu {
-    background-color: #fff;
-}
-
-.uspto-header-bottom .open > .dropdown-toggle.btn-default {
-    background-color: #598ABB;
-    color: #FFF;
-}
-
-body main {
-    /*
-     * Push the main body content below the header. The Bootstrap fixed navbar will
-     * overlay other content unless you add padding to the top of the <body>. This
-     * is because fixed position elements are removed from the document flow.
-     */
-    padding-top: 100px;
-    /*
-     * Position the footer when there's not enough page content to push it off
-     * the screen.
-     * 110px = amount of footer that's shown when there's not enough content to
-     * fill the page and push the footer out of sight
-     */
-    min-height: calc(100vh - 110px);
-}
-
-body main .container-fluid,
-body main .container {
-    margin-left: 15px;
-    margin-right: 15px;
-}
-
-/* media rules for xs screens */
-@media (max-width: 767px) {
-    .uspto-header-top ul.dropdown-menu li a {
-        line-height: 2.1;
-        padding: 3px 15px;
+.uspto-header-bottom {
+    .container,
+    .container-fluid {
+        background-color: @color-bottom-background;
+        /* shift the bottom left menu to align with other header content */
+        padding-left: 9px;
     }
-
-    #headerSmallHeadingMobile {
-        display: inline-block;
-        height: 37px;
+    button,
+    .nav > li > a {
+        color: @color-white;
+        font-size: 14px;
+        background-color: @color-bottom-background;
+        border: none;
+        padding: 6px 15px 6px 12px;
+        line-height: 1.4;
     }
-
-    .collapse-header #headerSmallHeading {
-        display: none;
+    button > a {
+        color: @color-white;
     }
-
-    .collapse-header #headerSmallHeadingMobile {
-        display: inline-block;
+    .nav > li > button:hover,
+    .nav > li > button:focus,
+    .nav > li > a:hover,
+    .nav > li > a:focus {
+        text-decoration: none;
+        background-color: @color-light-blue;
+        color: @color-white;
     }
-
-    .uspto-header-middle {
-        display: none;
+    .navbar-nav {
+        .open {
+            .dropdown-menu {
+                background-color: @color-white;
+            }
+        }
     }
-
-    .uspto-header-middle .container, .uspto-header-middle .container-fluid {
-        font-size: 26px;
+    .open > .dropdown-toggle.btn-default {
+        background-color: @color-light-blue;
+        color: @color-white;
     }
+} // .uspto-header-bottom
 
-    .uspto-header-top .trademark-menu {
-        min-width: 240px;
-        left: -80px;
-    }
-
-    .uspto-header-top .patent-menu {
-        min-width: 210px;
-        right: auto;
-        left: auto;
-    }
-
-    .uspto-header-bottom .navbar-collapse button {
-        /* align the menu buttons with other header content */
-        padding-left: 22px;
-        width: 100%;
-        text-align: left;
-    }
-
-    .navbar-toggle {
-        padding: 5px 10px;
-    }
-
-    body main {
+body {
+    main {
         /*
          * Push the main body content below the header. The Bootstrap fixed navbar will
          * overlay other content unless you add padding to the top of the <body>. This
          * is because fixed position elements are removed from the document flow.
          */
-        padding-top: 60px;
+        padding-top: 100px;
         /*
          * Position the footer when there's not enough page content to push it off
          * the screen.
          * 110px = amount of footer that's shown when there's not enough content to
          * fill the page and push the footer out of sight
          */
-        min-height: calc(100vh - 105px);
+        min-height: calc(100vh - 110px);
+        .container,
+        .container-fluid {
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+    } // main
+    footer {
+        background-color: #363636;
+        padding-top: 1.4em;
+        padding-bottom: 1em;
+        margin-top: 18px;
+    } // footer
+} // body
+
+/* media rules for xs screens */
+@media (max-width: 767px) {
+    .uspto-header-top {
+        ul.dropdown-menu li a {
+            line-height: 2.1;
+            padding: 3px 15px;
+        }
+        .trademark-menu {
+            min-width: 240px;
+            left: -80px;
+        }
+        .patent-menu {
+            min-width: 210px;
+            right: auto;
+            left: auto;
+        }
+    } // .uspto-header-top
+
+    #headerSmallHeadingMobile {
+        display: inline-block;
+        height: 37px;
     }
+
+    .uspto-header-middle {
+        display: none;
+        .container,
+        .container-fluid {
+            font-size: 26px;
+        }
+    } // .uspto-header-middle
+
+    .uspto-header-bottom {
+        .navbar-collapse button,    // target the drop-down menu buttons
+        .nav > li > a {
+            /* align the menu buttons with other header content */
+            padding-left: 22px;
+            width: @width-100;
+            text-align: left;
+        }
+    } // .uspto-header-bottom
+
+    .navbar-toggle {
+        padding: 5px 10px;
+    }
+
+    body {
+        main {
+            /*
+             * Push the main body content below the header. The Bootstrap fixed navbar will
+             * overlay other content unless you add padding to the top of the <body>. This
+             * is because fixed position elements are removed from the document flow.
+             */
+            padding-top: 60px;
+            /*
+             * Position the footer when there's not enough page content to push it off
+             * the screen.
+             * 110px = amount of footer that's shown when there's not enough content to
+             * fill the page and push the footer out of sight
+             */
+            min-height: calc(100vh - 105px);
+        } // main
+    } // body
 }
 
 /* browser upgrade prompt */
 .browserupgrade {
     margin: 0.2em 0;
-    background: #ccc;
+    background: @color-header-text;
     color: #000;
     padding: 0.2em 0;
 }
 
-/* footer */
-#global-footer {
-    background-color: #363636;
-    padding-top: 1.4em;
-    padding-bottom: 1em;
-    margin-top: 18px;
-}
-
-.uspto-footer-logo a.logo {
-    background: transparent url('@{image-root}/logo-small.png') no-repeat left center;
-    /* logo sizing on small screen - this is overriden by a media rule for large screens */
-    height: 57px;
-    display: block;
+.uspto-footer-logo {
+    a.logo {
+        background: transparent url('@{image-root}/logo-small.png') no-repeat left center;
+        /* logo sizing on small screen - this is overriden by a media rule for large screens */
+        height: 57px;
+        display: block;
+    }
 }
 
 .uspto-footer-watermark {
@@ -321,42 +339,42 @@ body main .container {
     width: 157px;
 }
 
-.uspto-footer-middle .uspto-footer-column-hdg {
-    font-size: 12px;
-    line-height: 1.1em;
-    margin-top: 27px;
-    margin-bottom: 9px;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 700;
-    display: block;
-}
-
-.uspto-footer-middle .uspto-footer-column ul {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 0;
-}
-
-.uspto-footer-middle .uspto-footer-column ul li {
-    padding-top: 0.61em;
-}
-
-.uspto-footer-middle .uspto-footer-column ul li a {
-    color: #4ec5f1;
-}
-
-.uspto-footer-middle button.navbar-toggle {
-    text-align: left;
-    color: #fff;
-    width: 100%;
-    text-transform: uppercase;
-}
-
-.uspto-footer-middle button.navbar-toggle i, .uspto-footer-middle button.navbar-toggle span {
-    float: right;
-    margin-right: 10px;
-}
+.uspto-footer-middle {
+    .uspto-footer-column-hdg {
+        font-size: 12px;
+        line-height: 1.1em;
+        margin-top: 27px;
+        margin-bottom: 9px;
+        color: @color-white;
+        text-transform: uppercase;
+        font-weight: 700;
+        display: block;
+    }
+    .uspto-footer-column {
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 0;
+            li {
+                padding-top: 0.61em;
+                a {
+                    color: #4ec5f1;
+                }
+            }
+        }
+    }
+    button.navbar-toggle {
+        text-align: left;
+        color: @color-white;
+        width: @width-100;
+        text-transform: uppercase;
+        i,
+        span {
+            float: right;
+            margin-right: 10px;
+        }
+    }
+} // .uspto-footer-middle
 
 /* big screens */
 @media (min-width: 768px) {
@@ -366,11 +384,13 @@ body main .container {
         padding-right: 1%;
     }
 
-    .uspto-footer-logo a.logo {
-        background: transparent url('@{image-root}/logo.png') no-repeat left center;
-        /* logo sizing on large screen */
-        height: 62px;
-        display: block;
+    .uspto-footer-logo {
+        a.logo {
+            background: transparent url('@{image-root}/logo.png') no-repeat left center;
+            /* logo sizing on large screen */
+            height: 62px;
+            display: block;
+        }
     }
 }
 
