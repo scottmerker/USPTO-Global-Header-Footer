@@ -58,7 +58,7 @@
         min-width: 350px;
     }
     .fees-menu {
-        min-width: 200px;
+        min-width: 250px;
     }
     .dropdown-menu > li > a {
         line-height: 2.5;
@@ -254,14 +254,21 @@ body {
             line-height: 2.1;
             padding: 3px 15px;
         }
-        .trademark-menu {
-            min-width: 240px;
+        .patent-menu {
+            min-width: 275px;
             left: -80px;
         }
-        .patent-menu {
-            min-width: 210px;
-            right: auto;
-            left: auto;
+        .trademark-menu {
+            min-width: 300px;
+            left: -140px;
+            // force long text lines to wrap
+            .dropdown-menu li a {
+                white-space: normal;
+            }
+        }
+        .fees-menu {
+            min-width: 240px;
+            left: -120px;
         }
     } // .uspto-header-top
 

@@ -1,4 +1,4 @@
-/* USPTO Header Footer 26-10-2016 */
+/* USPTO Header Footer 27-10-2016 */
 /* color variables */
 /* width variables */
 /* height variables */
@@ -48,7 +48,7 @@
   min-width: 350px;
 }
 .uspto-header-top .fees-menu {
-  min-width: 200px;
+  min-width: 250px;
 }
 .uspto-header-top .dropdown-menu > li > a {
   line-height: 2.5;
@@ -208,14 +208,20 @@ body footer {
     line-height: 2.1;
     padding: 3px 15px;
   }
-  .uspto-header-top .trademark-menu {
-    min-width: 240px;
+  .uspto-header-top .patent-menu {
+    min-width: 275px;
     left: -80px;
   }
-  .uspto-header-top .patent-menu {
-    min-width: 210px;
-    right: auto;
-    left: auto;
+  .uspto-header-top .trademark-menu {
+    min-width: 300px;
+    left: -140px;
+  }
+  .uspto-header-top .trademark-menu .dropdown-menu li a {
+    white-space: normal;
+  }
+  .uspto-header-top .fees-menu {
+    min-width: 240px;
+    left: -120px;
   }
   #headerSmallHeadingMobile {
     display: inline-block;
