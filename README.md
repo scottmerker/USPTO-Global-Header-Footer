@@ -1,7 +1,7 @@
 Universal Header/Footer Template
 ==============
 
-This project provides a front-end template for the header and footer
+This project provides a responsive front-end template for the header and footer
 for USPTO web apps or sites.
 
 - View the source: [https://github.com/USPTO/USPTO-Global-Header-Footer](https://github.com/USPTO/USPTO-Global-Header-Footer)
@@ -115,10 +115,44 @@ by the header or footer.
 #### collapseHeader.js
 
 This script provides the automation needed to collapse and expand the header
-when the user scrolls the page. A minified version is available in the
+when the user scrolls the page. Including this file is required to achieve the
+"standard" look-and-feel. A minified version is available in the
 `dist/scripts` directory.
 
 #### includeHTML.js
+
+This script reads in HTML from an external file. A minified version is available
+in the `dist/scripts` directory.
+
+### footer.html
+
+This file contains the code for the page footer. The contents of this file
+are required to achieve the "standard" look-and-feel.
+
+### header.html
+
+This file contains the code for the page header. The contents of this file
+are required to achieve the "standard" look-and-feel.
+
+### index.html
+
+This file is an HTML skeleton used to demonstrate the header and footer.
+
+## How to integrate the header/footer
+
+To incorporate this code in your project, start with the steps shown
+above in the "Quick start" section: download or clone the
+[USPTO-Global-Header-Footer](https://github.com/USPTO/USPTO-Global-Header-Footer)
+repository, install the tools and components, and build the project.
+
+### header.html
+
+Include this file as close as practical to the top of your <body> element.
+
+### footer.html
+
+Include this file as close as practical to the bottom of your <body> element,
+just before including any scripts.
 
 ## Browser support
 
