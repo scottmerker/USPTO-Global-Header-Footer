@@ -12,8 +12,8 @@ for USPTO web apps or sites.
 ## Quick start
 
 Choose one of the following options:
-<br>
-1. If you already have a web site in place and you're managing packages
+
+* If you already have a web site in place and you're managing packages
 using [Bower](http://bower.io/), you can download the latest
 stable release by including the following in your `bower.json` file:
 ```
@@ -21,9 +21,9 @@ stable release by including the following in your `bower.json` file:
     "USPTO-Global-Header-Footer": "https://github.com/USPTO/USPTO-Global-Header-Footer.git#master"
 }
 ```
-2. Download the latest stable release from
+* Download the latest stable release from
    [USPTO-Global-Header-Footer](https://github.com/USPTO/USPTO-Global-Header-Footer)
-3. Clone the git repo — `git clone
+* Clone the git repo — `git clone
    https://github.com/USPTO/USPTO-Global-Header-Footer` - and checkout the
    [tagged release](https://github.com/USPTO/USPTO-Global-Header-Footer/releases)
    you'd like to use.
@@ -204,6 +204,15 @@ for the header, but you'll need to customize it for your site. Include the
 contents of this file as close as practical to the top of your <body>
 element. 
 
+Likely areas of customization include:
+* In `.uspto-header-top`, the menu options in the btn-group sign-in \<div>.
+* In `.uspto-header-middle`, the \<span> contents.
+* In `.uspto-header-bottom`, the text in \<span>s for `#headerSmallHeadingMobile`
+and `#headerSmallHeading` should match the contents of the `.uspto-header-middle`
+\<span>.
+* In `.uspto-header-bottom`, the \<ul>s containing the menu options for both the
+left and right sides of the menu bar.
+
 ### footer.html
 
 The contents of this file are required to achieve the "standard" look-and-feel
@@ -216,6 +225,25 @@ The bulk of your page content should be wrapped in an HTML \<main> tag. Styling
 applied to this tag ensures proper positioning of the page content and the
 footer. Refer to `index.html` for an example.
 
+### images
+
+This directory is used by the styles, and is assumed to be located as in
+USPTO-Global-Header-Footer, immediately below the root directory.
+
+### scripts
+
+The header and footer depend on jQuery, Bootstrap, and `collapseHeader.js`
+to provide appearance and behaviors. You'll need to ensure that they're
+included at the bottom of the \<body>.
+```
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="scripts/collapseHeader.js"></script>
+```
+There's also a minified version of the `collapseHeader.js` script:
+```
+<link rel="stylesheet" type="text/css" href="/dist/scripts/collapseHeader.min.js">
+```
 
 ## Browser support
 
