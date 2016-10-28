@@ -4,28 +4,37 @@ Universal Header/Footer Template
 This project provides a responsive front-end template for the header and footer
 for USPTO web apps or sites.
 
-- View the source: [https://github.com/USPTO/USPTO-Global-Header-Footer](https://github.com/USPTO/USPTO-Global-Header-Footer)
+- View the source:
+[https://github.com/USPTO/USPTO-Global-Header-Footer](https://github.com/USPTO/USPTO-Global-Header-Footer)
 - [Terms](TERMS.md)
 - [License](LICENSE.txt)
 
 ## Quick start
 
 Choose one of the following options:
-1. Download the latest stable release from
+1. If you already have a web site in place and you're managing packages
+using using [Bower](http://bower.io/), you can download the latest
+stable release by including the following in your `bower.json` file:
+```
+"devDependencies": {
+    "USPTO-Global-Header-Footer": "https://github.com/USPTO/USPTO-Global-Header-Footer.git#master"
+}
+```
+2. Download the latest stable release from
    [USPTO-Global-Header-Footer](https://github.com/USPTO/USPTO-Global-Header-Footer)
-2. Clone the git repo — `git clone
+3. Clone the git repo — `git clone
    https://github.com/USPTO/USPTO-Global-Header-Footer` - and checkout the
    [tagged release](https://github.com/USPTO/USPTO-Global-Header-Footer/releases)
    you'd like to use.
 
-You will also need to install [Node.js](https://nodejs.org/en/).
+You will need to install [Node.js](https://nodejs.org/en/).
 Node.js powers the front-end build and dependency management tools
 [Grunt](http://gruntjs.com/) and [Bower](http://bower.io/). You're also
 going to need the [Git](https://git-scm.com/) version control system
 tools.
 
 To install [Grunt](http://gruntjs.com/) and [Bower](http://bower.io/),
-and the tools used by Grunt:
+and the tools used by Grunt, go to the project's root directory and enter:
 ```
 npm install -g grunt-cli bower
 npm install grunt grunt-contrib-jshint grunt-contrib-less
@@ -121,8 +130,11 @@ when the user scrolls the page. Including this file is required to achieve the
 
 #### includeHTML.js
 
-This script reads in HTML from an external file. A minified version is available
-in the `dist/scripts` directory.
+This script reads in HTML from an external file, and is used in `index.html`
+to include the code for the header and footer. AngularJS and React provide
+this functionality. If you're using one of these frameworks, use their native
+toolset to include the header and footer. A minified version is available in
+the `dist/scripts` directory.
 
 ### footer.html
 
@@ -145,14 +157,35 @@ above in the "Quick start" section: download or clone the
 [USPTO-Global-Header-Footer](https://github.com/USPTO/USPTO-Global-Header-Footer)
 repository, install the tools and components, and build the project.
 
+### bower_components
+
+Add the header and footer to you project's  
+```
+"devDependencies": {
+    "USPTOPatternLibrary": "https://github.com/USPTO/designpatterns.git#v1.5.2",
+    "USPTO-Global-Header-Footer": "https://github.com/USPTO/USPTO-Global-Header-Footer.git#master"
+}
+```
+
 ### header.html
 
-Include this file as close as practical to the top of your <body> element.
+The contents of this file are required to achieve the "standard" look-and-feel
+for the header, but you'll need to customize it for your site.Include the
+contents of this file as close as practical to the top of your <body>
+element. 
 
 ### footer.html
 
-Include this file as close as practical to the bottom of your <body> element,
-just before including any scripts.
+The contents of this file are required to achieve the "standard" look-and-feel
+for the footer.Include this file as close as practical to the bottom of your
+\<body> element, just before including any scripts. 
+
+### \<main>
+
+The bulk of your page content should be wrapped in an HTML \<main> tag. Styling
+applied to this tag ensures proper positioning of the page content and the
+footer. Refer to `index.html` for an example.
+
 
 ## Browser support
 
