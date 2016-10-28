@@ -159,7 +159,15 @@ repository, install the tools and components, and build the project.
 
 ### bower_components
 
-Add the header and footer to you project's  
+You're probably going to want to modify some of the header/footer code, but
+there will also be code that remains unchanged. To simplify maintenance,
+we recommend that your web site code and build system use relative references
+to the portions of the header and footer code that you'll use. This code will
+most likely be resident in your web sites's `bower_components` directory.
+
+The header and footer make use of the USPTO Pattern library. If you're using
+Bower, add both USPTO-Global-Header-Footer and the Pattern Library to your
+`bower.json` file:
 ```
 "devDependencies": {
     "USPTOPatternLibrary": "https://github.com/USPTO/designpatterns.git#v1.5.2",
@@ -167,17 +175,38 @@ Add the header and footer to you project's
 }
 ```
 
+### css
+
+Both USPTO-Global-Header-Footer and the Pattern Library use LESS to create
+styles. If you're using LESS, you can include the styles directly from
+`bower_components` using something like this:
+```
+@bower-path: "./bower_components";   // path to the bower components
+@import "@{bower-path}/USPTO-Global-Header-Footer/css/_styles.less";
+@import "@{bower-path}/USPTOPatternLibrary/usptostrap/less/usptostrap.less";
+```
+
+If you prefer CSS, you can include the header and footer styles as follows:
+```
+<link rel="stylesheet" type="text/css" href="dist/bower_components/USPTOPatternLibrary/generated/styles/pattern-library.css">
+<link rel="stylesheet" type="text/css" href="USPTO-Global-Header-Footer/css/dist/styles.css">
+```
+There's also a minified version of the header and footer styles:
+```
+<link rel="stylesheet" type="text/css" href="USPTO-Global-Header-Footer/css/dist/styles.min.css">
+```
+
 ### header.html
 
 The contents of this file are required to achieve the "standard" look-and-feel
-for the header, but you'll need to customize it for your site.Include the
+for the header, but you'll need to customize it for your site. Include the
 contents of this file as close as practical to the top of your <body>
 element. 
 
 ### footer.html
 
 The contents of this file are required to achieve the "standard" look-and-feel
-for the footer.Include this file as close as practical to the bottom of your
+for the footer. Include this file as close as practical to the bottom of your
 \<body> element, just before including any scripts. 
 
 ### \<main>
