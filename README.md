@@ -12,8 +12,9 @@ for USPTO web apps or sites.
 ## Quick start
 
 Choose one of the following options:
+<br>
 1. If you already have a web site in place and you're managing packages
-using using [Bower](http://bower.io/), you can download the latest
+using [Bower](http://bower.io/), you can download the latest
 stable release by including the following in your `bower.json` file:
 ```
 "devDependencies": {
