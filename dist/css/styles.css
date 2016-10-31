@@ -1,4 +1,4 @@
-/* USPTO Header Footer 27-10-2016 */
+/* USPTO Header Footer 31-10-2016 */
 /* color variables */
 /* width variables */
 /* height variables */
@@ -116,6 +116,9 @@
 #headerSmallHeadingMobile {
   display: none;
 }
+.collapse-header .container #headerSmallHeading {
+  margin-left: 0px;
+}
 .collapse-header #headerSmallHeading {
   display: inline-block;
   margin-left: -8px;
@@ -134,10 +137,15 @@
 }
 .uspto-header-middle .container span,
 .uspto-header-middle .container-fluid span {
-  margin-left: 10px;
   display: inline-block;
   padding-bottom: 3px;
   font-size: 32px;
+}
+.uspto-header-middle .container span {
+  margin-left: 0;
+}
+.uspto-header-middle .container-fluid span {
+  margin-left: 10px;
 }
 .uspto-header-middle .collapse-header {
   display: none;
