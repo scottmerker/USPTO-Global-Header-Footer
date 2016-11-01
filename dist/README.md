@@ -242,7 +242,7 @@ included at the bottom of the \<body>.
 ```
 There's also a minified version of the `collapseHeader.js` script:
 ```
-<link rel="stylesheet" type="text/css" href="/dist/scripts/collapseHeader.min.js">
+<script src="scripts/collapseHeader.min.js"></script>
 ```
 
 ## Browser support
