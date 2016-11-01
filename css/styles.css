@@ -1,4 +1,4 @@
-/* USPTO Header Footer 31-10-2016 */
+/* USPTO Header Footer 01-11-2016 */
 /* color variables */
 /* width variables */
 /* height variables */
@@ -66,7 +66,8 @@
 .uspto-header-top .bigger {
   transform: scale(1.2);
 }
-.uspto-header-top button {
+.uspto-header-top button,
+.uspto-header-top .btn-group > a {
   color: #ccc;
   font-weight: 400;
   text-decoration: none;
@@ -77,11 +78,12 @@
   vertical-align: middle;
   border-radius: 4px;
   text-align: center;
-  background: #fff;
+  background: #323232;
   /* fallback color for old browsers */
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0);
 }
-.uspto-header-top button:hover {
+.uspto-header-top button:hover,
+.uspto-header-top .btn-group > a:hover {
   background-color: #282828;
   color: #fff;
 }
@@ -135,8 +137,8 @@
 .uspto-header-middle .container-fluid {
   background-color: #ebebeb;
 }
-.uspto-header-middle .container span,
-.uspto-header-middle .container-fluid span {
+.uspto-header-middle .container .header-middle-label,
+.uspto-header-middle .container-fluid .header-middle-label {
   display: inline-block;
   padding-bottom: 3px;
   font-size: 32px;

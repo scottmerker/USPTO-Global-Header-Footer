@@ -15,7 +15,7 @@
                         <button type="button" class="btn btn-default dropdown-toggle ex-btn-inverse"
                                 data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
-                            <span class="hidden-xs">Patent&nbsp<span class="caret"></span></span>
+                            <span class="hidden-xs">Patent&nbsp;<span class="caret"></span></span>
                             <span class="visible-xs icon-btn bigger"><em class="icon icon-lightbulb-o icon-inverse"></em></span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-right patent-menu">
@@ -43,7 +43,7 @@
                         <button type="button" class="btn btn-default dropdown-toggle ex-btn-inverse"
                                 data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
-                            <span class="hidden-xs">Trademark&nbsp<span class="caret"></span></span>
+                            <span class="hidden-xs">Trademark&nbsp;<span class="caret"></span></span>
                             <span class="visible-xs icon-btn"><em class="icon icon-trademark icon-inverse"></em></span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-right trademark-menu">
@@ -73,7 +73,7 @@
                         <button type="button" class="btn btn-default dropdown-toggle ex-btn-inverse"
                                 data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
-                            <span class="hidden-xs">Fees and payments&nbsp<span class="caret"></span></span>
+                            <span class="hidden-xs">Fees and payments&nbsp;<span class="caret"></span></span>
                             <span class="visible-xs icon-btn"><em class="icon icon-dollar icon-inverse"></em></span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-right fees-menu">
@@ -89,7 +89,7 @@
                         <button type="button" class="btn btn-default dropdown-toggle ex-btn-inverse"
                                 data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
-                            <span class="hidden-xs">Help&nbsp<span class="caret"></span></span>
+                            <span class="hidden-xs">Help&nbsp;<span class="caret"></span></span>
                             <span class="visible-xs icon-btn"><em class="icon icon-question-circle icon-inverse"></em></span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-right">
@@ -99,11 +99,16 @@
                                 Contact us</a> </li>
                         </ul>
                     </div>
+                    <!--
+                        The code snippet for the .btn-group below will need to
+                        be conditionally displayed when the user is signed in
+                        and it's appropriate to show account information.
+                    -->
                     <div class="btn-group">
                         <button type="button" class="btn btn-default dropdown-toggle ex-btn-inverse"
                                 data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
-                            <span class="hidden-xs">T. Markey&nbsp<span class="caret"></span></span>
+                            <span class="hidden-xs">T. Markey&nbsp;<span class="caret"></span></span>
                             <span class="visible-xs icon-btn"><em class="icon icon-user icon-inverse"></em></span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-right">
@@ -115,6 +120,14 @@
                                 <em class="icon icon-inverse icon-sign-out"></em> &nbsp;Sign out</a></li>
                         </ul>
                     </div>
+                    <!--
+                        The code snippet for the .btn-group below will need to
+                        be conditionally displayed when it's appropriate to show
+                        the "Sign in" button.
+                    <div class="btn-group">
+                        <a href="#" class="btn btn-default" role="button">Sign in</a>
+                    </div>
+                    -->
                 </span> <!-- /.pull-right -->
             </div> <!-- /.container-fluid -->
         </nav>
@@ -122,7 +135,7 @@
 
     <div class="uspto-header-middle hidden-xs">
         <div class="container-fluid">
-            <span>
+            <span class="header-middle-label">
                 MyUSPTO
             </span>
         </div>
@@ -157,7 +170,7 @@
                         <li><a class="btn-default" href="#">Navigation</a></li>
                         <li class="dropdown">
                             <button href="#" id="nav-dropdown-left" class="btn-default dropdown-toggle" data-toggle="dropdown">
-                                Navigation <span class="caret"></span>
+                                Navigation&nbsp;<span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="nav-dropdown-left">
                                 <li role="presentation"><a href="#" role="menuitem">Action</a></li>
@@ -171,7 +184,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                             <button id="nav-dropdown-right" class="btn-default dropdown-toggle" data-toggle="dropdown">
-                                My Collection <span class="caret"></span>
+                                My Collection&nbsp;<span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="nav-dropdown-right">
                                 <li role="presentation"><a href="#" role="menuitem">Action</a></li>

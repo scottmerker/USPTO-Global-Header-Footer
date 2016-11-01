@@ -77,7 +77,8 @@
     .bigger {
         transform: scale(1.2);
     }
-    button {
+    button,
+    .btn-group > a {
         color: @color-header-text;
         font-weight: 400;
         text-decoration: none;
@@ -88,8 +89,9 @@
         vertical-align: middle;
         border-radius: 4px;
         text-align: center;
-        background: @color-white;    /* fallback color for old browsers */
-        background: rgba(255, 255, 255, 0.05);
+        background: @color-header-background;    /* fallback color for old browsers */
+        // increase the transparency variable to highlight the buttons
+        background: rgba(255, 255, 255, 0.0);
         &:hover {
             background-color: @color-header-dropdown;
             color: @color-white;
@@ -168,7 +170,7 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
     .container,
     .container-fluid {
         background-color: @color-header-middle;
-        span {
+        .header-middle-label {
             display: inline-block;
             padding-bottom: 3px;
             font-size: 32px;
