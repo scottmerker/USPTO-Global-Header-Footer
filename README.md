@@ -212,18 +212,32 @@ and `#headerSmallHeading` should match the contents of the `.uspto-header-middle
 \<span>.
 * In `.uspto-header-bottom`, the \<ul>s containing the menu options for both the
 left and right sides of the menu bar.
+* The `.uspto-header-top`, `.uspto-header-middle`, and `.uspto-header-bottom`
+sections of the header are configured to dynamically resize as the viewport
+changes width. For fixed-width sizing, change the `class="container-fluid"`
+to `class="container"`.
 
 ### footer.html
 
 The contents of this file are required to achieve the "standard" look-and-feel
 for the footer. Include this file as close as practical to the bottom of your
-\<body> element, just before including any scripts. 
+\<body> element, just before including any scripts.
+
+Likely areas of customization include:
+* The footer is configured to dynamically resize as the viewport
+changes width. For fixed-width sizing, change the `class="container-fluid"`
+to `class="container"`.
 
 ### \<main>
 
 The bulk of your page content should be wrapped in an HTML \<main> tag. Styling
 applied to this tag ensures proper positioning of the page content and the
 footer. Refer to `index.html` for an example.
+
+Likely areas of customization include:
+* The \<main> content is configured to dynamically resize as the viewport
+changes width. For fixed-width sizing, change the `class="container-fluid"`
+to `class="container"`.
 
 ### images
 

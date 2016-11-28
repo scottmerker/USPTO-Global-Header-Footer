@@ -34,6 +34,9 @@
         background-color: @color-header-background;
         height: @height-header-top;
     }
+    .nav {
+         background: @color-header-background;
+    }
     a.uspto-logo {
         background: transparent url('@{image-root}/logo-micro.png') no-repeat left center;
         background-size: contain;
@@ -147,7 +150,7 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
 .collapse-header {
     .container {
         #headerSmallHeading {
-            margin-left:0px;
+            margin-left: -8px;
         }
     }
     #headerSmallHeading {
@@ -167,20 +170,16 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
 /* header middle */
 
 .uspto-header-middle {
+    background-color: @color-header-middle;
     .container,
     .container-fluid {
-        background-color: @color-header-middle;
         .header-middle-label {
             display: inline-block;
             padding-bottom: 3px;
             font-size: 32px;
         }
     }
-    .container {
-        span {
-            margin-left: 0;
-        }
-    }
+    .container,
     .container-fluid {
         span {
             margin-left: 10px;
@@ -195,9 +194,12 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
 /* header bottom */
 
 .uspto-header-bottom {
+    .navbar {
+        background-color: @color-bottom-background;
+        min-height: auto;
+    }
     .container,
     .container-fluid {
-        background-color: @color-bottom-background;
         /* shift the bottom left menu to align with other header content */
         padding-left: 9px;
     }
@@ -249,7 +251,6 @@ body {
          * fill the page and push the footer out of sight
          */
         min-height: calc(100vh - 110px);
-        .container,
         .container-fluid {
             margin-left: 15px;
             margin-right: 15px;
