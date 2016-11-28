@@ -3,7 +3,7 @@
   "version": "1.0",
   "dependencies": {},
   "devDependencies": {
-    "USPTOPatternLibrary": "https://github.com/USPTO/designpatterns.git#master"
+    "USPTOPatternLibrary": "https://github.com/USPTO/designpatterns.git"
   },
   "resolutions": {
     "jquery": "^2.0"
