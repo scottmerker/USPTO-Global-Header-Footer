@@ -88,7 +88,8 @@ module.exports = function (grunt) {
                     src: [
                         'bower_components/jquery/dist/jquery.min.js',
                         'bower_components/bootstrap/dist/js/bootstrap.min.js',
-                        'bower_components/USPTOPatternLibrary/generated/images/icons/*.svg'
+                        'bower_components/USPTOPatternLibrary/generated/images/icons/*.svg',
+                        'bower_components/USPTOPatternLibrary/generated/styles/pattern-library.css'
                     ]
                 }]
             },
