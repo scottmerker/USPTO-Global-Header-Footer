@@ -35,7 +35,7 @@
         height: @height-header-top;
     }
     .nav {
-         background: @color-header-background;
+        background: @color-header-background;
     }
     a.uspto-logo {
         background: transparent url('@{image-root}/logo-micro.png') no-repeat left center;
@@ -86,7 +86,7 @@
         font-weight: 400;
         text-decoration: none;
         /* margin top, right, bottom, and left */
-        margin: 9px 5px 0 0;
+        margin: 9px 0 0 0;
         box-shadow: none;
         padding: 8px 8px;
         vertical-align: middle;
@@ -98,6 +98,9 @@
         &:hover {
             background-color: @color-header-dropdown;
             color: @color-white;
+        }
+        @media (min-width: 360px) {
+            margin: 9px 5px 0 0;
         }
     }
     /*
@@ -128,6 +131,12 @@
         li.divider {
             border-bottom: none;
         }
+    }
+    .myuspto-link{
+        color: #ffcd59;
+        margin: 17px 5px 0 0;
+        display: block;
+        float: right;
     }
 } // .uspto-header-top
 
@@ -216,9 +225,9 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
         color: @color-white;
     }
     .nav > li > button:hover,
-    .nav > li > button:focus,
-    .nav > li > a:hover,
-    .nav > li > a:focus {
+        .nav > li > button:focus,
+        .nav > li > a:hover,
+        .nav > li > a:focus {
         text-decoration: none;
         background-color: @color-light-blue;
         color: @color-white;

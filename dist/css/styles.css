@@ -1,4 +1,4 @@
-/* USPTO Header Footer 06-12-2016 */
+/* USPTO Header Footer 19-12-2016 */
 /* color variables */
 /* width variables */
 /* height variables */
@@ -75,7 +75,7 @@
   font-weight: 400;
   text-decoration: none;
   /* margin top, right, bottom, and left */
-  margin: 9px 5px 0 0;
+  margin: 9px 0 0 0;
   box-shadow: none;
   padding: 8px 8px;
   vertical-align: middle;
@@ -89,6 +89,12 @@
 .uspto-header-top .btn-group > a:hover {
   background-color: #282828;
   color: #fff;
+}
+@media (min-width: 360px) {
+  .uspto-header-top button,
+  .uspto-header-top .btn-group > a {
+    margin: 9px 5px 0 0;
+  }
 }
 .uspto-header-top .ex-btn-inverse.btn:focus {
   background-color: #282828;
@@ -108,6 +114,12 @@
 }
 .uspto-header-top ul.dropdown-menu li.divider {
   border-bottom: none;
+}
+.uspto-header-top .myuspto-link {
+  color: #ffcd59;
+  margin: 17px 5px 0 0;
+  display: block;
+  float: right;
 }
 @media only screen and (min-resolution: 2dppx), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .uspto-header-top a.uspto-logo {
