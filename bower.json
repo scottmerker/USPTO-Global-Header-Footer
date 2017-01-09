@@ -1,6 +1,6 @@
 {
   "name": "headerfooter",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "dependencies": {},
   "devDependencies": {
     "USPTOPatternLibrary": "https://github.com/USPTO/designpatterns.git"
@@ -14,7 +14,7 @@
   "description": "USPTO header/footer",
   "main": "",
   "authors": [
-    "Lincoln Gup"
+    "USPTO.gov"
   ],
   "ignore": [
     "node_modules",
