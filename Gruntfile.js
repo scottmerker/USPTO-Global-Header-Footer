@@ -1,213 +1,424 @@
-"use strict";
+// Generated on 2016-12-29 using
+// generator-webapp 1.0.1
+'use strict';
+
+// # Globbing
+// for performance reasons we're only matching one level down:
+// 'test/spec/{,*/}*.js'
+// If you want to recursively match all subfolders, use:
+// 'test/spec/**/*.js'
 
 module.exports = function (grunt) {
 
-    // global variables
-    var globals = {
-        source: ".",           // path of source directory
-        dist: "dist",          // path for distribution directory
-        banner: '/* USPTO Header Footer <%= grunt.template.today("dd-mm-yyyy") %> */\n'
-    };
+  // Time how long tasks take. Can help when optimizing build times
+  require('time-grunt')(grunt);
 
-    // Define the configuration for all the tasks
-    grunt.initConfig({
+  // Automatically load required grunt tasks
+  require('jit-grunt')(grunt, {
+      useminPrepare: 'grunt-usemin'
+  });
 
-        globals: globals,
+  // Configurable paths
+  var config = {
+    app: '.',
+    dist: 'dist'
+  };
 
-        // import the configuration info from package.json
-        pkg: grunt.file.readJSON('package.json'),
+  // Define the configuration for all the tasks
+  grunt.initConfig({
 
-        // check coding style
-        jshint: {
+    // Project settings
+    config: config,
+
+    // Watches files for changes and runs tasks based on the changed files
+    watch: {
+      babel: {
+        files: ['<%= config.app %>/scripts/{,*/}*.js'],
+        tasks: ['babel:dist']
+      },
+      babelTest: {
+        files: ['test/spec/{,*/}*.js'],
+        tasks: ['babel:test', 'test:watch']
+      },
+      gruntfile: {
+        files: ['Gruntfile.js']
+      },
+      sass: {
+        files: ['<%= config.app %>/styles/{,*/}*.{scss,sass}'],
+        tasks: ['sass:server', 'postcss']
+      },
+      styles: {
+        files: ['<%= config.app %>/styles/{,*/}*.css'],
+        tasks: ['newer:copy:styles', 'postcss']
+      }
+    },
+
+    browserSync: {
+      options: {
+        notify: false,
+        background: true
+      },
+      livereload: {
+        options: {
+          files: [
+            '<%= config.app %>/{,*/}*.html',
+            '.tmp/styles/{,*/}*.css',
+            '<%= config.app %>/images/{,*/}*',
+            '.tmp/scripts/{,*/}*.js'
+          ],
+          port: 9000,
+          server: {
+            baseDir: ['.tmp', config.app],
+            routes: {
+              '/bower_components': './bower_components'
+            }
+          }
+        }
+      },
+      test: {
+        options: {
+          port: 9001,
+          open: false,
+          logLevel: 'silent',
+          host: 'localhost',
+          server: {
+            baseDir: ['.tmp', './test', config.app],
+            routes: {
+              '/bower_components': './bower_components'
+            }
+          }
+        }
+      },
+      dist: {
+        options: {
+          background: false,
+          server: '<%= config.dist %>'
+        }
+      }
+    },
+
+    // Empties folders to start fresh
+    clean: {
+      dist: {
+        files: [{
+          dot: true,
+          src: [
+            '.tmp',
+            '<%= config.dist %>/*',
+            '!<%= config.dist %>/.git*'
+          ]
+        }]
+      },
+      server: '.tmp'
+    },
+
+    // Make sure code styles are up to par and there are no obvious mistakes
+    eslint: {
+      target: [
+        'Gruntfile.js',
+        '<%= config.app %>/scripts/{,*/}*.js',
+        '!<%= config.app %>/scripts/vendor/*',
+        'test/spec/{,*/}*.js'
+      ]
+    },
+
+    // Mocha testing framework configuration options
+    mocha: {
+      all: {
+        options: {
+          run: true,
+          urls: ['http://<%= browserSync.test.options.host %>:<%= browserSync.test.options.port %>/index.html']
+        }
+      }
+    },
+
+    // Compiles ES6 with Babel
+    babel: {
+      options: {
+          sourceMap: true
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= config.app %>/scripts',
+          src: '{,*/}*.js',
+          dest: '.tmp/scripts',
+          ext: '.js'
+        }]
+      },
+      test: {
+        files: [{
+          expand: true,
+          cwd: 'test/spec',
+          src: '{,*/}*.js',
+          dest: '.tmp/spec',
+          ext: '.js'
+        }]
+      }
+    },
+
+    // Compiles Sass to CSS and generates necessary files if requested
+    sass: {
+      options: {
+        sourceMap: true,
+        sourceMapEmbed: true,
+        sourceMapContents: true,
+        includePaths: ['.']
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= config.app %>/styles',
+          src: ['*.{scss,sass}'],
+          dest: '.tmp/styles',
+          ext: '.css'
+        }]
+      },
+      server: {
+        files: [{
+          expand: true,
+          cwd: '<%= config.app %>/styles',
+          src: ['*.{scss,sass}'],
+          dest: '.tmp/styles',
+          ext: '.css'
+        }]
+      }
+    },
+
+    less: {
+        dev: {
             options: {
-                jshintrc: '.jshintrc',
-                force: true, //show all errors but continue grunt
-                reporter: require('jshint-stylish')
+                sourceMap: true,
+                outputSourceFiles: true,
+                sourceMapURL: 'header-footer.min.css.map'
             },
-            all: {
-                src: [
-                    'Gruntfile.js',
-                    '<%= globals.source %>/scripts/**/*.js'
-                ]
-            }
+            files: [{
+                    '<%= config.app %>/styles/header-footer.min.css': '<%= config.app %>/styles/less/main.less' // destination file : source file
+                }]
         },
-
-        // convert LESS to CSS
-        less: {
-            development: {
-                options: {
-                    compress: false,  // compress output by removing some whitespaces
-                    // the banner is inserted at the top of the output
-                    banner: "<%= globals.banner %>"
-                },
-                files: {
-                    // to file : from file
-                    "<%= globals.source %>/css/styles.css": "<%= globals.source %>/css/_styles.less"
-                } // files
-            } // development
-        }, // less
-
-        replace: {
-            /*
-             * Remove the use of the "dist" directory from the index.html in
-             * the "dist" directory. Not used, but leaving this in just in case.
-             */
-            dist:{
-                options: {
-                    patterns: [{
-                        match: /=\"dist\//g,
-                        replacement: '="'
-                    }]
-                },
-                files: [{
-                    expand: true,
-                    src: ['<%= globals.source %>/index.html'],
-                    dest: '<%= globals.dist %>'
-                }]
-            }
-        },
-
-        // copy files to the distribution directory
-        copy: {
-            source: {
-                files: [{
-                    expand: true,
-                    dot: true,
-                    cwd: '<%= globals.source %>',
-                    dest: '<%= globals.dist %>',
-                    src: [
-                        '*.{ico,png,txt,md}',
-                        '*.html',
-                        'images/{,*/}*.{png,gif,svg}',
-                        'scripts/*.js'
-                    ]
-                }, {
-                    expand: true,
-                    cwd: '<%= globals.source %>',
-                    dest: '<%= globals.dist %>',
-                    src: [
-                        'bower_components/jquery/dist/jquery.min.js',
-                        'bower_components/bootstrap/dist/js/bootstrap.min.js',
-                        'bower_components/USPTOPatternLibrary/generated/images/icons/*.svg',
-                        'bower_components/USPTOPatternLibrary/generated/styles/pattern-library.css'
-                    ]
-                }]
-            },
-            css: {
-                expand: true,
-                cwd: '<%= globals.source %>',
-                dest: '<%= globals.dist %>',
-                src: 'css/{,*/}*.{css,less}'
-            },
-            // copy icons from design pattern library in bower components to images/icons
-            icons: {
-                files: [{
-                    expand: true,
-                    dot: true,
-                    cwd: 'bower_components/USPTOPatternLibrary/generated/images/icons/',
-                    dest: '<%= globals.source %>/images/icons/',
-                    src: [
-                        '*.{webp,png,jpg,gif,svg}'
-                    ]
-                }]
-            }
-        }, // copy
-
-        // concatenate the JavaScript files and place them in a temp directory
-        concat: {
-            dist: {
-                src: ['<%= globals.source %>/scripts/*.js'],
-                dest: '<%= globals.source %>/.tmp/headerFooter.concat.js'
-            }
-        }, // concat
-
-        // minify the CSS and add a .min.css extension
-        cssmin: {
-            target: {
-                files: [{
-                    expand: true,
-                    cwd: '<%= globals.source %>/css',
-                    src: ['*.css', '!*.min.css'],
-                    dest: '<%= globals.dist %>/css',
-                    ext: '.min.css'
-                }]
-            }
-        }, // cssmin
-
-        // compress and uglify the JavaScript
-        uglify: {
+        prod: {
             options: {
-                // the banner is inserted at the top of the output
-                banner: "<%= globals.banner %>"
+                paths: ['<%= config.app %>/less'],
+                compress: true //minifies the file
             },
-            build: {
-                files: [{
-                    expand: true,
-                    src: '**/*.js',
-                    dest: '<%= globals.dist %>/scripts',
-                    cwd: '<%= globals.source %>/scripts',
-                    ext: '.min.js'
+            files: [{
+                    '<%= config.dist %>/styles/header-footer.min.css': '<%= config.app %>/styles/less/main.less' // destination file : source file
                 }]
-            }
-        }, // uglify
+        }
+    },
 
-        // build a ZIP file
-        compress: {
-            main: {
-                options: {
-                    mode: 'zip',
-                    archive: '../USPTO-Global-Header-Footer-v1.X.X.zip'
-                },
-                files: [
-                    {
-                        expand: true,
-                        cwd: '.',
-                        src: [
-                            '**',   // include everything
-                            '.**',
-                            '!archive/**',
-                            '!node_modules/**',
-                            '!bower_components/**',
-                            '!.idea/**',
-                            '!.git/**',
-                            '!**.iml',
-                            '!.tmp/**'
-                        ]
-                    }
-                ]
-            }
-        } // compress
+    postcss: {
+      options: {
+        map: true,
+        processors: [
+          // Add vendor prefixed styles
+          require('autoprefixer-core')({
+            browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1']
+          })
+        ]
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '.tmp/styles/',
+          src: '{,*/}*.css',
+          dest: '.tmp/styles/'
+        }]
+      }
+    },
 
-    });
+    // Reads HTML for usemin blocks to enable smart builds that automatically
+    // concat, minify and revision files. Creates configurations in memory so
+    // additional tasks can operate on them
+    useminPrepare: {
+      options: {
+        dest: '<%= config.dist %>'
+      },
+      html: '<%= config.app %>/*.html'
+    },
 
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-replace');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-compress');
+    // Performs rewrites based on rev and the useminPrepare configuration
+    usemin: {
+      options: {
+        assetsDirs: [
+          '<%= config.dist %>',
+          '<%= config.dist %>/images',
+          '<%= config.dist %>/styles'
+        ]
+      },
+      html: ['<%= config.dist %>/{,*/}*.html'],
+      css: ['<%= config.dist %>/styles/{,*/}*.css']
+    },
 
-    // default grunt task
-    grunt.registerTask('default', [
-        'build' // Run grunt.registerTask('build')
+    // The following *-min tasks produce minified files in the dist folder
+    imagemin: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= config.app %>/images',
+          src: '<%= config.app %>/images/**/*.{gif,jpeg,jpg,png}',
+          dest: '<%= config.dist %>/images'
+        }]
+      }
+    },
+
+    svgmin: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= config.app %>/images',
+          src: '<%= config.app %>/images/**/*.svg',
+          dest: '<%= config.dist %>/images'
+        }]
+      }
+    },
+
+    htmlmin: {
+      dist: {
+        options: {
+          collapseBooleanAttributes: true,
+          collapseWhitespace: true,
+          conservativeCollapse: true,
+          removeAttributeQuotes: true,
+          removeCommentsFromCDATA: true,
+          removeComments: true,
+          removeEmptyAttributes: true,
+          removeOptionalTags: true,
+          // true would impact styles with attribute selectors
+          removeRedundantAttributes: false,
+          useShortDoctype: true
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= config.dist %>',
+          src: '{,*/}*.html',
+          dest: '<%= config.dist %>'
+        }]
+      }
+    },
+
+    // By default, your `index.html`'s <!-- Usemin block --> will take care
+    // of minification. These next options are pre-configured if you do not
+    // wish to use the Usemin blocks.
+    // cssmin: {
+    //   dist: {
+    //     files: {
+    //       '<%= config.dist %>/styles/main.css': [
+    //         '.tmp/styles/{,*/}*.css',
+    //         '<%= config.app %>/styles/{,*/}*.css'
+    //       ]
+    //     }
+    //   }
+    // },
+    // uglify: {
+    //   dist: {
+    //     files: {
+    //       '<%= config.dist %>/scripts/scripts.js': [
+    //         '<%= config.dist %>/scripts/scripts.js'
+    //       ]
+    //     }
+    //   }
+    // },
+    // concat: {
+    //   dist: {}
+    // },
+
+    // Copies remaining files to places other tasks can use
+    copy: {
+      dist: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '<%= config.app %>',
+          dest: '<%= config.dist %>',
+          src: [
+            '*.{ico,png,txt}',
+            'images/{,*/}*.webp',
+            '{,*/}*.html',
+            'styles/fonts/{,*/}*.*'
+          ]
+        }, {
+          expand: true,
+          dot: true,
+          cwd: '.',
+          src: 'bower_components/bootstrap-sass/assets/fonts/bootstrap/*',
+          dest: '<%= config.dist %>'
+        }]
+      }
+    },
+
+    // Run some tasks in parallel to speed up build process
+    concurrent: {
+      server: [
+        'babel:dist',
+        'less:dev',
+        'sass:server'
+      ],
+      test: [
+        'babel'
+      ],
+      dist: [
+        'babel',
+        'sass',
+        'less:prod',
+        'imagemin',
+        'svgmin'
+      ]
+    }
+  });
+
+
+  grunt.registerTask('serve', 'start the server and preview your app', function (target) {
+
+    if (target === 'dist') {
+      return grunt.task.run(['build', 'browserSync:dist']);
+    }
+
+    grunt.task.run([
+      'clean:server',
+      'concurrent:server',
+      'postcss',
+      'browserSync:livereload',
+      'watch'
     ]);
+  });
 
-    // build a ZIP file to include with releases
-    grunt.registerTask('zip', [
-        'compress'
+  grunt.registerTask('server', function (target) {
+    grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
+    grunt.task.run([target ? ('serve:' + target) : 'serve']);
+  });
+
+  grunt.registerTask('test', function (target) {
+    if (target !== 'watch') {
+      grunt.task.run([
+        'clean:server',
+        'concurrent:test',
+        'postcss'
+      ]);
+    }
+
+    grunt.task.run([
+      'browserSync:test',
+      'mocha'
     ]);
+  });
 
-    // build the application
-    grunt.registerTask('build', [
-        'jshint:all',
-        'less',
-        'copy:source',
-        'copy:css',
-        'replace',
-        'cssmin',
-        'uglify'
-    ]);
+  grunt.registerTask('build', [
+    'clean:dist',
+    'useminPrepare',
+    'concurrent:dist',
+    'postcss',
+    'concat',
+    'cssmin',
+    'uglify',
+    'copy:dist',
+    'usemin',
+    'htmlmin'
+  ]);
 
+  grunt.registerTask('default', [
+    'newer:eslint',
+    'test',
+    'build'
+  ]);
 };
