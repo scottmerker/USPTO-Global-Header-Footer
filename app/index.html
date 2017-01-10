@@ -1,16 +1,28 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
+<html lang="en">
 
-<html lang=en> 
-<head> 
-    <meta charset=utf-8> 
-    <meta http-equiv=X-UA-Compatible content="IE=edge"> 
-    <meta name=viewport content="width=device-width"> 
-    <title>United States Patent and Trademark Office</title> 
-    <link rel="shortcut icon" type=image/x-icon href="http://ptoweb.uspto.gov/wmb/resources/universalheader/uhf/images/icons/favicon.ico">
-    <link rel=icon type=image/png href="http://ptoweb.uspto.gov/wmb/resources/universalheader/uhf/images/icons/favicon-32x32.png" sizes=32x32> 
-    <link rel=icon type=image/png href="http://ptoweb.uspto.gov/wmb/resources/universalheader/uhf/images/icons/favicon-16x16.png" sizes=16x16> 
-    <link rel=stylesheet href="dist/styles/vendor.css"> 
-    <link rel=stylesheet href="dist/styles/header-footer.min.css">  
+<head>
+    <meta charset="utf-8">
+    <title>United States Patent and Trademark Office</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="shortcut icon" type="image/x-icon"
+          href="http://ptoweb.uspto.gov/wmb/resources/universalheader/uhf/images/icons/favicon.ico">
+    <link rel="icon" type="image/png"
+          href="http://ptoweb.uspto.gov/wmb/resources/universalheader/uhf/images/icons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png"
+          href="http://ptoweb.uspto.gov/wmb/resources/universalheader/uhf/images/icons/favicon-16x16.png" sizes="16x16">
+
+    <!-- build:css(.) styles/vendor.css -->
+        <!-- bower:css -->
+        <link rel="stylesheet" href="bower_components/USPTOPatternLibrary/generated/styles/pattern-library.css" />
+        <!-- endbower -->
+    <!-- endbuild -->
+    
+    <!-- build:css({app,.tmp}) styles/header-footer.min.css -->
+    <link rel="stylesheet" href="styles/header-footer.min.css">
+    <!-- endbuild -->
 </head>
 
 <body>
@@ -28,7 +40,7 @@
        A similar example with Angular (note the single-quoted src string):
        <div ng-include src="'header.html'"></div>
     -->
-    <div data-include-html="dist/header.html"></div>
+    <div data-include-html="header.html"></div>
 
     <main>
         <div class="container-fluid">
@@ -163,11 +175,18 @@
        A similar example with Angular (note the single-quoted src string):
        <div ng-include src="'footer.html'"></div>
     -->
-    <div data-include-html="dist/footer.html"></div>
+    <div data-include-html="footer.html"></div>
+
+    <!-- build:js(.) scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <!-- endbower -->
+    <!-- endbuild -->
     
-        <script src="dist/scripts/vendor.js"></script> 
-        <script src="app/scripts/collapseHeader.js"></script> 
-        <script src="app/scripts/includeHTML.js"></script> 
-<!--        <script src="dist/scripts/header-footer.min.js"></script>  -->
-        </body>
+    <!-- build:js({.tmp,app}) scripts/header-footer.min.js -->
+    <script src="scripts/includeHTML.js"></script>
+    <script src="scripts/collapseHeader.js"></script>
+    <!-- endbuild -->
+</body>
 </html>

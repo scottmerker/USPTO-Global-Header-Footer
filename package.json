@@ -1,7 +1,7 @@
 {
   "name": "universalHeaderFooter",
   "private": true,
-  "version": "1.0.7",
+  "version": "1.0.8",
   "homepage": "https://github.com/USPTO/USPTO-Global-Header-Footer",
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
