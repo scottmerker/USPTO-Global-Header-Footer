@@ -19,7 +19,11 @@
 }
 .uspto-header-top .container,
 .uspto-header-top .container-fluid {
-  padding: 0 5px 0 0;
+  padding-top: 0;
+  padding-right: 5px;
+  padding-right: 0.5rem;
+  padding-bottom: 0;
+  padding-left: 0;
   background-color: #323232;
   height: 49px;
 }
@@ -33,7 +37,9 @@
   height: 27px;
   display: inline-block;
   margin-left: 21px;
+  margin-left: 2.1rem;
   margin-top: 12px;
+  margin-top: 1.2rem;
   /*
          * IE7 and IE8 render resized images (width or height tags are set)
          * improperly if this isn't set. This is IE-specific.
@@ -45,16 +51,19 @@
 }
 .uspto-header-top .patent-menu {
   min-width: 275px;
+  min-width: 27.5rem;
 }
 .uspto-header-top .trademark-menu {
   min-width: 350px;
+  min-width: 35rem;
 }
 .uspto-header-top .fees-menu {
   min-width: 250px;
+  min-width: 25rem;
 }
 .uspto-header-top .dropdown-menu > li > a {
   line-height: 2.5;
-  color: #ccc;
+  color: #cccccc;
 }
 .uspto-header-top .dropdown-menu > li > a:hover {
   background-color: #323232;
@@ -64,21 +73,42 @@
 }
 .uspto-header-top .icon-btn {
   min-width: 17px;
+  min-width: 1.7rem;
+}
+@media (min-width: 320px) {
+  .uspto-header-top .icon-btn {
+    min-width: 12px;
+    min-width: 1.2rem;
+  }
 }
 .uspto-header-top .bigger {
   transform: scale(1.2);
 }
 .uspto-header-top button,
 .uspto-header-top .btn-group > a {
-  color: #ccc;
+  color: #cccccc;
   font-weight: 400;
   text-decoration: none;
-  /* margin top, right, bottom, and left */
-  margin: 9px 0 0 0;
+  margin-top: 9px;
+  margin-top: 0.9rem;
+  margin-right: 0px;
+  margin-right: 0rem;
+  margin-bottom: 0px;
+  margin-bottom: 0rem;
+  margin-left: 0px;
+  margin-left: 0rem;
+  padding-top: 8px;
+  padding-top: 0.8rem;
+  padding-right: 8px;
+  padding-right: 0.8rem;
+  padding-bottom: 8px;
+  padding-bottom: 0.8rem;
+  padding-left: 8px;
+  padding-left: 0.8rem;
   box-shadow: none;
-  padding: 8px 8px;
   vertical-align: middle;
   border-radius: 4px;
+  border-radius: 0.4rem;
   text-align: center;
   background: #323232;
   /* fallback color for old browsers */
@@ -87,26 +117,34 @@
 .uspto-header-top button:hover,
 .uspto-header-top .btn-group > a:hover {
   background-color: #282828;
-  color: #fff;
+  color: #ffffff;
 }
 @media (min-width: 360px) {
   .uspto-header-top button,
   .uspto-header-top .btn-group > a {
-    margin: 9px 5px 0 0;
+    margin-top: 9px;
+    margin-top: 0.9rem;
+    margin-right: 5px;
+    margin-right: 0.5rem;
+    margin-bottom: 0px;
+    margin-bottom: 0rem;
+    margin-left: 0px;
+    margin-left: 0rem;
   }
 }
 .uspto-header-top .ex-btn-inverse.btn:focus {
   background-color: #282828;
-  color: #fff;
+  color: #ffffff;
 }
 .uspto-header-top .open > .btn-default {
   background: #282828;
+  color: #ffffff;
 }
 .uspto-header-top .btn-default {
   border-style: none;
 }
 .uspto-header-top ul.dropdown-menu li {
-  border-bottom: 1px solid #444;
+  border-bottom: 1px solid #444444;
 }
 .uspto-header-top ul.dropdown-menu li:last-child {
   border-bottom: none;
@@ -116,7 +154,14 @@
 }
 .uspto-header-top .myuspto-link {
   color: #ffcd59;
-  margin: 17px 5px 0 0;
+  margin-top: 17px;
+  margin-top: 1.7rem;
+  margin-right: 5px;
+  margin-right: 0.5rem;
+  margin-bottom: 0px;
+  margin-bottom: 0rem;
+  margin-left: 0px;
+  margin-left: 0rem;
   display: block;
   float: right;
 }
@@ -126,6 +171,12 @@
     background-size: contain;
     width: 78px;
     height: 27px;
+  }
+}
+@media only screen and (min-resolution: 2dppx) and (max-width: 320px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 320px), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (max-width: 320px), only screen and (min-device-pixel-ratio: 2) and (max-width: 320px), only screen and (min-resolution: 192dpi) and (max-width: 320px), only screen and (min-resolution: 2dppx) and (max-width: 320px) {
+  .uspto-header-top a.uspto-logo {
+    width: 70px;
+    width: 7rem;
   }
 }
 #headerSmallHeading,
@@ -139,12 +190,25 @@
   display: inline-block;
   margin-left: -8px;
 }
+@media (max-width: 667px) {
+  #bottom-collapse-button #headerSmallHeading {
+    display: none;
+  }
+}
 .headerbar-smallHeading {
   display: inline-block;
-  color: #444;
-  padding: 5px 19px;
+  color: #444444;
+  padding-top: 5px;
+  padding-top: 0.5rem;
+  padding-right: 19px;
+  padding-right: 1.9rem;
+  padding-bottom: 5px;
+  padding-bottom: 0.5rem;
+  padding-left: 19px;
+  padding-left: 1.9rem;
   font-size: 16px;
-  background-color: #E2E2E2;
+  font-size: 1.6rem;
+  background-color: #e2e2e2;
 }
 /* header middle */
 .uspto-header-middle {
@@ -154,11 +218,14 @@
 .uspto-header-middle .container-fluid .header-middle-label {
   display: inline-block;
   padding-bottom: 3px;
+  padding-bottom: 0.3rem;
   font-size: 32px;
+  font-size: 3.2rem;
 }
 .uspto-header-middle .container span,
 .uspto-header-middle .container-fluid span {
   margin-left: 10px;
+  margin-left: 1rem;
 }
 .uspto-header-middle .collapse-header {
   display: none;
@@ -172,18 +239,27 @@
 .uspto-header-bottom .container-fluid {
   /* shift the bottom left menu to align with other header content */
   padding-left: 9px;
+  padding-left: 0.9rem;
 }
 .uspto-header-bottom button,
 .uspto-header-bottom .nav > li > a {
-  color: #fff;
+  color: #ffffff;
   font-size: 14px;
+  font-size: 1.4rem;
   background-color: #004c97;
   border: none;
-  padding: 6px 15px 6px 12px;
+  padding-top: 6px;
+  padding-top: 0.6rem;
+  padding-right: 15px;
+  padding-right: 1.5rem;
+  padding-bottom: 6px;
+  padding-bottom: 0.6rem;
+  padding-left: 12px;
+  padding-left: 1.2rem;
   line-height: 1.4;
 }
 .uspto-header-bottom button > a {
-  color: #fff;
+  color: #ffffff;
 }
 .uspto-header-bottom .nav > li > button:hover,
 .uspto-header-bottom .nav > li > button:focus,
@@ -191,14 +267,14 @@
 .uspto-header-bottom .nav > li > a:focus {
   text-decoration: none;
   background-color: #598abb;
-  color: #fff;
+  color: #ffffff;
 }
 .uspto-header-bottom .navbar-nav .open .dropdown-menu {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 .uspto-header-bottom .open > .dropdown-toggle.btn-default {
   background-color: #598abb;
-  color: #fff;
+  color: #ffffff;
 }
 body main {
   /*
@@ -207,6 +283,7 @@ body main {
          * is because fixed position elements are removed from the document flow.
          */
   padding-top: 100px;
+  padding-top: 10rem;
   /*
          * Position the footer when there's not enough page content to push it off
          * the screen.
@@ -217,7 +294,9 @@ body main {
 }
 body main .container-fluid {
   margin-left: 15px;
+  margin-left: 1.5rem;
   margin-right: 15px;
+  margin-right: 1.5rem;
 }
 body footer {
   background-color: #363636;
@@ -229,14 +308,23 @@ body footer {
 @media (max-width: 767px) {
   .uspto-header-top ul.dropdown-menu li a {
     line-height: 2.1;
-    padding: 3px 15px;
+    padding-top: 3px;
+    padding-top: 0.3rem;
+    padding-right: 15px;
+    padding-right: 1.5rem;
+    padding-bottom: 3px;
+    padding-bottom: 0.3rem;
+    padding-left: 15px;
+    padding-left: 1.5rem;
   }
   .uspto-header-top .patent-menu {
     min-width: 275px;
+    min-width: 27.5rem;
     left: -80px;
   }
   .uspto-header-top .trademark-menu {
     min-width: 300px;
+    min-width: 30rem;
     left: -140px;
   }
   .uspto-header-top .trademark-menu .dropdown-menu li a {
@@ -244,11 +332,13 @@ body footer {
   }
   .uspto-header-top .fees-menu {
     min-width: 240px;
+    min-width: 24rem;
     left: -120px;
   }
   #headerSmallHeadingMobile {
     display: inline-block;
     height: 37px;
+    height: 3.7rem;
   }
   .uspto-header-middle {
     display: none;
@@ -256,16 +346,25 @@ body footer {
   .uspto-header-middle .container,
   .uspto-header-middle .container-fluid {
     font-size: 26px;
+    font-size: 2.6rem;
   }
   .uspto-header-bottom .navbar-collapse button,
   .uspto-header-bottom .nav > li > a {
     /* align the menu buttons with other header content */
     padding-left: 22px;
+    padding-left: 2.2rem;
     width: 100%;
     text-align: left;
   }
   .navbar-toggle {
-    padding: 5px 10px;
+    padding-top: 5px;
+    padding-top: 0.5rem;
+    padding-right: 10px;
+    padding-right: 1rem;
+    padding-bottom: 5px;
+    padding-bottom: 0.5rem;
+    padding-left: 10px;
+    padding-left: 1rem;
   }
   body main {
     /*
@@ -274,6 +373,7 @@ body footer {
              * is because fixed position elements are removed from the document flow.
              */
     padding-top: 60px;
+    padding-top: 6rem;
     /*
              * Position the footer when there's not enough page content to push it off
              * the screen.
@@ -283,17 +383,17 @@ body footer {
     min-height: calc(-5vh);
   }
 }
-/* browser upgrade prompt */
-.browserupgrade {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+@media (max-width: 767px) and (max-width: 320px) {
+  body main {
+    padding-top: 96px;
+    padding-top: 9.6rem;
+  }
 }
 .uspto-footer-logo a.logo {
   background: transparent url('../images/logo-small.png') no-repeat left center;
   /* logo sizing on small screen - this is overriden by a media rule for large screens */
   height: 57px;
+  height: 5.7rem;
   display: block;
 }
 .uspto-footer-watermark {
@@ -304,14 +404,19 @@ body footer {
   top: 0;
   right: 0;
   height: 157px;
+  height: 15.7rem;
   width: 157px;
+  width: 15.7rem;
 }
 .uspto-footer-middle .uspto-footer-column-hdg {
   font-size: 12px;
+  font-size: 1.2rem;
   line-height: 1.1em;
   margin-top: 27px;
+  margin-top: 2.7rem;
   margin-bottom: 9px;
-  color: #fff;
+  margin-bottom: 0.9rem;
+  color: #ffffff;
   text-transform: uppercase;
   font-weight: 700;
   display: block;
@@ -329,7 +434,7 @@ body footer {
 }
 .uspto-footer-middle button.navbar-toggle {
   text-align: left;
-  color: #fff;
+  color: #ffffff;
   width: 100%;
   text-transform: uppercase;
 }
@@ -337,6 +442,7 @@ body footer {
 .uspto-footer-middle button.navbar-toggle span {
   float: right;
   margin-right: 10px;
+  margin-right: 1rem;
 }
 /* big screens */
 @media (min-width: 768px) {
@@ -349,6 +455,7 @@ body footer {
     background: transparent url('../images/logo.png') no-repeat left center;
     /* logo sizing on large screen */
     height: 62px;
+    height: 6.2rem;
     display: block;
   }
 }
@@ -358,5 +465,12 @@ body footer {
  */
 @-ms-viewport {
   width: auto !important;
+}
+/* browser upgrade prompt */
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #cccccc;
+  color: #000;
+  padding: 0.2em 0;
 }
 /*# sourceMappingURL=header-footer.min.css.map */
