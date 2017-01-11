@@ -4,14 +4,16 @@
 @image-root: "../images";
 
 /* color variables */
-@color-white: #fff;     // white
-@color-bottom-background: #004c97;
-@color-header-dropdown: #282828;
-@color-header-background: #323232;
-@color-header-text: #ccc;
-@color-light-blue: #598abb;
-@color-dark-grey: #444;
-@color-header-middle: #ebebeb;
+@color-white: rgb(255, 255,255);
+@color-bottom-background: rgb(0, 76, 151);
+@color-header-dropdown: rgb(40, 40, 40);
+@color-header-background: rgb(50, 50, 50);
+@color-header-text: rgb(204, 204, 204);
+@color-light-blue: rgb(89, 138, 187);
+@color-dark-grey: rgb(68, 68, 68);
+@color-header-middle: rgb(235, 235, 235);
+@color-footer-background: rgb(54, 54, 54);
+
 
 /* width variables */
 @width-100: 100%;
@@ -32,7 +34,10 @@
 .uspto-header-top {
     .container,
     .container-fluid {
-        padding: 0 5px 0 0;
+        padding-top: 0;
+        .unit-fallback(padding-right, 5);
+        padding-bottom: 0;
+        padding-left: 0;
         background-color: @color-header-background;
         height: @height-header-top;
     }
@@ -45,8 +50,9 @@
         width: @width-header-logo;
         height: @height-header-logo;
         display: inline-block;
-        margin-left: 21px;
-        margin-top: 12px;
+        .unit-fallback(margin-left, 21);
+        .unit-fallback(margin-top, 12);
+
         /*
          * IE7 and IE8 render resized images (width or height tags are set)
          * improperly if this isn't set. This is IE-specific.
@@ -57,13 +63,13 @@
         background-color: @color-header-dropdown;
     }
     .patent-menu {
-        min-width: 275px;
+        .unit-fallback(min-width, 275);
     }
     .trademark-menu {
-        min-width: 350px;
+        .unit-fallback(min-width, 350);
     }
     .fees-menu {
-        min-width: 250px;
+        .unit-fallback(min-width, 250);
     }
     .dropdown-menu > li > a {
         line-height: 2.5;
@@ -76,7 +82,11 @@
         margin: 0;
     }
     .icon-btn {
-        min-width: 17px;
+        .unit-fallback(min-width, 17);
+        
+        @media (min-width: 320px) {
+            .unit-fallback(min-width, 12);
+        }
     }
     /* make an icon bigger */
     .bigger {
@@ -87,12 +97,17 @@
         color: @color-header-text;
         font-weight: 400;
         text-decoration: none;
-        /* margin top, right, bottom, and left */
-        margin: 9px 0 0 0;
+        .unit-fallback(margin-top, 9);
+        .unit-fallback(margin-right, 0);
+        .unit-fallback(margin-bottom, 0);
+        .unit-fallback(margin-left, 0);
+        .unit-fallback(padding-top, 8);
+        .unit-fallback(padding-right, 8);
+        .unit-fallback(padding-bottom, 8);
+        .unit-fallback(padding-left, 8);
         box-shadow: none;
-        padding: 8px 8px;
         vertical-align: middle;
-        border-radius: 4px;
+        .unit-fallback(border-radius, 4);
         text-align: center;
         background: @color-header-background;    /* fallback color for old browsers */
         // increase the transparency variable to highlight the buttons
@@ -102,7 +117,10 @@
             color: @color-white;
         }
         @media (min-width: 360px) {
-            margin: 9px 5px 0 0;
+            .unit-fallback(margin-top, 9);
+            .unit-fallback(margin-right, 5);
+            .unit-fallback(margin-bottom, 0);
+            .unit-fallback(margin-left, 0);
         }
     }
     /*
@@ -118,6 +136,7 @@
     }
     .open > .btn-default {
         background: @color-header-dropdown;
+        color: @color-white;
     }
 
     .btn-default {
@@ -136,7 +155,10 @@
     }
     .myuspto-link{
         color: #ffcd59;
-        margin: 17px 5px 0 0;
+        .unit-fallback(margin-top, 17);
+        .unit-fallback(margin-right, 5);
+        .unit-fallback(margin-bottom, 0);
+        .unit-fallback(margin-left, 0);
         display: block;
         float: right;
     }
@@ -150,6 +172,10 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
         background-size: contain;
         width: @width-header-logo;
         height: @height-header-logo;
+        
+        @media (max-width: 320px) {
+            .unit-fallback(width, 70);
+        }
     }
 }
 
@@ -168,14 +194,25 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
         display: inline-block;
         margin-left: -8px;
     }
+    
 } // .collapse-header
+@media (max-width: 667px) {
+    #bottom-collapse-button {
+        #headerSmallHeading {
+                display: none;
+            }
+    }
+}
 
 .headerbar-smallHeading {
     display: inline-block;
     color: @color-dark-grey;
-    padding: 5px 19px;
-    font-size: 16px;
-    background-color: #E2E2E2;
+    .unit-fallback(padding-top, 5);
+    .unit-fallback(padding-right, 19);
+    .unit-fallback(padding-bottom, 5);
+    .unit-fallback(padding-left, 19);
+    .unit-fallback(font-size, 16);
+    background-color: rgb(226, 226, 226);
 }
 
 /* header middle */
@@ -186,14 +223,14 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
     .container-fluid {
         .header-middle-label {
             display: inline-block;
-            padding-bottom: 3px;
-            font-size: 32px;
+            .unit-fallback(padding-bottom, 3);
+            .unit-fallback(font-size, 32);
         }
     }
     .container,
     .container-fluid {
         span {
-            margin-left: 10px;
+            .unit-fallback(margin-left, 10);
         }
     }
     // hide the middle header when scrolling
@@ -212,15 +249,18 @@ only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx
     .container,
     .container-fluid {
         /* shift the bottom left menu to align with other header content */
-        padding-left: 9px;
+        .unit-fallback(padding-left, 9);
     }
     button,
     .nav > li > a {
         color: @color-white;
-        font-size: 14px;
+        .unit-fallback(font-size, 14);
         background-color: @color-bottom-background;
         border: none;
-        padding: 6px 15px 6px 12px;
+        .unit-fallback(padding-top, 6);
+        .unit-fallback(padding-right, 15);
+        .unit-fallback(padding-bottom, 6);
+        .unit-fallback(padding-left, 12);
         line-height: 1.4;
     }
     button > a {
@@ -254,7 +294,7 @@ body {
          * overlay other content unless you add padding to the top of the <body>. This
          * is because fixed position elements are removed from the document flow.
          */
-        padding-top: 100px;
+        .unit-fallback(padding-top, 100);
         /*
          * Position the footer when there's not enough page content to push it off
          * the screen.
@@ -263,12 +303,12 @@ body {
          */
         min-height: calc(100vh - 110px);
         .container-fluid {
-            margin-left: 15px;
-            margin-right: 15px;
+            .unit-fallback(margin-left, 15);
+            .unit-fallback(margin-right, 15);
         }
     } // main
     footer {
-        background-color: #363636;
+        background-color: @color-footer-background;
         padding-top: 1.4em;
         padding-bottom: 1em;
         margin-top: 18px;
@@ -280,14 +320,17 @@ body {
     .uspto-header-top {
         ul.dropdown-menu li a {
             line-height: 2.1;
-            padding: 3px 15px;
+            .unit-fallback(padding-top, 3);
+            .unit-fallback(padding-right, 15);
+            .unit-fallback(padding-bottom, 3);
+            .unit-fallback(padding-left, 15);
         }
         .patent-menu {
-            min-width: 275px;
+            .unit-fallback(min-width, 275);
             left: -80px;
         }
         .trademark-menu {
-            min-width: 300px;
+            .unit-fallback(min-width, 300);
             left: -140px;
             // force long text lines to wrap
             .dropdown-menu li a {
@@ -295,21 +338,21 @@ body {
             }
         }
         .fees-menu {
-            min-width: 240px;
+            .unit-fallback(min-width, 240);
             left: -120px;
         }
     } // .uspto-header-top
 
     #headerSmallHeadingMobile {
         display: inline-block;
-        height: 37px;
+        .unit-fallback(height, 37);
     }
 
     .uspto-header-middle {
         display: none;
         .container,
         .container-fluid {
-            font-size: 26px;
+            .unit-fallback(font-size, 26);
         }
     } // .uspto-header-middle
 
@@ -317,14 +360,17 @@ body {
         .navbar-collapse button,    // target the drop-down menu buttons
         .nav > li > a {
             /* align the menu buttons with other header content */
-            padding-left: 22px;
+            .unit-fallback(padding-left, 22);
             width: @width-100;
             text-align: left;
         }
     } // .uspto-header-bottom
 
     .navbar-toggle {
-        padding: 5px 10px;
+        .unit-fallback(padding-top, 5);
+        .unit-fallback(padding-right, 10);
+        .unit-fallback(padding-bottom, 5);
+        .unit-fallback(padding-left, 10);
     }
 
     body {
@@ -334,7 +380,10 @@ body {
              * overlay other content unless you add padding to the top of the <body>. This
              * is because fixed position elements are removed from the document flow.
              */
-            padding-top: 60px;
+            .unit-fallback(padding-top, 60);
+            @media (max-width: 320px) {
+                .unit-fallback(padding-top, 96);
+            }
             /*
              * Position the footer when there's not enough page content to push it off
              * the screen.
@@ -346,19 +395,11 @@ body {
     } // body
 }
 
-/* browser upgrade prompt */
-.browserupgrade {
-    margin: 0.2em 0;
-    background: @color-header-text;
-    color: #000;
-    padding: 0.2em 0;
-}
-
 .uspto-footer-logo {
     a.logo {
         background: transparent url('@{image-root}/logo-small.png') no-repeat left center;
         /* logo sizing on small screen - this is overriden by a media rule for large screens */
-        height: 57px;
+        .unit-fallback(height, 57);
         display: block;
     }
 }
@@ -370,16 +411,16 @@ body {
     z-index: 0;
     top: 0;
     right: 0;
-    height: 157px;
-    width: 157px;
+    .unit-fallback(height, 157);
+    .unit-fallback(width, 157);
 }
 
 .uspto-footer-middle {
     .uspto-footer-column-hdg {
-        font-size: 12px;
+        .unit-fallback(font-size, 12);
         line-height: 1.1em;
-        margin-top: 27px;
-        margin-bottom: 9px;
+        .unit-fallback(margin-top, 27);
+        .unit-fallback(margin-bottom, 9);
         color: @color-white;
         text-transform: uppercase;
         font-weight: 700;
@@ -406,7 +447,7 @@ body {
         i,
         span {
             float: right;
-            margin-right: 10px;
+            .unit-fallback(margin-right, 10);
         }
     }
 } // .uspto-footer-middle
@@ -423,7 +464,7 @@ body {
         a.logo {
             background: transparent url('@{image-root}/logo.png') no-repeat left center;
             /* logo sizing on large screen */
-            height: 62px;
+            .unit-fallback(height, 62);
             display: block;
         }
     }

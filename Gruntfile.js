@@ -44,13 +44,17 @@ module.exports = function (grunt) {
         files: ['Gruntfile.js']
       },
       sass: {
-        files: ['<%= config.app %>/styles/{,*/}*.{scss,sass}'],
+        files: ['<%= config.app %>/styles/sass/{,*/}*.{scss,sass}'],
         tasks: ['sass:server', 'postcss']
       },
-      styles: {
-        files: ['<%= config.app %>/styles/{,*/}*.css'],
-        tasks: ['newer:copy:styles', 'postcss']
+      less: {
+        files: ['<%= config.app %>/styles/less/{,*/}*.less'],
+        tasks: ['less:server']
       }
+//      styles: {
+//        files: ['<%= config.app %>/styles/{,*/}*.css', '<%= config.app %>/styles/{,*/}*.less'],
+//        tasks: ['newer:copy:styles', 'postcss', 'less:dev']
+//      }
     },
 
     browserSync: {
@@ -177,7 +181,7 @@ module.exports = function (grunt) {
       server: {
         files: [{
           expand: true,
-          cwd: '<%= config.app %>/styles',
+          cwd: '<%= config.app %>/styles/sass',
           src: ['*.{scss,sass}'],
           dest: '.tmp/styles',
           ext: '.css'
@@ -186,23 +190,25 @@ module.exports = function (grunt) {
     },
 
     less: {
-        dev: {
+        server: {
             options: {
                 sourceMap: true,
                 outputSourceFiles: true,
                 sourceMapURL: 'header-footer.min.css.map'
             },
             files: [{
-                    '<%= config.app %>/styles/header-footer.min.css': '<%= config.app %>/styles/less/main.less' // destination file : source file
+                    src: '<%= config.app %>/styles/less/main.less',
+                    dest: '<%= config.app %>/styles/header-footer.min.css'
                 }]
         },
-        prod: {
+        dist: {
             options: {
                 paths: ['<%= config.app %>/less'],
                 compress: true //minifies the file
             },
             files: [{
-                    '<%= config.dist %>/styles/header-footer.min.css': '<%= config.app %>/styles/less/main.less' // destination file : source file
+                    src: '<%= config.app %>/styles/less/main.less',
+                    dest: '<%= config.dist %>/styles/header-footer.min.css'
                 }]
         }
     },
@@ -279,11 +285,11 @@ module.exports = function (grunt) {
           collapseBooleanAttributes: true,
           collapseWhitespace: true,
           conservativeCollapse: true,
-          removeAttributeQuotes: true,
+          removeAttributeQuotes: false,
           removeCommentsFromCDATA: true,
           removeComments: true,
-          removeEmptyAttributes: true,
-          removeOptionalTags: true,
+          removeEmptyAttributes: false,
+          removeOptionalTags: false,
           // true would impact styles with attribute selectors
           removeRedundantAttributes: false,
           useShortDoctype: true
@@ -333,16 +339,17 @@ module.exports = function (grunt) {
           dest: '<%= config.dist %>',
           src: [
             '*.{ico,png,txt}',
-            'images/{,*/}*.webp',
+            'images/**/*',
             '{,*/}*.html',
             'styles/fonts/{,*/}*.*'
           ]
         }, {
           expand: true,
           dot: true,
+          flatten: true,
           cwd: '.',
-          src: 'bower_components/bootstrap-sass/assets/fonts/bootstrap/*',
-          dest: '<%= config.dist %>'
+          src: ['bower_components/USPTOPatternLibrary/generated/images/icons/*'],
+          dest: '<%= config.dist %>/images/icons'
         }]
       }
     },
@@ -351,7 +358,7 @@ module.exports = function (grunt) {
     concurrent: {
       server: [
         'babel:dist',
-        'less:dev',
+        'less:server',
         'sass:server'
       ],
       test: [
@@ -360,7 +367,7 @@ module.exports = function (grunt) {
       dist: [
         'babel',
         'sass',
-        'less:prod',
+        'less:dist',
         'imagemin',
         'svgmin'
       ]
