@@ -2,7 +2,6 @@ Changelog
 =========
 
 ### v1.0.10 
------
 * Release 2017-01-30
 * Updated README and other *.md files.
 
@@ -13,8 +12,9 @@ Changelog
 #### Updated LESS: 
 * added the CSS class .uhf-main so that other projects are not restricted to use the <main> element.
 
-### v1.0.9 
 -----
+### v1.0.9 
+
 #### Release 2017-01-11
 #### Changed project structure
 * Moved source code out of the root directory and into the folder `app`
