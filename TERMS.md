@@ -1,3 +1,5 @@
+Terms
+==============
 Software code created by U.S. Government employees is not subject to copyright
 in the United States (17 U.S.C. §105). The United States/Department of Commerce
 reserve all rights to seek and obtain copyright protection in countries other
