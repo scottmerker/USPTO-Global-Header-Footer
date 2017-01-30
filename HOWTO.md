@@ -4,6 +4,7 @@ How to use the Universal Header/Footer Template
 You must use the [USPTO UI Design Library](http://uspto.github.io/designpatterns/index.html) in order to get the styles and assets used by the Universal Header/Footer.  This is based on Bootstrap and uses jQuery.
 
 ## Project Structure
+```
 .
 ├── app
 │   ├── images
@@ -18,8 +19,7 @@ You must use the [USPTO UI Design Library](http://uspto.github.io/designpatterns
 │   └── styles
 │   └── views
 │   └── index.html
-
-##### app
+```
 This is the source folder for the application.
 ##### templates
 This folder has the template used to build the distribution code.  It should only be used if you want to use the Grunt build.
