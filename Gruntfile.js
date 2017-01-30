@@ -50,6 +50,10 @@ module.exports = function (grunt) {
       less: {
         files: ['<%= config.app %>/styles/less/{,*/}*.less'],
         tasks: ['less:server']
+      },
+      html: {
+        files: ['<%= config.app %>/templates/{,*/}*.html', '<%= config.app %>/views/{,*/}*.html'],
+        tasks: ['templateBuild']
       }
 //      styles: {
 //        files: ['<%= config.app %>/styles/{,*/}*.css', '<%= config.app %>/styles/{,*/}*.less'],
@@ -371,6 +375,44 @@ module.exports = function (grunt) {
         'imagemin',
         'svgmin'
       ]
+    },
+    
+    replace : {
+        // Update assets path references.  This index file is for GitHub Pages.
+        dist: {
+            options: {
+                patterns: [
+                    {
+                        match: /styles\//g,
+                        replacement: 'dist/styles/'
+                    },
+                    {
+                        match: /scripts\//g,
+                        replacement: 'dist/scripts/'
+                    }
+                ]
+            },
+            files: [
+                {
+                    expand: true,
+                    flatten: true,
+                    src: ['./<%= config.dist %>/index.html'],
+                    dest: '.'
+                }
+            ]
+        }
+    },
+    includes: {
+      build: {
+        cwd: '<%= config.app %>',
+        src: [ 'templates/index.html' ],
+        dest: '<%= config.app %>/index.html',
+        options: {
+          flatten: true,
+          includePath: '<%= config.app %>/views',
+          banner: '<!-- Site built using grunt includes! -->\n'
+        }
+      }
     }
   });
 
@@ -383,16 +425,12 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
+      'templateBuild',
       'concurrent:server',
       'postcss',
       'browserSync:livereload',
       'watch'
     ]);
-  });
-
-  grunt.registerTask('server', function (target) {
-    grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-    grunt.task.run([target ? ('serve:' + target) : 'serve']);
   });
 
   grunt.registerTask('test', function (target) {
@@ -410,7 +448,13 @@ module.exports = function (grunt) {
     ]);
   });
 
+  grunt.registerTask('templateBuild', [
+    'includes'
+  ]);
+  
+  
   grunt.registerTask('build', [
+    'templateBuild',
     'clean:dist',
     'useminPrepare',
     'concurrent:dist',
@@ -420,7 +464,8 @@ module.exports = function (grunt) {
     'uglify',
     'copy:dist',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'replace:dist'
   ]);
 
   grunt.registerTask('default', [
