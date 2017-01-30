@@ -1,8 +1,7 @@
 {
   "name": "universalHeaderFooter",
   "private": true,
-  "version": "1.0.9",
-  "homepage": "https://github.com/USPTO/USPTO-Global-Header-Footer",
+  "version": "1.0.10",
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
     "grunt": "^0.4.5",
@@ -19,9 +18,12 @@
     "grunt-contrib-uglify": "^0.8.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-eslint": "^16.0.0",
+    "grunt-include-replace": "^5.0.0",
+    "grunt-includes": "^1.0.0",
     "grunt-mocha": "^0.4.12",
     "grunt-newer": "^1.1.0",
     "grunt-postcss": "^0.5.3",
+    "grunt-replace": "^1.0.1",
     "grunt-sass": "^1.0.0",
     "grunt-svgmin": "^2.0.1",
     "grunt-usemin": "^3.0.0",
