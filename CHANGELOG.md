@@ -1,6 +1,11 @@
 Changelog
 =========
 
+### v1.0.11
+* Release 2017-02-24
+* Updated to use [USPTO UI Design Library](http://uspto.github.io/designpatterns/index.html) v1.5.3.
+
+-----
 ### v1.0.10 
 
 * Release 2017-01-30
