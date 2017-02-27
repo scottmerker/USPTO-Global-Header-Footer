@@ -345,7 +345,8 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             'images/**/*',
             '{,*/}*.html',
-            'styles/fonts/{,*/}*.*'
+            'styles/fonts/{,*/}*.*',
+            '!templates/*.html'
           ]
         }, {
           expand: true,
@@ -409,8 +410,7 @@ module.exports = function (grunt) {
         dest: '<%= config.app %>/index.html',
         options: {
           flatten: true,
-          includePath: '<%= config.app %>/views',
-          banner: '<!-- Site built using grunt includes! -->\n'
+          includePath: '<%= config.app %>/views'
         }
       }
     }
