@@ -363,15 +363,15 @@ module.exports = function (grunt) {
     concurrent: {
       server: [
         'babel:dist',
-        'less:server',
-        'sass:server'
+        'less:server'
+//        'sass:server'
       ],
       test: [
         'babel'
       ],
       dist: [
         'babel',
-        'sass',
+//        'sass',
         'less:dist',
         'imagemin',
         'svgmin'

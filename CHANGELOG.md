@@ -1,9 +1,14 @@
 Changelog
 =========
 
+### v1.0.13
+* Release 2017-05-11
+* Updated link for 'File Patents' under the Patent's menu.
+
+-----
 ### v1.0.12
 * Release 2017-03-23
-* Updated link for 'Check private filing status' under the Patents menu.
+* Updated link for 'Check private filing status' under the Patent's menu.
 
 -----
 ### v1.0.11
