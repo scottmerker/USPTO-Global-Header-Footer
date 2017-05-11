@@ -1,7 +1,7 @@
 {
   "name": "universalHeaderFooter",
   "private": true,
-  "version": "1.0.12",
+  "version": "1.0.13",
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
     "grunt": "^0.4.5",
