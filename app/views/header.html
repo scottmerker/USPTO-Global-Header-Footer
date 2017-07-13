@@ -10,6 +10,7 @@
                     </span>
                 </a>
                 <span class="pull-right">
+                    <!-- Patents -->
                     <div class="btn-group">
                         <button type="button" class="btn btn-default dropdown-toggle ex-btn-inverse"
                                 data-toggle="dropdown"
@@ -47,6 +48,8 @@
                             </li>
                         </ul>
                     </div>
+
+                    <!-- Trademarks -->
                     <div class="btn-group">
                         <button type="button" class="btn btn-default dropdown-toggle ex-btn-inverse"
                                 data-toggle="dropdown"
@@ -56,8 +59,7 @@
                         </button>
                         <ul class="dropdown-menu dropdown-menu-right trademark-menu">
                             <li>
-<!--                                <a href="http://tmsearch.uspto.gov/bin/gate.exe?f=login&amp;p_lang=english&amp;p_d=trmk" target="_blank">Search trademarks</a>-->
-                                <a href="#" target="_blank">Search trademarks</a>
+                                <a href="http://tmsearch.uspto.gov/bin/gate.exe?f=login&p_lang=english&p_d=trmk" target="_blank">Search trademarks</a>
                             </li>
                             <li>
                                 <a href="https://www.uspto.gov/trademarks-application-process/filing-online" target="_blank">File trademark forms</a>
@@ -88,6 +90,8 @@
                             </li>
                         </ul>
                     </div>
+
+                    <!-- Fees and payment -->
                     <div class="btn-group">
                         <button type="button" class="btn btn-default dropdown-toggle ex-btn-inverse"
                                 data-toggle="dropdown"
@@ -107,6 +111,8 @@
                             </li>
                         </ul>
                     </div>
+
+                    <!-- Help -->
                     <div class="btn-group">
                         <button type="button" class="btn btn-default dropdown-toggle ex-btn-inverse"
                                 data-toggle="dropdown"
@@ -123,17 +129,15 @@
                             </li>
                         </ul>
                     </div>
-                    <!--
-                        The code snippet for the .btn-group below will need to
-                        be conditionally displayed when the user is signed in
-                        and it's appropriate to show account information.
-                    -->
 
-                    <!--
-                        The code snippet for the .btn-group below will need to
-                        be conditionally displayed when the user is signed in
-                        and it's appropriate to show account information. -->
+                    <!-- Sign-in/User menu -->
                     <div class="btn-group">
+                        <!--
+                            The code snippet for the .btn-group below will need to
+                            be conditionally displayed when the user is signed in
+                            and it's appropriate to show account information.
+                         -->
+                        <!-- BEGIN USER DROPDOWN MENU -->
                         <button type="button" class="btn btn-default dropdown-toggle ex-btn-inverse"
                                 data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
@@ -141,37 +145,42 @@
                             <span class="visible-xs icon-btn"><span class="icon icon-user icon-inverse"></span></span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-right">
-                            <li><a href="https://my.uspto.gov">
-                                <em class="icon icon-inverse icon-home"></em> &nbsp;MyUSPTO<span class="sr-only">&nbsp;console</span></a> </li>
-                            <li><a href="https://account.uspto.gov">
-                                <em class="icon icon-inverse icon-user"></em> &nbsp;<span class="sr-only">Manage your&nbsp;</span>Account</a></li>
-                            <li><a href="https://my.uspto.gov">
-                                <em class="icon icon-inverse icon-sign-out"></em> &nbsp;Sign out</a></li>
+                            <li>
+                                <a href="https://my.uspto.gov">
+                                <span class="icon icon-inverse icon-home"></span> &nbsp;MyUSPTO<span class="sr-only">&nbsp;console</span></a>
+                            </li>
+                            <li>
+                                <a href="https://account.uspto.gov">
+                                <span class="icon icon-inverse icon-user"></span> &nbsp;<span class="sr-only">Manage your&nbsp;</span>Account</a>
+                            </li>
+                            <li>
+                                <a href="https://my.uspto.gov/signout">
+                                <span class="icon icon-inverse icon-sign-out"></span> &nbsp;Sign out</a>
+                            </li>
                         </ul>
-                    </div>
-                    <!--
-                        The code snippet for the .btn-group below will need to
-                        be conditionally displayed when it's appropriate to show
-                        the "Sign in" button. -->
-<!--                    <div class="btn-group">
-                        <button 
-                            class="btn btn-default ex-btn-inverse" 
+                        <!-- END USER DROPDOWN MENU -->
+
+                        <!--
+                            The code snippet for the .btn-group below will need to
+                            be conditionally displayed when it's appropriate to show
+                            the "Sign in" button.
+                        -->
+                        <!-- BEGIN SIGN IN BUTTON TO OPEN SIGN-IN WIDGET-->
+                        <!-- <button
+                            class="btn btn-default ex-btn-inverse"
                             type="button"
-                            data-toggle="modal" 
+                            data-toggle="modal"
                             data-backdrop="static"
                             data-keyboard="false"
-                            data-target="#siw-modal-widget" 
-                            onclick="SIW.init({type:'modal'});">Sign in</button>
-                    </div>-->
-                    <a href="https://my.uspto.gov" target="_blank" class="myuspto-link">MyUSPTO</a>
-                    <!--
-                        The code snippet for the .btn-group below will need to
-                        be conditionally displayed when it's appropriate to show
-                        the "Sign in" button.
-                    <div class="btn-group">
-                        <a href="#" class="btn btn-default" role="button">Sign in</a>
+                            data-target="#siw-modal-widget"
+                            onclick="SIW.init({type:'modal'});">Sign in</button>-->
+                        <!-- END SIGN IN BUTTON TO OPEN SIGN-IN WIDGET-->
                     </div>
-                    -->
+
+                    <!-- MyUSPTO Link -->
+                    <div class="btn-group">
+                        <a href="https://my.uspto.gov" target="_blank" class="btn myuspto-link">MyUSPTO</a>
+                    </div>
                 </span> <!-- /.pull-right -->
             </div> <!-- /.container-fluid -->
         </nav>

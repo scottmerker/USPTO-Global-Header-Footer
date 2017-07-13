@@ -1,9 +1,9 @@
 {
   "name": "headerfooter",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "dependencies": {},
   "devDependencies": {
-    "USPTOPatternLibrary": "https://github.com/USPTO/designpatterns.git#v1.5.3"
+    "USPTOPatternLibrary": "https://github.com/USPTO/designpatterns.git#v1.5.4"
   },
   "resolutions": {
     "jquery": "^2.0",

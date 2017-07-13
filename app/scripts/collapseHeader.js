@@ -1,5 +1,5 @@
 (function() {
-    "use strict";
+    'use strict';
 
     /*
      * Collapse the header when the user scrolls down.
@@ -23,12 +23,12 @@
                     if ($(this).scrollTop() > minimumScroll) {
                         // collapse the header
                         $('.uspto-header-middle').hide(duration, function () {    // smooth out the transition
-                            $('#global-header').addClass("collapse-header");
+                            $('#global-header').addClass('collapse-header');
                         });
                     } else {
                         // restore the header
                         $('.uspto-header-middle').show(duration, function () {   // smooth out the transition
-                            $('#global-header').removeClass("collapse-header");
+                            $('#global-header').removeClass('collapse-header');
                         });
                     } // if
                 }, 200);

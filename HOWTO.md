@@ -97,9 +97,9 @@ Delete or comment out the code in the `header.html` file that references the sig
     <span class="visible-xs icon-btn"><span class="icon icon-user icon-inverse"></span></span>
     </button>
     <ul class="dropdown-menu dropdown-menu-right">
-        <li><a href="https://my.uspto.gov"><em class="icon icon-inverse icon-home"></em> &nbsp;MyUSPTO<span class="sr-only">&nbsp;console</span></a></li>
-        <li><a href="https://account.uspto.gov"><em class="icon icon-inverse icon-user"></em> &nbsp;<span class="sr-only">Manage your&nbsp;</span>Account</a></li>
-        <li><a href="https://my.uspto.gov"><em class="icon icon-inverse icon-sign-out"></em> &nbsp;Sign out</a></li>
+        <li><a href="https://my.uspto.gov"><span class="icon icon-inverse icon-home"></span> &nbsp;MyUSPTO<span class="sr-only">&nbsp;console</span></a></li>
+        <li><a href="https://account.uspto.gov"><span class="icon icon-inverse icon-user"></span> &nbsp;<span class="sr-only">Manage your&nbsp;</span>Account</a></li>
+        <li><a href="https://my.uspto.gov/signout"><span class="icon icon-inverse icon-sign-out"></span> &nbsp;Sign out</a></li>
     </ul>
 </div>
 
