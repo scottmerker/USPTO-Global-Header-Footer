@@ -1,7 +1,7 @@
 @import "_unit-fallback.less";
 
 // root directory for images, relative to the location of index.html
-@image-root: "../images";
+@image-root: "../../images";
 
 /* color variables */
 @color-white: rgb(255, 255,255);
@@ -122,7 +122,11 @@
             .unit-fallback(margin-bottom, 0);
             .unit-fallback(margin-left, 0);
         }
+        &.myuspto-link{
+            color: rgb(242, 169, 0);
+        }
     }
+
     /*
      * button:hover works, but button:focus fails to produce the correct
      * behavior. An initial guess is there's an interaction with pattern-library.css
@@ -152,15 +156,6 @@
         li.divider {
             border-bottom: none;
         }
-    }
-    .myuspto-link{
-        color: #ffcd59;
-        .unit-fallback(margin-top, 17);
-        .unit-fallback(margin-right, 5);
-        .unit-fallback(margin-bottom, 0);
-        .unit-fallback(margin-left, 0);
-        display: block;
-        float: right;
     }
 } // .uspto-header-top
 
