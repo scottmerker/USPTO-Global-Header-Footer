@@ -31,7 +31,7 @@
   background: #323232;
 }
 .uspto-header-top a.uspto-logo {
-  background: transparent url('../../images/logo-micro.png') no-repeat left center;
+  background: transparent url('../images/logo-micro.png') no-repeat left center;
   background-size: contain;
   width: 78px;
   height: 27px;
@@ -158,7 +158,7 @@
 }
 @media only screen and (min-resolution: 2dppx), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .uspto-header-top a.uspto-logo {
-    background: transparent url('../../images/retina/logo-micro.png') no-repeat left center;
+    background: transparent url('../images/retina/logo-micro.png') no-repeat left center;
     background-size: contain;
     width: 78px;
     height: 27px;
@@ -383,14 +383,14 @@ body footer {
   }
 }
 .uspto-footer-logo a.logo {
-  background: transparent url('../../images/logo-small.png') no-repeat left center;
+  background: transparent url('../images/logo-small.png') no-repeat left center;
   /* logo sizing on small screen - this is overriden by a media rule for large screens */
   height: 57px;
   height: 5.7rem;
   display: block;
 }
 .uspto-footer-watermark {
-  background: url('../../images/logo-watermark.png') no-repeat left top;
+  background: url('../images/logo-watermark.png') no-repeat left top;
   background-size: contain;
   position: absolute;
   z-index: 0;
@@ -445,7 +445,7 @@ body footer {
     padding-right: 1%;
   }
   .uspto-footer-logo a.logo {
-    background: transparent url('../../images/logo.png') no-repeat left center;
+    background: transparent url('../images/logo.png') no-repeat left center;
     /* logo sizing on large screen */
     height: 62px;
     height: 6.2rem;
@@ -460,10 +460,4 @@ body footer {
   width: auto !important;
 }
 /* browser upgrade prompt */
-.browserupgrade {
-  margin: 0.2em 0;
-  background: #cccccc;
-  color: #000;
-  padding: 0.2em 0;
-}
 /*# sourceMappingURL=header-footer.min.css.map */

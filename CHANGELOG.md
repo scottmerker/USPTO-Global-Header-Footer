@@ -2,6 +2,11 @@ Changelog
 =========
 
 ### v1.0.14
+* Release 2017-09-19
+* Updated linking for background images and logos.
+
+-----
+### v1.0.14
 * Release 2017-07-13
 * Updated spacing between menu items and the MyUSPTO link in the top navigation bar.
 * Updated MyUSPTO link font color.
@@ -9,7 +14,6 @@ Changelog
 * Updated the path for the variable `@image-root` in `_header-footer.less`.
 
 -----
-
 ### v1.0.13
 * Release 2017-05-11
 * Updated link for 'File Patents' under the Patent's menu.

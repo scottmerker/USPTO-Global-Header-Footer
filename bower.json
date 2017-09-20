@@ -1,6 +1,6 @@
 {
   "name": "headerfooter",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "dependencies": {},
   "devDependencies": {
     "USPTOPatternLibrary": "https://github.com/USPTO/designpatterns.git#v1.5.4"
