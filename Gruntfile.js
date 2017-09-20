@@ -124,7 +124,14 @@ module.exports = function (grunt) {
     eslint: {
       target: [
         '<%= config.app %>/scripts/{,*/}*.js'
-      ]
+      ],
+      quiet: true,
+      files: {
+          options: {
+              configFile: '.eslintrc',
+              format: require('eslint-tap')
+          }
+      }
     },
 
     // Mocha testing framework configuration options
@@ -204,7 +211,7 @@ module.exports = function (grunt) {
         },
         dist: {
             options: {
-                paths: ['<%= config.app %>/less'],
+                paths: ['<%= config.app %>/styles/less'],
                 compress: true //minifies the file
             },
             files: [{
@@ -251,7 +258,15 @@ module.exports = function (grunt) {
           '<%= config.dist %>',
           '<%= config.dist %>/images',
           '<%= config.dist %>/styles'
-        ]
+        ],
+        blockReplacements: {
+            js: function (block) {
+                grunt.log.debug(JSON.stringify(block.dest));
+                //grunt.log.debug(JSON.stringify(grunt.filerev.summary));
+
+                return '<script src="'+block.dest+'"></script>';
+            }
+        }
       },
       html: ['<%= config.dist %>/{,*/}*.html'],
       css: ['<%= config.dist %>/styles/{,*/}*.css']
@@ -343,7 +358,7 @@ module.exports = function (grunt) {
             'images/**/*',
             '{,*/}*.html',
             'styles/fonts/{,*/}*.*',
-            '!templates/*.html'
+            '!templates/{,*/}*'
           ]
         }, {
           expand: true,
