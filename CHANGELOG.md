@@ -1,7 +1,12 @@
 Changelog
 =========
+### v1.0.17
+* Added Google Tag Manager attributes to the menu.
 
-### v1.0.14
+### v1.0.16
+* Updated to use [USPTO UI Design Library](http://uspto.github.io/designpatterns/index.html) v1.6.3.
+
+### v1.0.15
 * Release 2017-09-19
 * Updated linking for background images and logos.
 
