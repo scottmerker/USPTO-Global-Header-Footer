@@ -1,6 +1,6 @@
 {
-  "name": "headerfooter",
-  "version": "1.0.16",
+  "name": "universal-header-footer",
+  "version": "1.0.17",
   "dependencies": {},
   "devDependencies": {
     "USPTOPatternLibrary": "https://github.com/USPTO/designpatterns.git#v1.6.3"
@@ -13,7 +13,7 @@
   "appPath": "resources",
   "moduleName": "universalHeaderFooter",
   "homepage": "https://github.com/USPTO/USPTO-Global-Header-Footer",
-  "description": "USPTO header/footer",
+  "description": "USPTO universal header and footer",
   "main": "",
   "authors": [
     "uspto.gov"
