@@ -1,3 +1,7 @@
+---------------------------------------------------------------------------------------------
+IMPORTANT:  THIS REPO IS BEING DEPRECATED.  PLEASE USE THE REPO NOW AVAILABLE ON GITLAB.
+---------------------------------------------------------------------------------------------
+
 Universal Header/Footer Template
 ==============
 
