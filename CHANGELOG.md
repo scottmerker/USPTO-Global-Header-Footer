@@ -1,5 +1,8 @@
 Changelog
 =========
+### v1.0.18
+* Updated links in black banner for **File patents** and **Check private filing status**.
+
 ### v1.0.17
 * Added Google Tag Manager attributes to the menu.
 
