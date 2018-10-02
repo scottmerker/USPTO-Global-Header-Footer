@@ -1,6 +1,6 @@
 {
   "name": "universalHeaderFooter",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "dependencies": {},
   "devDependencies": {
     "USPTOPatternLibrary": "https://github.com/USPTO/designpatterns.git#v1.6.3"
