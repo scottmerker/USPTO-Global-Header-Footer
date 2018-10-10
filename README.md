@@ -1,6 +1,10 @@
 ---------------------------------------------------------------------------------------------
 IMPORTANT:  THIS REPO IS BEING DEPRECATED.  PLEASE USE THE REPO NOW AVAILABLE ON GITLAB.
 ---------------------------------------------------------------------------------------------
+# NOTICE
+All of MyUSPTO's repositories in GitHub will be inaccessible after October 30, 2018.
+All of the repositories have been migrated to USPTO's GitLab site where you can access them at [https://prod-cicm.uspto.gov/gitlab/myuspto](https://prod-cicm.uspto.gov/gitlab/myuspto).
+MyUSPTO's GitHub sites are now inactive and any updates made to them will be in GitLab only.
 
 Universal Header/Footer Template
 ==============
