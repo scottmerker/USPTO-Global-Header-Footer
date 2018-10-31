@@ -1,11 +1,6 @@
----------------------------------------------------------------------------------------------
-IMPORTANT:  THIS REPO IS BEING DEPRECATED.  PLEASE USE THE REPO NOW AVAILABLE ON GITLAB.
----------------------------------------------------------------------------------------------
-
 Universal Header/Footer Template
 ==============
 
-- [View the Demo](https://uspto.github.io/USPTO-Global-Header-Footer/)
 - [How-to: Using the Header/Footer templates in your project](HOWTO.md)
 - [Dependencies](#dependencies)
 - [Contributing](CONTRIBUTING.md)
@@ -13,7 +8,7 @@ Universal Header/Footer Template
 - [Terms](TERMS.md)
 - [License](LICENSE.md)
 
-Have feedback or questions about the Header/Footer tempaltes? [Create an issue!](https://github.com/USPTO/USPTO-Global-Header-Footer/issues)
+Have feedback or questions about the Header/Footer tempaltes? [Create an issue!](https://prod-cicm.uspto.gov/gitlab/myuspto/USPTO-Global-Header-Footer/issues)
 
 #### About this repository
 This project provides a template for the header and footer
@@ -32,14 +27,14 @@ Choose one of the following options:
 * Bower - include the following in your `bower.json` file and run `bower install` in your command line:
 ``` javascript
 "devDependencies": {
-    "USPTO-Global-Header-Footer": "https://[GitHub username or GitHub Personal Access Token]github.com/USPTO/USPTO-Global-Header-Footer.git"
+    "universalHeaderFooter": "https://git+https://prod-cicm.uspto.gov/gitlab/myuspto/USPTO-Global-Header-Footer.git#[version]"
 }
 ```
 
 * Download the latest stable release from
-   [USPTO-Global-Header-Footer](https://github.com/USPTO/USPTO-Global-Header-Footer)
+   [USPTO-Global-Header-Footer](https://prod-cicm.uspto.gov/gitlab/myuspto/USPTO-Global-Header-Footer)
 * Clone the git repo — `git clone
-   https://github.com/USPTO/USPTO-Global-Header-Footer`
+   https://prod-cicm.uspto.gov/gitlab/myuspto/USPTO-Global-Header-Footer.git`
 
 ## Browser support
 
