@@ -358,7 +358,8 @@ module.exports = function (grunt) {
             'images/**/*',
             '{,*/}*.html',
             'styles/fonts/{,*/}*.*',
-            '!templates/{,*/}*'
+            '!templates/{,*/}*',
+            'assets/{,*/}*'
           ]
         }, {
           expand: true,
@@ -389,7 +390,7 @@ module.exports = function (grunt) {
         'svgmin'
       ]
     },
-    
+
     replace : {
         // Update assets path references.  This index file is for GitHub Pages.
         dist: {
@@ -463,8 +464,8 @@ module.exports = function (grunt) {
   grunt.registerTask('templateBuild', [
     'includes'
   ]);
-  
-  
+
+
   grunt.registerTask('build', [
     'templateBuild',
     'clean:dist',

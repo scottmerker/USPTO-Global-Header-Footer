@@ -46,6 +46,9 @@
          */
   -ms-interpolation-mode: bicubic;
 }
+
+
+
 .uspto-header-top .dropdown-menu {
   background-color: #282828;
 }
@@ -134,8 +137,14 @@
 }
 .uspto-header-top button.myuspto-link,
 .uspto-header-top .btn-group > a.myuspto-link {
+  color: #ccc;
+}
+.uspto-header-top button.user-link,
+.uspto-header-top .btn-group > a.user-link  {
   color: #f2a900;
 }
+
+
 .uspto-header-top .ex-btn-inverse.btn:focus {
   background-color: #282828;
   color: #ffffff;
