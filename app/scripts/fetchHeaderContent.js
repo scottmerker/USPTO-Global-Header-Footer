@@ -1,7 +1,7 @@
 (function () {
     'use strict';
     var addLink = function (url, label){
-        return '<li><a href="' + url + ' target="_blank">' + label + '</a></li>';
+        return '<li><a href="' + url + '" target="_blank">' + label + '</a></li>';
     }
     var addButton = function (label, ulIcon){
 
@@ -32,13 +32,7 @@
             navHtml = navHtml + '</ul>';
             navHtml = navHtml + '</div>';
         }
-        navHtml = navHtml + '</div>' +
-                '<div class="btn-group">' +
-               '<button type="button" class="btn btn-default dropdown-toggle ex-btn-inverse"' +
-                   'data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' +
-                   '<span class="hidden-xs">MyUSPTO&nbsp;</span>' +
-                   '<span class="visible-xs icon-btn"><img src="images/myuspto-icon.svg"/></span>' +
-                   '</button>';
+        navHtml = navHtml + '</div>';
         node.innerHTML = navHtml;
     }
 

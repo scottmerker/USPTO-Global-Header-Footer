@@ -1,5 +1,11 @@
 Changelog
 =========
+### v1.0.19
+* Updated code to pull top navigation dynamically from shared JSON resource
+* Updated header.html view to support fall back mechanism to standard links (no dropdowns)
+* Added navigation JSON for local (internal) project user
+* Updated Grintfile for **assets** folder inclusion 
+
 ### v1.0.18
 * Updated links in black banner for **File patents** and **Check private filing status**.
 
@@ -37,7 +43,7 @@ Changelog
 * Updated to use [USPTO UI Design Library](http://uspto.github.io/designpatterns/index.html) v1.5.3.
 
 -----
-### v1.0.10 
+### v1.0.10
 
 * Release 2017-01-30
 * Updated README and other *.md files.
@@ -46,11 +52,11 @@ Changelog
 * Added include package to have Grunt build the index.html file with the *.html templates.  This eliminates the use of the includeHTML.js file.  
 * Created template folder to house the various views templates.
 
-#### Updated LESS: 
+#### Updated LESS:
 * added the CSS class .uhf-main so that other projects are not restricted to use the <main> element.
 
 -----
-### v1.0.9 
+### v1.0.9
 
 #### Release 2017-01-11
 #### Changed project structure

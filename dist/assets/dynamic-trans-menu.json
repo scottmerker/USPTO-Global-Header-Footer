@@ -1,11 +1,11 @@
 dynamicTransMenu100 = {
-    "Patents*": {
+    "Patents": {
         "ulClass":"patent-menu",
         "ulIcon":"icon-lightbulb-o",
         "ulLink": [
 
          {
-          "label": "Search patents*",
+          "label": "Search patents",
 
           "url": "http://patft.uspto.gov/netahtml/PTO/search-bool.html"
 
@@ -19,7 +19,7 @@ dynamicTransMenu100 = {
    {
           "label": "Check private filing status",
 
-          "url": "https://ppair.uspto.gov/TruePassWebStart/AuthenticationChooser.html"
+          "url": "https://ppair-my.uspto.gov/pair/PrivatePair"
 
          } ,
    {
@@ -31,7 +31,7 @@ dynamicTransMenu100 = {
    {
           "label": "File patents",
 
-          "url": "https://efs.uspto.gov/EFSWebUIUnregistered/EFSWebUnregistered"
+          "url": "https://efs-my.uspto.gov/EFSWebUIRegistered/EFSWebRegistered"
 
          } ,
    {
@@ -61,13 +61,13 @@ dynamicTransMenu100 = {
       ]
 
   },
-   "Trademarks*": {
+   "Trademarks": {
      "ulClass":"trademark-menu",
      "ulIcon":"icon-trademark",
     "ulLink" : [
 
          {
-          "label": "Search trademarks*",
+          "label": "Search trademarks",
 
           "url": "http://tmsearch.uspto.gov/bin/gate.exe?f=login&p_lang=english&p_d=trmk"
 
@@ -129,15 +129,15 @@ dynamicTransMenu100 = {
       ]
   },
 
-  "Fees and payment*": {
+  "Fees and payment": {
     "ulClass":"fees-menu",
     "ulIcon":"icon-dollar",
      "ulLink": [
 
          {
-          "label": "Fees Self-Service*",
+          "label": "Fees Self-Service",
 
-          "url": "https://fees.uspto.gov"
+          "url": "https://fees.uspto.gov/"
 
          },
 
@@ -156,12 +156,12 @@ dynamicTransMenu100 = {
          }
     ]
   },
-  "Help*": {
+  "Help": {
    "ulIcon":"icon-question-circle",
    "ulLink":[
 
          {
-          "label": "FAQs*",
+          "label": "FAQs",
 
           "url": "http://www.uspto.gov/learning-resources"
 
